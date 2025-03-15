@@ -1,0 +1,49 @@
+@use 'helpers' as *;
+
+:root {
+	//! Colors
+	--white: #fff;
+	--black: #171717;
+	--gray: #333333;
+	--gray-light: #d3d3d3;
+	--blue: #1749b3;
+	--red: #fe0000;
+	--input-border: #cecbdf;
+
+	--background: #ecf3fb;
+	--background-input: #f1f4f8;
+
+	--main-text: #2c2738;
+	--label-text: #1b1b29;
+	--price-text: #0f0f0f;
+	--acc-setting-text: #070033;
+	--placeholder-text: #8f8f8f;
+
+	//! Fonts
+	--font-gotham: 'Gotham Pro', sans-serif;
+	--font-inter: 'Inter', sans-serif;
+	--font-montserrat: 'Montserrat', sans-serif;
+
+	//! Borders
+	--border-input-active: #{remm(1)} solid var(--input-border);
+	--border-black: #{remm(2)} solid var(--black);
+
+	//! Ansmation
+	--transition-duration: 0.2s;
+
+	//! Container
+	--container-width: #{fluid(1440, 320)};
+	--container-padding-x: #{remm(24)};
+
+	@include mobile {
+		--container-padding-x: #{remm(24)};
+	}
+	@include tablet {
+		--container-padding-x: #{remm(32)};
+	}
+	@include laptop {
+		--container-padding-x: #{remm(120)};
+	}
+
+	--100vw: calc(100vw - var(--scrollbar-width));
+}

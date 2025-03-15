@@ -1,0 +1,12 @@
+@use '../helpers' as *;
+input {
+	padding: 16px 24px;
+	border-radius: 8px;
+	background: var(--background-input);
+	@include hover {
+		border: 1px solid var(--2, #838099);
+	}
+	&:active {
+		border: var(--border-input-active);
+	}
+}

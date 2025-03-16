@@ -13,6 +13,7 @@
 
 	--input-border: #cecbdf;
 
+	--background-menu-links: #f7f7f7;
 	--background: #ecf3fb;
 	--background-input: #f1f4f8;
 
@@ -26,9 +27,16 @@
 	--font-inter: 'Inter', sans-serif;
 	--font-montserrat: 'Montserrat', sans-serif;
 
+	//! Shadows
+	--shadow-menu-modal: #{remm(0)} #{remm(12)} #{remm(28)} #{remm(0)}
+		rgba(177, 177, 177, 0.2);
+	--shadow-details-list: #{remm(0)} #{remm(20)} #{remm(48)} #{remm(0)}
+		rgba(177, 177, 177, 0.4);
+
 	//! Borders
 	--border-input-active: #{remm(1)} solid var(--input-border);
 	--border-blue: #{remm(1)} solid var(--blue);
+	--border-blue-light: #{remm(1)} solid var(--blue-light);
 	--border-black: #{remm(1)} solid var(--black);
 	--border-transparent: #{remm(1)} solid transparent;
 
@@ -37,7 +45,7 @@
 	--transition: all var(--transition-duration) linear;
 
 	//! Container
-	--container-width: #{fluid(1440, 320)};
+	--container-width: #{fluid(1200, 327)};
 	--container-padding-x: #{remm(24)};
 
 	@include mobile {

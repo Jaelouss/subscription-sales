@@ -1,0 +1,15 @@
+@use '../helpers' as *;
+
+.details {
+	position: relative;
+}
+.summary {
+	cursor: pointer;
+	@include flex-center;
+	@include hover {
+		color: var(--blue);
+	}
+	.details[open] & {
+		color: var(--blue-light);
+	}
+}

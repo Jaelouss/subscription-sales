@@ -1,6 +1,11 @@
 @use './scss/global';
 @use './scss/helpers' as *;
 
-// @use './scss/components/burger';
+@use './scss/components/icons';
+@use './scss/components/details';
+@use './scss/components/buttons';
+@use './scss/components/burger';
 
 @use './scss/blocks/header';
+
+@use './scss/blocks/modals';

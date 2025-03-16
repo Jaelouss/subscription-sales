@@ -1,0 +1,60 @@
+@use '../helpers' as *;
+
+.button {
+	@include transition;
+	background-color: transparent;
+	white-space: nowrap;
+	padding: remm(16) remm(24);
+	border-radius: remm(16);
+	position: relative;
+	z-index: 111;
+
+	&.blue {
+		color: var(--white);
+		background-color: var(--blue);
+		border: var(--border-transparent);
+
+		@include hover(false) {
+			color: var(--blue);
+			background-color: transparent;
+			border: var(--border-blue);
+		}
+
+		&:active {
+			color: var(--white);
+			background-color: var(--blue-light);
+			border: var(--border-transparent);
+		}
+	}
+	&.white {
+		color: var(--blue);
+		background-color: transparent;
+		border: var(--border-blue);
+
+		@include hover(false) {
+			color: var(--white);
+			background-color: var(--blue);
+			border: var(--border-blue);
+		}
+
+		&:active {
+			color: var(--white);
+			background-color: var(--blue-light);
+			border: var(--border-blue-light);
+		}
+	}
+
+	&__header-platform,
+	&__header-lang,
+	&__modal-menu-lang {
+		font-size: remm(17);
+		font-weight: 400;
+		line-height: 150%;
+		text-align: start;
+		width: 100%;
+		padding: remm(10);
+		@include hover {
+			color: var(--blue);
+		}
+	}
+}

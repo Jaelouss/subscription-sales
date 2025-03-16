@@ -1,1 +1,124 @@
 @use '../helpers' as *;
+
+.header {
+	width: 100%;
+	background-color: var(--white);
+	position: relative;
+	z-index: 5;
+	@include flex-center;
+
+	&__inner {
+		width: 100%;
+		@include flex-center;
+		padding-block: remm(10);
+		padding-inline: remm(24);
+		justify-content: space-between;
+		max-width: 1440px;
+		@include tablet {
+			padding-inline: remm(32);
+		}
+		@include laptop {
+			justify-content: space-between;
+			padding-block: remm(2);
+			padding-inline: remm(120);
+		}
+	}
+
+	&__logo {
+		@include flex-center;
+		gap: remm(12);
+		padding-right: fluid(116, 0);
+		background-color: transparent;
+		@include laptop {
+			gap: remm(8);
+		}
+		&-img {
+			width: remm(32);
+			height: remm(32);
+			@include laptop {
+				width: remm(55);
+				height: remm(55);
+			}
+		}
+		&-text {
+			@include mobile-below {
+				@include visually-hidden;
+			}
+			font-family: Manrope;
+			font-weight: 600;
+		}
+	}
+
+	&__nav {
+		display: none;
+		@include tablet-l {
+			@include flex-center;
+			justify-content: space-between;
+			width: 100%;
+		}
+		&-list {
+			@include tablet-l {
+				@include flex-center;
+			}
+		}
+
+		&-link {
+			@include tablet-l {
+				font-size: 16px;
+				font-weight: 400;
+				padding: remm(8) fluid(24, 0);
+				@include hover {
+					color: var(--blue);
+				}
+			}
+		}
+
+		&-summary {
+			@include tablet-l {
+				gap: remm(11);
+				padding: remm(8) fluid(24, 15) remm(8) remm(0);
+			}
+		}
+
+		&-platforms,
+		.lang-list {
+			@include tablet-l {
+				@include abs-x;
+				border-radius: remm(16);
+				background: var(--white);
+				box-shadow: var(--shadow-details-list);
+				padding: remm(17) remm(13);
+			}
+		}
+	}
+	&__soc1al {
+		@include tablet-l {
+			@include flex-center;
+			gap: fluid(40, 0);
+		}
+
+		&-networks {
+			@include tablet-l {
+				@include flex-center;
+				gap: remm(12);
+			}
+		}
+		&-lang {
+			&-summary {
+				@include tablet-l {
+					@include flex-center;
+					gap: remm(4);
+				}
+			}
+		}
+		&-login {
+			@include flex-center(column);
+			width: 100%;
+		}
+	}
+	&__burger {
+		@include tablet-l {
+			display: none;
+		}
+	}
+}

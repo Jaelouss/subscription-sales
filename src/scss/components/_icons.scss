@@ -1,0 +1,34 @@
+@use '../helpers' as *;
+
+.icon {
+	@include transition;
+	&__header {
+		&-details {
+			.header__nav-details[open] & {
+				transform: rotate(180deg);
+			}
+			.header__soc1al-lang-details[open] & {
+				transform: rotate(-180deg);
+			}
+		}
+		&-soc1al {
+			.header__soc1al-link:hover & {
+				fill: var(--blue);
+			}
+		}
+	}
+	&__modal {
+		&-menu {
+			&-details {
+				.menu__login-soc1al-lang-details[open] & {
+					transform: rotate(180deg);
+				}
+			}
+			&-soc1al {
+				.soc1al__networks-link:hover & {
+					fill: var(--blue);
+				}
+			}
+		}
+	}
+}

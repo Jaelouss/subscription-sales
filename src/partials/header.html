@@ -1,1 +1,124 @@
-<section class="header" id="header"></section>
+<header class="header" id="header">
+	<div class="header__inner">
+		<button class="header__logo" data-tab="main">
+			<img
+				class="header__logo-img"
+				src="/images/logo/logo.png"
+				alt="logo"
+				width="32"
+				height="32"
+			/>
+			<p class="header__logo-text">DiscountsOnServices</p>
+		</button>
+		<nav class="header__nav">
+			<ul class="header__nav-list">
+				<li class="header__nav-item">
+					<details class="header__nav-details details details__header-menu">
+						<summary class="header__nav-summary summary summary__header-menu">
+							Subscriptions
+							<svg class="icon icon__header-details" height="12" width="12">
+								<use href="/images/svg/sprite.svg#arrow-down"></use>
+							</svg>
+						</summary>
+						<ul class="header__nav-platforms">
+							<li class="header__nav-platforms-item">
+								<button
+									class="button button__header-platform"
+									data-tab="netflix"
+								>
+									Netflix
+								</button>
+							</li>
+							<li class="header__nav-platforms-item">
+								<button
+									class="button button__header-platform"
+									data-tab="youtube"
+								>
+									YouTube Premium
+								</button>
+							</li>
+							<li class="header__nav-platforms-item">
+								<button
+									class="button button__header-platform"
+									data-tab="spotify"
+								>
+									Spotify
+								</button>
+							</li>
+						</ul>
+					</details>
+				</li>
+				<li class="header__nav-item">
+					<a href="#faq" class="header__nav-link">FAQ</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#support" class="header__nav-link">Support</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#about" class="header__nav-link">About</a>
+				</li>
+			</ul>
+			<ul class="header__soc1al">
+				<li class="header__soc1al-networks">
+					<a
+						class="header__soc1al-link"
+						href="https://github.com/Jaelouss"
+						aria-label="autor github"
+					>
+						<svg class="icon icon__header-soc1al" height="24" width="24">
+							<use href="/images/svg/sprite.svg#github"></use>
+						</svg>
+					</a>
+					<a
+						class="header__soc1al-link"
+						href="https://www.linkedin.com/in/eugen-alekseev/"
+						aria-label="autor linkedin"
+					>
+						<svg class="icon icon__header-soc1al" height="24" width="24">
+							<use href="/images/svg/sprite.svg#linkedin"></use>
+						</svg>
+					</a>
+				</li>
+				<li class="header__soc1al-lang">
+					<details
+						class="details details__header-lang header__soc1al-lang-details"
+					>
+						<summary
+							class="summary summary__header-lang header__soc1al-lang-summary"
+						>
+							EN
+							<svg class="icon icon__header-details" height="12" width="12">
+								<use href="/images/svg/sprite.svg#arrow-down"></use>
+							</svg>
+						</summary>
+						<ul class="lang-list">
+							<li class="lang-item">
+								<button class="button button__header-lang" data-lang="en">
+									English
+								</button>
+							</li>
+							<li class="lang-item">
+								<button class="button button__header-lang" data-lang="uk">
+									Ukraine
+								</button>
+							</li>
+						</ul>
+					</details>
+				</li>
+				<li class="header__soc1al-login">
+					<button class="button button-login blue" type="button">Login</button>
+				</li>
+			</ul>
+		</nav>
+
+		<button
+			class="button header__burger burger"
+			data-modal="menu"
+			aria-label="menu"
+		>
+			<span class="burger__line"></span>
+			<span class="burger__line"></span>
+			<span class="burger__line"></span>
+		</button>
+	</div>
+</header>

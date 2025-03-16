@@ -1,0 +1,48 @@
+@use '../helpers' as *;
+
+.burger {
+	@include flex-center(column);
+	gap: remm(5);
+	padding: remm(4);
+	width: remm(24);
+	height: remm(24);
+	&.open {
+		transition-delay: 0.5s;
+		background-color: rgba(23, 23, 23, 0.1);
+		border-radius: 50%;
+
+		@include hover(false) {
+			background-color: var(--blue);
+			.burger__line {
+				background-color: var(--white);
+			}
+		}
+		&:active {
+			background-color: rgba(75, 132, 253, 0.1);
+		}
+	}
+
+	&__line {
+		@include transition;
+		width: remm(18);
+		height: remm(2);
+		background-color: var(--blue-dark);
+
+		.burger.open & {
+			&:nth-child(2) {
+				width: 0;
+				opacity: 0;
+			}
+			&:first-child {
+				transform: translateY(remm(7)) rotate(45deg);
+				transition-delay: 0.2s;
+				width: remm(12);
+			}
+			&:last-child {
+				transform: translateY(remm(-7)) rotate(-45deg);
+				transition-delay: 0.2s;
+				width: remm(12);
+			}
+		}
+	}
+}

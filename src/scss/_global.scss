@@ -179,7 +179,7 @@ input,
 textarea,
 select,
 svg * {
-	transition-duration: var(--transition-duration);
+	@include transition;
 }
 
 :focus-visible {

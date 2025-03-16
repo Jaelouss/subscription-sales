@@ -1,8 +1,8 @@
 @use 'functions' as *;
 $desktop: 1919.98;
 $laptop: 1439.98;
-$tablet: 1023.98;
-$mobile-l: 767.98;
+$tablet-l: 1023.98;
+$tablet: 767.98;
 $mobile: 374.98;
 
 @mixin desktop {
@@ -25,6 +25,16 @@ $mobile: 374.98;
 		@content;
 	}
 }
+@mixin tablet-l {
+	@media (width > remm($tablet-l)) {
+		@content;
+	}
+}
+@mixin tablet-l-below {
+	@media (width <= remm($tablet-l)) {
+		@content;
+	}
+}
 @mixin tablet {
 	@media (width > remm($tablet)) {
 		@content;
@@ -32,16 +42,6 @@ $mobile: 374.98;
 }
 @mixin tablet-below {
 	@media (width <= remm($tablet)) {
-		@content;
-	}
-}
-@mixin mobile-l {
-	@media (width > remm($mobile-l)) {
-		@content;
-	}
-}
-@mixin mobile-l-below {
-	@media (width <= remm($mobile-l)) {
 		@content;
 	}
 }

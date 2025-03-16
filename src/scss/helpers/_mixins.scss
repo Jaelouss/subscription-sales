@@ -5,6 +5,10 @@
 	font-size: fluid($max, $min);
 }
 
+@mixin transition {
+	transition: var(--transition);
+}
+
 @mixin hide {
 	opacity: 0;
 	visibility: hidden;

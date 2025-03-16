@@ -7,16 +7,16 @@
 }
 
 .hidden-mobile {
-	@include mobile-l-below {
-		display: none !important;
-	}
-}
-.hidden-mobile-l {
 	@include tablet-below {
 		display: none !important;
 	}
 }
 .hidden-tablet {
+	@include tablet-l-below {
+		display: none !important;
+	}
+}
+.hidden-tablet-l {
 	@include laptop-below {
 		display: none !important;
 	}
@@ -31,13 +31,13 @@
 		display: block !important;
 	}
 }
-.visible-mobile-l {
-	@include mobile-l {
+.visible-tablet {
+	@include tablet {
 		display: block !important;
 	}
 }
-.visible-tablet {
-	@include tablet {
+.visible-tablet-l {
+	@include tablet-l {
 		display: block !important;
 	}
 }

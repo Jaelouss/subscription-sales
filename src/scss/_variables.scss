@@ -6,8 +6,11 @@
 	--black: #171717;
 	--gray: #333333;
 	--gray-light: #d3d3d3;
+	--blue-dark: #070033;
 	--blue: #1749b3;
+	--blue-light: #4b84fd;
 	--red: #fe0000;
+
 	--input-border: #cecbdf;
 
 	--background: #ecf3fb;
@@ -16,7 +19,6 @@
 	--main-text: #2c2738;
 	--label-text: #1b1b29;
 	--price-text: #0f0f0f;
-	--acc-setting-text: #070033;
 	--placeholder-text: #8f8f8f;
 
 	//! Fonts
@@ -26,10 +28,13 @@
 
 	//! Borders
 	--border-input-active: #{remm(1)} solid var(--input-border);
-	--border-black: #{remm(2)} solid var(--black);
+	--border-blue: #{remm(1)} solid var(--blue);
+	--border-black: #{remm(1)} solid var(--black);
+	--border-transparent: #{remm(1)} solid transparent;
 
 	//! Ansmation
 	--transition-duration: 0.2s;
+	--transition: all var(--transition-duration) linear;
 
 	//! Container
 	--container-width: #{fluid(1440, 320)};

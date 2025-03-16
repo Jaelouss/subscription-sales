@@ -13,7 +13,6 @@ html {
 }
 
 body {
-	background-image: url(/images/star-bg.webp);
 	background-size: contain;
 	background-position: center;
 	@include flex-center(column);
@@ -132,10 +131,9 @@ a,
 button {
 	color: var(--main-text);
 	font-family: var(--font-gotham);
-	font-size: fluid(17, 15);
 	font-weight: 700;
 	line-height: 130%;
-	font-size: remm(18);
+	font-size: remm(17);
 	@include laptop-below {
 		font-size: remm(15);
 		letter-spacing: remm(0.15);
@@ -211,13 +209,13 @@ input {
 	}
 }
 .account-info {
-	color: var(--acc-setting-text);
+	color: var(--blue-dark);
 	font-family: var(--font-inter);
 	font-weight: 500;
 	letter-spacing: remm(0.15);
 }
-.accaunt-menu {
-	color: var(--acc-setting-text);
+.account-menu {
+	color: var(--blue-dark);
 	font-family: var(--font-inter);
 	font-weight: 600;
 	line-height: 140%;

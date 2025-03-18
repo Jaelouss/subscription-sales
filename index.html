@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/subscription-sales/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Subscription App</title>
+		<script type="module" crossorigin src="/subscription-sales/index.js"></script>
+		<link rel="stylesheet" crossorigin href="/subscription-sales/index.css">
+	</head>
+	<body>
+		<header class="header" id="header">
+	<div class="header__inner">
+		<button class="header__logo" data-tab="main">
+			<img
+				class="header__logo-img"
+				srcset="data:image/webp;base64,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 1x, /subscription-sales/logo-2x.webp 2x"
+				src="/subscription-sales/logo.png"
+				alt="logo"
+				width="32"
+				height="32"
+			/>
+			<p class="header__logo-text">DiscountsOnServices</p>
+		</button>
+		<nav class="header__nav">
+			<ul class="header__nav-list">
+				<li class="header__nav-item">
+					<details class="header__nav-details details details__header-menu">
+						<summary class="header__nav-summary summary summary__header-menu">
+							Subscriptions
+							<svg class="icon icon__header-details" height="12" width="12">
+								<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+							</svg>
+						</summary>
+						<ul class="header__nav-platforms">
+							<li class="header__nav-platforms-item">
+								<button
+									class="button button__header-platform"
+									data-tab="netflix"
+								>
+									Netflix
+								</button>
+							</li>
+							<li class="header__nav-platforms-item">
+								<button
+									class="button button__header-platform"
+									data-tab="youtube"
+								>
+									YouTube Premium
+								</button>
+							</li>
+							<li class="header__nav-platforms-item">
+								<button
+									class="button button__header-platform"
+									data-tab="spotify"
+								>
+									Spotify
+								</button>
+							</li>
+						</ul>
+					</details>
+				</li>
+				<li class="header__nav-item">
+					<a href="#faq" class="header__nav-link">FAQ</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#support" class="header__nav-link">Support</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#about" class="header__nav-link">About</a>
+				</li>
+			</ul>
+			<ul class="header__soc1al">
+				<li class="header__soc1al-networks">
+					<a
+						class="header__soc1al-link"
+						href="https://github.com/Jaelouss"
+						aria-label="autor github"
+					>
+						<svg class="icon icon__header-soc1al" height="24" width="24">
+							<use href="/subscription-sales/sprite.svg#github"></use>
+						</svg>
+					</a>
+					<a
+						class="header__soc1al-link"
+						href="https://www.linkedin.com/in/eugen-alekseev/"
+						aria-label="autor linkedin"
+					>
+						<svg class="icon icon__header-soc1al" height="24" width="24">
+							<use href="/subscription-sales/sprite.svg#linkedin"></use>
+						</svg>
+					</a>
+				</li>
+				<li class="header__soc1al-lang">
+					<details
+						class="details details__header-lang header__soc1al-lang-details"
+					>
+						<summary
+							class="summary summary__header-lang header__soc1al-lang-summary"
+						>
+							EN
+							<svg class="icon icon__header-details" height="12" width="12">
+								<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+							</svg>
+						</summary>
+						<ul class="lang-list">
+							<li class="lang-item">
+								<button class="button button__header-lang" data-lang="en">
+									English
+								</button>
+							</li>
+							<li class="lang-item">
+								<button class="button button__header-lang" data-lang="uk">
+									Ukraine
+								</button>
+							</li>
+						</ul>
+					</details>
+				</li>
+				<li class="header__soc1al-login">
+					<button
+						class="button button-login blue"
+						type="button"
+						data-modal="login"
+					>
+						Login
+					</button>
+				</li>
+			</ul>
+		</nav>
+
+		<button
+			class="button header__burger burger"
+			data-modal="menu"
+			aria-label="menu"
+		>
+			<span class="burger__line"></span>
+			<span class="burger__line"></span>
+			<span class="burger__line"></span>
+		</button>
+	</div>
+</header>
+
+		<section class="overlay visually-hidden" id="overlay">
+	<ul class="modal visually-hidden" id="modal">
+		<li class="modal__menu visually-hidden">
+			<ul class="modal__menu-list">
+	<li class="modal__menu-item">
+		<ul class="menu__nav">
+			<li class="menu__nav-item">
+				<ul class="menu__nav-section">
+					<li class="menu__nav-section-item">
+						<button
+							class="menu__links button button-home"
+							data-tab="main"
+							type="button"
+						>
+							<svg class="icon icon-menu-nav" height="24" width="24">
+								<use href="/subscription-sales/sprite.svg#menu-home"></use>
+							</svg>
+							Home
+						</button>
+					</li>
+					<li class="menu__nav-section-item">
+						<a class="menu__links menu__nav-section-link" href="#about">
+							<svg class="icon icon-menu-nav" height="24" width="24">
+								<use href="/subscription-sales/sprite.svg#menu-dashboard"></use>
+							</svg>
+							About
+						</a>
+					</li>
+					<li class="menu__nav-section-item">
+						<a class="menu__links menu__nav-section-link" href="#faq">
+							<svg class="icon icon-menu-nav" height="24" width="24">
+								<use href="/subscription-sales/sprite.svg#menu-question"></use>
+							</svg>
+							FAQ
+						</a>
+					</li>
+					<li class="menu__nav-section-item">
+						<a class="menu__links menu__nav-section-link" href="#support">
+							<svg class="icon icon-menu-nav" height="24" width="24">
+								<use href="/subscription-sales/sprite.svg#menu-dashboard2"></use>
+							</svg>
+							Support
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="menu__nav-item">
+				<ul class="menu__nav-section">
+					<li class="menu__nav-section-item">
+						<button
+							class="menu__links button button-platform"
+							data-tab="netflix"
+							type="button"
+						>
+							Netflix
+						</button>
+					</li>
+					<li class="menu__nav-section-item">
+						<button
+							class="menu__links button button-platform"
+							data-tab="youtube"
+							type="button"
+						>
+							Youtube
+						</button>
+					</li>
+					<li class="menu__nav-section-item">
+						<button
+							class="menu__links button button-platform"
+							data-tab="spotify"
+							type="button"
+						>
+							Spotify
+						</button>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="modal__menu-item">
+		<ul class="menu__login">
+			<li class="menu__login-buttons">
+				<ul class="login__buttons">
+					<li class="login__buttons-item">
+						<button class="button button-login transparent" data-modal="login">
+							Login
+						</button>
+					</li>
+					<li class="login__buttons-item">
+						<button class="button button-sing-up blue" data-modal="sing-up">
+							Sign up
+						</button>
+					</li>
+				</ul>
+			</li>
+			<li class="menu__login-soc1al">
+				<ul class="soc1al__list">
+					<li class="soc1al__networks">
+						<a
+							href="https://github.com/Jaelouss"
+							class="soc1al__networks-link"
+							aria-label="autor github"
+						>
+							<svg class="icon icon__modal-menu-soc1al" height="32" width="32">
+								<use href="/subscription-sales/sprite.svg#github"></use>
+							</svg>
+						</a>
+						<a
+							href="https://www.linkedin.com/in/eugen-alekseev/"
+							class="soc1al__networks-link"
+							aria-label="autor linkedin"
+						>
+							<svg class="icon icon__modal-menu-soc1al" height="32" width="32">
+								<use href="/subscription-sales/sprite.svg#linkedin"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="soc1al__lang">
+						<details
+							class="details details__modal-menu-lang menu__login-soc1al-lang-details"
+						>
+							<summary
+								class="summary summary__modal-menu-lang menu__login-soc1al-lang-summary"
+							>
+								EN
+								<svg
+									class="icon icon__modal-menu-details"
+									height="12"
+									width="12"
+								>
+									<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+								</svg>
+							</summary>
+							<ul class="lang-list">
+								<li class="lang-item">
+									<button class="button button__modal-menu-lang" data-lang="en">
+										English
+									</button>
+								</li>
+								<li class="lang-item">
+									<button class="button button__modal-menu-lang" data-lang="uk">
+										Ukraine
+									</button>
+								</li>
+							</ul>
+						</details>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+		</li>
+	</ul>
+</section>
+
+		<section class="tabs" id="tabs">
+	<ul class="tab" id="tab">
+		<li class="tab__netflix visually-hidden">
+			<section class="netflix container tab" id="netflix">
+	<ul class="tab__list">
+		<li class="tab__header">
+			<h1 class="tab__header-title">Choose a Netflix Plan</h1>
+			<p class="tab__header-text">Listen without limits at a bargain price</p>
+		</li>
+		<li class="tab__selector">
+			<div class="first">
+				<input
+					class="tab__selector-input"
+					type="radio"
+					name="price-time"
+					id="time"
+					checked
+				/>
+				<label class="tab__selector-label" for="time"> 6 months </label>
+			</div>
+			<div class="second">
+				<input
+					class="tab__selector-input"
+					type="radio"
+					name="price-time"
+					id="time2"
+				/>
+				<label class="tab__selector-label" for="time2"> 12 months </label>
+			</div>
+		</li>
+		<li class="tab__plan">
+			<ul class="tab__plan-list">
+				<li class="tab__plan-item">
+					<ul class="plan__list">
+						<li class="plan__header">
+							<h3 class="plan__header-title h2">Basic</h3>
+						</li>
+						<li class="plan__suggestions">
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">Ad-free music listening</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">Play anywhere - even offline</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">On-demand playback</p>
+							</div>
+						</li>
+						<li class="plan__price">
+							<div class="plan__price-inner">
+								<span class="price currency">$</span>
+								<p class="price">45</p>
+							</div>
+							<button class="plan__price-button button gray">
+								Get started
+							</button>
+						</li>
+					</ul>
+				</li>
+				<li class="tab__plan-item">
+					<ul class="plan__list">
+						<li class="plan__header">
+							<h3 class="plan__header-title h2">Standart</h3>
+						</li>
+						<li class="plan__suggestions">
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">Ad-free music listening</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">Play anywhere - even offline</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">On-demand playback</p>
+							</div>
+						</li>
+						<li class="plan__price">
+							<div class="plan__price-inner">
+								<span class="price currency">$</span>
+								<p class="price">60</p>
+							</div>
+							<button class="plan__price-button button gray">
+								Get started
+							</button>
+						</li>
+					</ul>
+				</li>
+				<li class="tab__plan-item">
+					<ul class="plan__list">
+						<li class="plan__header">
+							<h3 class="plan__header-title h2">Premium</h3>
+						</li>
+						<li class="plan__suggestions">
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success "></use>
+								</svg>
+								<p class="options__text">Ad-free music listening</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success "></use>
+								</svg>
+								<p class="options__text">Play anywhere - even offline</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success "></use>
+								</svg>
+								<p class="options__text">On-demand playback</p>
+							</div>
+						</li>
+						<li class="plan__price">
+							<div class="plan__price-inner">
+								<span class="price currency">$</span>
+								<p class="price">80</p>
+							</div>
+							<button class="plan__price-button button gray">
+								Get started
+							</button>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li class="works__item">
+	<div class="works__invite">
+		<h3 class="invite__title">Invite friends</h3>
+		<p class="invite__text">
+			Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with
+			a secure payment from PAYPAL
+		</p>
+	</div>
+	<div class="works__discount">
+		<p class="discount__text">Click on the link</p>
+		<div class="discount__copy-inner">
+			<p class="discount__copy-text" id="copy">Discounts On Services</p>
+			<svg class="icon-copy discount__copy-icon" height="19" width="19">
+				<use href="/subscription-sales/sprite.svg#file-copy"></use>
+			</svg>
+			<svg
+				class="icon-copy success discount__copy-icon visually-hidden"
+				height="19"
+				width="19"
+			>
+				<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+			</svg>
+		</div>
+	</div>
+</li>
+
+	</ul>
+</section>
+<section class="faq container section-display" id="faq">
+	<h2 class="faq__title">FAQ</h2>
+	<ul class="faq__list">
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						The set time has passed, but the invoice has not yet arrived, what
+						should I do?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Contact our support team, and we’ll resend the invoice promptly.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						Can I change my Netflix account email and password after purchase?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Yes, you can update your email and password in the account settings
+					after purchase.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						Can I add a phone number for password recovery?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Yes, you can add a phone number for recovery through the account
+					security settings.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						How soon will I receive the account information I ordered?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					You’ll receive your account details within 24 hours of purchase
+					confirmation.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">How to pay?</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Payment options we currently have: PayPal, Bitcoin.
+				</p>
+			</details>
+		</li>
+	</ul>
+	<button class="button gray faq__button" data-modal="support" id="support">
+		Support
+	</button>
+</section>
+
+
+		</li>
+		<li class="tab__youtube visually-hidden">
+			<section class="youtube container tab" id="youtube">
+	<ul class="tab__list">
+		<li class="tab__header">
+			<h1 class="tab__header-title">Choose a Youtube Plan</h1>
+			<p class="tab__header-text">Listen without limits at a bargain price</p>
+		</li>
+		<li class="tab__selector">
+			<div class="first">
+				<input
+					class="tab__selector-input"
+					type="radio"
+					name="price-time"
+					id="time"
+					checked
+				/>
+				<label class="tab__selector-label" for="time"> 6 months </label>
+			</div>
+			<div class="second">
+				<input
+					class="tab__selector-input"
+					type="radio"
+					name="price-time"
+					id="time2"
+				/>
+				<label class="tab__selector-label" for="time2"> 12 months </label>
+			</div>
+		</li>
+		<li class="tab__plan">
+			<ul class="tab__plan-list yotube">
+				<li class="tab__plan-item">
+					<ul class="plan__list">
+						<li class="plan__header">
+							<h3 class="plan__header-title h2">Music</h3>
+						</li>
+						<li class="plan__suggestions">
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">
+									Listen to music without ads, in the background and offline
+								</p>
+							</div>
+						</li>
+						<li class="plan__price">
+							<div class="plan__price-inner">
+								<span class="price currency">$</span>
+								<p class="price">60</p>
+							</div>
+							<button class="plan__price-button button gray">
+								Get started
+							</button>
+						</li>
+					</ul>
+				</li>
+				<li class="tab__plan-item">
+					<ul class="plan__list">
+						<li class="plan__header">
+							<h3 class="plan__header-title h2">Premium</h3>
+						</li>
+						<li class="plan__suggestions">
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">
+									Listen to music without ads, in the background and offline
+								</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">
+									YouTube and YouTube Music without ads, in the background and
+									offline
+								</p>
+							</div>
+						</li>
+						<li class="plan__price">
+							<div class="plan__price-inner">
+								<span class="price currency">$</span>
+								<p class="price">80</p>
+							</div>
+							<button class="plan__price-button button gray">
+								Get started
+							</button>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li class="works__item">
+	<div class="works__invite">
+		<h3 class="invite__title">Invite friends</h3>
+		<p class="invite__text">
+			Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with
+			a secure payment from PAYPAL
+		</p>
+	</div>
+	<div class="works__discount">
+		<p class="discount__text">Click on the link</p>
+		<div class="discount__copy-inner">
+			<p class="discount__copy-text" id="copy">Discounts On Services</p>
+			<svg class="icon-copy discount__copy-icon" height="19" width="19">
+				<use href="/subscription-sales/sprite.svg#file-copy"></use>
+			</svg>
+			<svg
+				class="icon-copy success discount__copy-icon visually-hidden"
+				height="19"
+				width="19"
+			>
+				<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+			</svg>
+		</div>
+	</div>
+</li>
+
+	</ul>
+</section>
+<section class="faq container section-display" id="faq">
+	<h2 class="faq__title">FAQ</h2>
+	<ul class="faq__list">
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						The set time has passed, but the invoice has not yet arrived, what
+						should I do?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Contact our support team, and we’ll resend the invoice promptly.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						Can I change my Netflix account email and password after purchase?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Yes, you can update your email and password in the account settings
+					after purchase.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						Can I add a phone number for password recovery?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Yes, you can add a phone number for recovery through the account
+					security settings.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						How soon will I receive the account information I ordered?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					You’ll receive your account details within 24 hours of purchase
+					confirmation.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">How to pay?</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Payment options we currently have: PayPal, Bitcoin.
+				</p>
+			</details>
+		</li>
+	</ul>
+	<button class="button gray faq__button" data-modal="support" id="support">
+		Support
+	</button>
+</section>
+
+
+		</li>
+		<li class="tab__spotify visually-hidden">
+			<section class="netflix container tab" id="spotify">
+	<ul class="tab__list">
+		<li class="tab__header">
+			<h1 class="tab__header-title">Choose a Spotify Plan</h1>
+			<p class="tab__header-text">Listen without limits at a bargain price</p>
+		</li>
+		<li class="tab__selector">
+			<div class="first">
+				<input
+					class="tab__selector-input"
+					type="radio"
+					name="price-time"
+					id="time"
+					checked
+				/>
+				<label class="tab__selector-label" for="time"> 6 months </label>
+			</div>
+			<div class="second">
+				<input
+					class="tab__selector-input"
+					type="radio"
+					name="price-time"
+					id="time2"
+				/>
+				<label class="tab__selector-label" for="time2"> 12 months </label>
+			</div>
+		</li>
+		<li class="tab__plan">
+			<ul class="tab__plan-list">
+				<li class="tab__plan-item">
+					<ul class="plan__list">
+						<li class="plan__header">
+							<h3 class="plan__header-title h2">Individual</h3>
+						</li>
+						<li class="plan__suggestions">
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">
+									Ad-free music listening, play offline, on-demand playback
+								</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">
+									2 Premium accounts for a couple under one roof
+								</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">Block explicit music</p>
+							</div>
+						</li>
+						<li class="plan__price">
+							<div class="plan__price-inner">
+								<span class="price currency">$</span>
+								<p class="price">47</p>
+							</div>
+							<button class="plan__price-button button gray">
+								Get started
+							</button>
+						</li>
+					</ul>
+				</li>
+				<li class="tab__plan-item">
+					<ul class="plan__list">
+						<li class="plan__header">
+							<h3 class="plan__header-title h2">Duo</h3>
+						</li>
+						<li class="plan__suggestions">
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">
+									Ad-free music listening, play offline, on-demand playback
+								</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">
+									2 Premium accounts for a couple under one roof
+								</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">Block explicit music</p>
+							</div>
+						</li>
+						<li class="plan__price">
+							<div class="plan__price-inner">
+								<span class="price currency">$</span>
+								<p class="price">57</p>
+							</div>
+							<button class="plan__price-button button gray">
+								Get started
+							</button>
+						</li>
+					</ul>
+				</li>
+				<li class="tab__plan-item">
+					<ul class="plan__list">
+						<li class="plan__header">
+							<h3 class="plan__header-title h2">Family</h3>
+						</li>
+						<li class="plan__suggestions">
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success "></use>
+								</svg>
+								<p class="options__text">
+									Ad-free music listening, play offline, on-demand playback
+								</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success "></use>
+								</svg>
+								<p class="options__text">
+									6 Premium accounts for family members living under one roof
+								</p>
+							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon added"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success "></use>
+								</svg>
+								<p class="options__text">Block explicit music</p>
+							</div>
+						</li>
+						<li class="plan__price">
+							<div class="plan__price-inner">
+								<span class="price currency">$</span>
+								<p class="price">77</p>
+							</div>
+							<button class="plan__price-button button gray">
+								Get started
+							</button>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li class="works__item">
+	<div class="works__invite">
+		<h3 class="invite__title">Invite friends</h3>
+		<p class="invite__text">
+			Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with
+			a secure payment from PAYPAL
+		</p>
+	</div>
+	<div class="works__discount">
+		<p class="discount__text">Click on the link</p>
+		<div class="discount__copy-inner">
+			<p class="discount__copy-text" id="copy">Discounts On Services</p>
+			<svg class="icon-copy discount__copy-icon" height="19" width="19">
+				<use href="/subscription-sales/sprite.svg#file-copy"></use>
+			</svg>
+			<svg
+				class="icon-copy success discount__copy-icon visually-hidden"
+				height="19"
+				width="19"
+			>
+				<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+			</svg>
+		</div>
+	</div>
+</li>
+
+	</ul>
+</section>
+<section class="faq container section-display" id="faq">
+	<h2 class="faq__title">FAQ</h2>
+	<ul class="faq__list">
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						The set time has passed, but the invoice has not yet arrived, what
+						should I do?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Contact our support team, and we’ll resend the invoice promptly.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						Can I change my Netflix account email and password after purchase?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Yes, you can update your email and password in the account settings
+					after purchase.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						Can I add a phone number for password recovery?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Yes, you can add a phone number for recovery through the account
+					security settings.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						How soon will I receive the account information I ordered?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					You’ll receive your account details within 24 hours of purchase
+					confirmation.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">How to pay?</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Payment options we currently have: PayPal, Bitcoin.
+				</p>
+			</details>
+		</li>
+	</ul>
+	<button class="button gray faq__button" data-modal="support" id="support">
+		Support
+	</button>
+</section>
+
+
+		</li>
+	</ul>
+</section>
+
+		<main>
+			<section class="hero container" id="hero">
+	<ul class="hero__list">
+		<li class="hero__item">
+			<h1 class="hero__title">Start enjoying a benefit of up to 50%</h1>
+			<p class="hero__text">
+				You have always wanted to get the same product at a special price for
+				you, without haggling - and it is yours.
+			</p>
+			<a href="#choose" class="hero__link button white">Start using</a>
+		</li>
+		<li class="hero__item">
+			<img
+				class="hero__image"
+				srcset="/subscription-sales/girl-main.webp 1x, /subscription-sales/girl-main-2x.webp 2x"
+				src="/subscription-sales/girl-main.png"
+				alt="girl with product icons"
+				width="281"
+				height="281"
+			/>
+		</li>
+	</ul>
+</section>
+
+			<section class="choose container section-display" id="choose">
+	<h2 class="choose__title">Choose a subscription</h2>
+	<ul class="choose__list">
+		<li class="choose__item">
+			<div class="choose__item-inner">
+				<h3 class="choose__item-title">Netflix subscription rates</h3>
+				<p class="choose__item-text">
+					The constant contributes to the task of the same and thus the intended
+					features and the set relation to the check and set also.
+				</p>
+				<button class="choose__item-button button blue" data-tab="netflix">
+					Learn more
+				</button>
+			</div>
+			<img
+				width="327"
+				height="213"
+				srcset="data:image/webp;base64,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 1x, data:image/webp;base64,UklGRogPAABXRUJQVlA4IHwPAADw6wCdASqYBKwCPm02m0mkIyKhIVQYEIANiWlu/EsZ+zbWFpruk48H/lu9Q8R4b+9/s9+QHXcd3eCebCMT6ufAn6f8xv8784/T7/dP2M9w37Uvfp6FP/D6AP2N/Yz3dPQX+zHsAfpL1sP919Qr+Yf4//7eup+zHw2f2n/cftn7Vn//1mq+Dwd2z/2fhX+c2+L+26kcZXjFfVOi/BJ9acOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDXDdtSt5ujdG6NwRx6TCEJDlzobuN0bo3HYwMxRhU4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHBo1tVPggT/g3wi1uYTBAvCXAsyZMmTJkyZMmTJkyZMmTJkyZMmTJkyZMmSy2AWn9zPZqb6YV1Ymz124i5nBCbtaKnDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4NgdFrAdGzS/HY4ItjW/S+mZwQm7TSHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4V3nVWvLdX1CGHH5wpBzOCE3a0VOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhwbtTByH2mU0FVebC4F+ZwQm7TSHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4V32D1a9T249iAH8du6cy5pG1oqcOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDg3aVrMK9kNRyKLgUwsVp12ZlzSNppDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cK78M4uVm9g1SYZiCVI1ppmgfPQvso9O6dOnTp06dOnTp06dOnTp06dOnTp06dOnTkUb57WxLLuRuBdFg0T9vLIMb5raaQ4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHCu/G0bWjkG0bmQFkwxWMcoUendOnTp06dOnTp06dOnTp06dOnTp06dOnTpyKOFubqAo5i1riudZaQe80MiELJkyZMmTJkyZMmTJkyZMmTJkyZMmTJkyZMeepr2oOGCAu1AmkV7JimVsVUx2tFThw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cG7TUDXdiIzMJMSbM+IpdM7GmvxiZMmTJkyZMmTJkyZMmTJkyZMmTJkyZMmTJZo4WmQAirK9LwI20TXBWi2eA+b1i7JkyZMmTJkyZMmTJkyZMmTJkyZMmTJkyZLNHCxtSJsb7QLjgm+cXBvl8oTto5IkSJEiRIkSJEiRIkSJEiRIkSJEiRIkSJEZepuL0n4/4htwe/irY7KNzDh+uSJEiRIkSJEiRIkSJEiRIkSJEiRIkSJEiRGXqbifoaCoHIW/bQg448VY+VRsAgQIECBAgQIECBAgQIECBAgQIECBAgQIEBK/GevPJjkNRr93I3QL2PBMoTxDlEiRIkSJEiRIkSJEiRIkSJEiRIkSJEiRIkL34z1565Bf+DYRH6KTauJ54QxL8YmTJkyZMmTJkyZMmTJkyZMmTJkyZMmTJkyWaOFh0vwgZoLzyRShkDvo5a0VOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhwbtNUjIgENMUNOsXym/rJT1vxiZMmTJkyZMmTJkyZMmTJkyZMmTJkyZMmTJZo4WHS/GjboHnhw0qoCYDCY3GitWrVq1atWrVq1atWrVq1atWrVq1atWrVqzIg4Ck1OkZCQtUkyDskMEOrorrrSPXcT4wBzbzB8NVOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw1waIOkBC+0DvirkjdA6vIAthE7VwMQFwkODKW4TdevXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr169evXr167QAA/v/rAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhYsdbbflJcr0o9PYXnO5XkHsrR3IC7FG3rCOjbf+b/yPoW2rYOg/jB3ucXIzOciqsdSShOSYIT2A094RQNUpVb4WJrdd31BD9nrPr2kpJn8928VDcLR808Wy3NFgIFB1BjN7yT9StbrxpHwf8RJu9xawWfb+/sHMtNmFq+ANdy5KDmwpBNpKBhgQjUQaEApxwHU+QuHtZUxlyAACTZeL0YlxOI20fhmyKuC69K/B6Heax9gJpG7Rx/FMmL0pdt9kGOm4qY+Sqi0SQLzbvJJKNOK7RiJuL5XL72ueNLPKB6uUQFNQBswsAAzUJmWc1lo2KBopzSJ09CWrp8AMRnIz9HoZHnQCmpdubdNU+AtR5V3aT4ydPksHjhE0SW+RjZn4qG2NAaQ+0igADyLw720QjD65E+A/35+PErY15dT6se/QdB1jzroEn2mwPiRC/e4Q/xEFlyL+zJ+9g1Zv2akZKMVIa1xNje3gAo+ScIcFhUph+sDdZVj/O2ZEwxcoz7gh+eKW/+PntrX8ba4amuB6uswjTmMaFfqHdwBu8eY+i+mTeHv5u1buIACLlInyQEVkr0LQUOWbup5aPygUmEGhWodRXWH2F3yF5oa5xlWjaWJreFOVlhzRYHgdBjVrUnsoKtuNS7bghE3WYFAA0DlKG9UOIAESq5uL/u8kKdL0JDauqS44HDp25WxSh2pWG8xMPGnpCCb0xKHeeVICm3h1D9Gx5lVh8K9opRBgvihJ9+0mTdrTACUv8nYq4gARBrPbZbmaKNf8pawYgL63sBIWkcFIOEbJaovkjVoMDvZ2pd/pzLDZnMGtH/7vylM1i3k3h0esOpvX6AFrB3lDQnoeSPMdxAAiQHJZ4o/pxEIdbui/CjAtz4Vq1tK+L6Z0cA4CNBr+QatV4Gp+2dVdnM7rJgyGxhapyeyF8P5zGUYx8sLJS3oE2wCIzcF4gARBQZenysPIOUlt5ih3DsK/lwsjcTulx8FEMGO+hg41esqxHF7omMoaUL9B3YDbSDu59mUW2hP6uQ76yd+s/CPcsYBH0JdHfSI+L+BKcQAIj3UaCe/5sBnU2RsFdVMTMiFTvtMGklNYsScxZ4XPDTwziMfHO99gS5DOa8h71H07BvGuWTQzH58ddUuVCt42qEbj5fVY9Mf/b1Tq4rLiABEJh3WIi8cXOB8uxqAVjeX2w3/uwoufa3xTZRCZIYIIaE7/235FkOKe/gkJm+nDnvVoxm2Q7MlLrg/WcQAIkZkq3i/4exKH4renUMdXZVYI4uv1Mb52Z8JFitwvvhGoBN3fjTPwYqQi2A6ypZe/x6auR04a2EViAlk/EACIG6hKvFgSDFmUrl6LtlGlS0fMxoKdLHoLFqEKoGocbQRjDnrP+HOWJ9isRuztKkXjFuqt1PI7D1O1DpiGqxLADWdfiABEdYeQYqkKSxkzKacNY8o6PGeTinB6GV1eF5fAl27fXt1te7qPN4HWATp1C3k0ARZIy03PI2YSKoCYW5ZSkOAO2Gxk/B0OMAZtkRGw1EUvCgAI8/Rd/kY/0KclW353zVpLDW4B0lpyhz3zXiyipHmd+3GVrPIKtM6QxKr+lrpHSzPonZgAuyGtyQwKVCqqIN8ujpJc/m+aTMq9iUA2oADnELEyLaJ0w7g3OrmmDva6XJCmcn/8kKBZD3hZoTjIoE9Q1AWbV/LZrV8iWxj/thQnDIjkgb/wsDQjkFpQoe9XS4FxQXKBhsG/yu4H30UQRMXEABZIPnfXRwQnggCWGtqZzLvwpk/Hy0WaRyNCu3cz3LMHdkTbyNiWkuT4QbhBJ6yeHxYHKZ361F+boRk72fTPp3uVczRV9ZMlzFxAAWXO5QWBmCL885yP1tkgf+cR+inYV6m/F9go2VwP+PMtKFVoxXtEfQdayBkgdYPwheVstiGym7kQ8hHxVNt+jMXEABZHcARd4OhFB/ge9Mv60/BjM+9tLm7tzLiEj1evuVWuu1ViLh5qTfY8YJlHqGUWQDdEF6YicvYnrz7X4uJVaZaEKgALjv29yd2czA34azv3dmfFeR4srPYO7PXHgaJESeUjtqUHp+v+PR039wk7BXdwWCXM6xXz0fqY+nl9ZfQTKCgAFgQU/T2ElwO7wVY5GelyTHKc5IIfolpTDlP2dFX8XxtLPPdzWumyHlQe4VUjelitQBhR7l81QfRc/G6ixRtxAAWH4hIRzL8e4p/ExbrMTo8m3OfY0UxvJs670G4yXi4e8lhRwHBMgWYV1BWfoDAXmN2ggRnGg8857r8ACKVgGn49CJ0pwJjeEbEignlwG+ueR++sPQhV29xBttfTc7nElqtwhBrHVTIn54kNhu3GuwPaOmVw+6Yv/dSHjuxa/CK5y11txkCf74FzsWpBp4h5HbVIHWM8j/hK8m9H4nN4zqBN3aDW5hJUBJCrZRSJJarEJ3Kxma6aj7DQ4dsvKoo+jW3HU8mor8MdbHaLFheIM9mLtk2zEhc4kiE5s7l2zx5k8h3J06EWQANUxuRKUfXHKIWWL48U3eiaM2g731DFVfYJ6Pd28Z7H2tdVJIAK9nLkfU+6NSgfXzFPC+HJLZbL0W9vDfNtG0iek8WBouL6qAEJEUd0i5giebnS9lUJkJQgAJ1nxl1q1NBw5/989+XRHBm5J4h0h5e28sol49h9RDhdxzkMRP39rvyOJCixCJmUrpgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2x"
+				src="/subscription-sales/netflix.png"
+				alt="netflix logo"
+				class="choose__item-image"
+			/>
+		</li>
+		<li class="choose__item">
+			<div class="choose__item-inner">
+				<h3 class="choose__item-title">Spotify Premium</h3>
+				<p class="choose__item-text">
+					The constant contributes to the task of the same and thus the intended
+					features and the set relation to the check and set also.
+				</p>
+				<button class="choose__item-button button blue" data-tab="spotify">
+					Learn more
+				</button>
+			</div>
+			<img
+				width="327"
+				height="213"
+				srcset="data:image/webp;base64,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 1x, /subscription-sales/spotify-2x.webp 2x"
+				src="/subscription-sales/spotify.png"
+				alt="spotify logo"
+				class="choose__item-image"
+			/>
+		</li>
+		<li class="choose__item">
+			<div class="choose__item-inner">
+				<h3 class="choose__item-title">Youtube Premium</h3>
+				<p class="choose__item-text">
+					The constant contributes to the task of the same and thus the intended
+					features and the set relation to the check and set also.
+				</p>
+				<button class="choose__item-button button blue" data-tab="youtube">
+					Learn more
+				</button>
+			</div>
+			<img
+				width="327"
+				height="213"
+				srcset="data:image/webp;base64,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 1x, /subscription-sales/youtube-2x.webp 2x"
+				src="/subscription-sales/youtube.png"
+				alt="youtube logo"
+				class="choose__item-image"
+			/>
+		</li>
+	</ul>
+</section>
+
+			<section class="works container section-display" id="works">
+	<h2 class="works__title">How it works?</h2>
+	<ul class="works__list">
+		<li class="works__item">
+			<ul class="works__steps-list">
+				<li class="works__steps-item">
+					<div class="steps__header">
+						<h3 class="steps__title">Step 1</h3>
+						<svg class="steps__icon icon-works-step" height="93" width="93">
+							<use href="/subscription-sales/sprite.svg#steps-one"></use>
+						</svg>
+					</div>
+					<p class="steps__text">Enter your account information</p>
+				</li>
+				<li class="works__steps-item">
+					<div class="steps__header">
+						<h3 class="steps__title">Step 2</h3>
+						<svg class="steps__icon icon-works-step" height="93" width="93">
+							<use href="/subscription-sales/sprite.svg#steps-two"></use>
+						</svg>
+					</div>
+					<p class="steps__text">Select the desired subscription and plan</p>
+				</li>
+				<li class="works__steps-item">
+					<div class="steps__header">
+						<h3 class="steps__title">Step 3</h3>
+						<svg class="steps__icon icon-works-step" height="93" width="93">
+							<use href="/subscription-sales/sprite.svg#steps-three"></use>
+						</svg>
+					</div>
+					<p class="steps__text">Pay your bill with PayPal</p>
+				</li>
+			</ul>
+		</li>
+		<li class="works__item">
+	<div class="works__invite">
+		<h3 class="invite__title">Invite friends</h3>
+		<p class="invite__text">
+			Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with
+			a secure payment from PAYPAL
+		</p>
+	</div>
+	<div class="works__discount">
+		<p class="discount__text">Click on the link</p>
+		<div class="discount__copy-inner">
+			<p class="discount__copy-text" id="copy">Discounts On Services</p>
+			<svg class="icon-copy discount__copy-icon" height="19" width="19">
+				<use href="/subscription-sales/sprite.svg#file-copy"></use>
+			</svg>
+			<svg
+				class="icon-copy success discount__copy-icon visually-hidden"
+				height="19"
+				width="19"
+			>
+				<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+			</svg>
+		</div>
+	</div>
+</li>
+
+	</ul>
+</section>
+
+			<section class="about container section-display" id="about">
+	<h2 class="about__title">About us</h2>
+	<ul class="about__list">
+		<li class="about__item">
+			<ul class="left__list">
+				<li class="left__item">
+					<img
+						width="60"
+						height="60"
+						class="left__item-logo"
+						srcset="data:image/webp;base64,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 1x, /subscription-sales/logo-2x.webp 2x"
+						src="/subscription-sales/logo.png"
+						alt="logo"
+					/>
+				</li>
+				<li class="left__item">
+					<p class="left__item-text">
+						We offer you a subscription to various media services at the best
+						price.
+					</p>
+				</li>
+				<li class="left__item">
+					<p class="left__item-text">
+						We have partnered with several companies to help you find the best
+						prices for your media subscriptions and provide you with the best
+						prices for the Premium subscriptions you want.
+					</p>
+				</li>
+				<li class="left__item">
+					<p class="left__item-text bold">It's simple, fast and economical.</p>
+				</li>
+			</ul>
+		</li>
+		<li class="about__item">
+			<div class="right">
+				<img
+					width="327"
+					height="327"
+					class="about__item-image right__image"
+					srcset="/subscription-sales/girl-about.webp 1x, /subscription-sales/girl-about-2x.webp 2x"
+					src="/subscription-sales/girl-about.png"
+					alt="girl with logo"
+				/>
+			</div>
+		</li>
+	</ul>
+</section>
+
+			<section class="faq container section-display" id="faq">
+	<h2 class="faq__title">FAQ</h2>
+	<ul class="faq__list">
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						The set time has passed, but the invoice has not yet arrived, what
+						should I do?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Contact our support team, and we’ll resend the invoice promptly.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						Can I change my Netflix account email and password after purchase?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Yes, you can update your email and password in the account settings
+					after purchase.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						Can I add a phone number for password recovery?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Yes, you can add a phone number for recovery through the account
+					security settings.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">
+						How soon will I receive the account information I ordered?
+					</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					You’ll receive your account details within 24 hours of purchase
+					confirmation.
+				</p>
+			</details>
+		</li>
+		<li class="faq__item">
+			<details class="details faq__details">
+				<summary class="summary faq__summary">
+					<p class="faq__summary-question">How to pay?</p>
+					<div class="faq__summary-icon-inner">
+						<svg
+							class="icon icon__faq-details faq__summary-icon"
+							height="20"
+							width="20"
+						>
+							<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+						</svg>
+					</div>
+				</summary>
+				<p class="faq__summary-answer">
+					Payment options we currently have: PayPal, Bitcoin.
+				</p>
+			</details>
+		</li>
+	</ul>
+	<button class="button gray faq__button" data-modal="support" id="support">
+		Support
+	</button>
+</section>
+
+			<section class="request container" id="request">
+	<div class="request__main">
+		<div class="request__inner">
+			<h2 class="request__title">
+				Request for an additional subscription that was not found here
+			</h2>
+			<p class="request__text">
+				Disney, Amazon Prime, Microsoft Office, Microsoft Windows
+			</p>
+		</div>
+		<button class="request__button button white" data-modal="request">
+			Request
+		</button>
+	</div>
+</section>
+
+		</main>
+		<footer class="footer" id="footer">
+	<div class="footer__inner">
+		<ul class="footer__list">
+			<li class="footer__item">
+				<div class="footer__logo-inner">
+					<a class="footer__logo-link" href="#header">
+						<img
+							width="44"
+							height="44"
+							class="footer__logo-image"
+							srcset="data:image/webp;base64,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 1x, /subscription-sales/logo-2x.webp 2x"
+							src="/subscription-sales/logo.png"
+							alt="logo"
+						/>
+						<p class="footer__logo-link-text">DiscountsOnServices</p>
+					</a>
+					<p class="footer__logo-text">It's simple, fast and economical</p>
+				</div>
+			</li>
+			<li class="footer__item">
+				<ul class="footer__links">
+					<li class="footer__nav-item">
+						<h3 class="footer__nav-title">Subscriptions</h3>
+						<nav class="footer__nav">
+							<button class="footer__nav-link button" data-tab="netflix">
+								Netflix
+							</button>
+							<button class="footer__nav-link button" data-tab="youtube">
+								YouTube Premium
+							</button>
+							<button class="footer__nav-link button" data-tab="spotify">
+								Spotify
+							</button>
+						</nav>
+					</li>
+					<li class="footer__nav-item">
+						<h3 class="footer__nav-title">Site navigation</h3>
+						<nav class="footer__nav">
+							<a href="#about" class="footer__nav-link button">About</a>
+							<a href="#faq" class="footer__nav-link button">FAQ</a>
+							<button class="footer__nav-link button" data-modal="support">
+								Support
+							</button>
+						</nav>
+					</li>
+				</ul>
+			</li>
+			<li class="footer__item">
+				<ul class="footer__soc1al">
+					<li class="footer__soc1al-networks">
+						<a
+							class="footer__soc1al-link"
+							href="https://github.com/Jaelouss"
+							aria-label="autor github"
+						>
+							<svg class="icon icon__footer-soc1al" height="32" width="32">
+								<use href="/subscription-sales/sprite.svg#github"></use>
+							</svg>
+						</a>
+						<a
+							class="footer__soc1al-link"
+							href="https://www.linkedin.com/in/eugen-alekseev/"
+							aria-label="autor linkedin"
+						>
+							<svg class="icon icon__footer-soc1al" height="32" width="32">
+								<use href="/subscription-sales/sprite.svg#linkedin"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="footer__soc1al-lang">
+						<details
+							class="details details__footer-lang footer__soc1al-lang-details"
+						>
+							<summary
+								class="summary summary__footer-lang footer__soc1al-lang-summary"
+							>
+								EN
+								<svg class="icon icon__footer-details" height="12" width="12">
+									<use href="/subscription-sales/sprite.svg#arrow-down"></use>
+								</svg>
+							</summary>
+							<ul class="lang-list">
+								<li class="lang-item">
+									<button class="button button__footer-lang" data-lang="en">
+										English
+									</button>
+								</li>
+								<li class="lang-item">
+									<button class="button button__footer-lang" data-lang="uk">
+										Ukraine
+									</button>
+								</li>
+							</ul>
+						</details>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="footer__copyright container">
+			<button
+				class="button footer__copyright-policy copyright"
+				data-modal="policy"
+			>
+				Privacy Policy
+			</button>
+			<a
+				href="https://github.com/Jaelouss/subscription-sales"
+				class="button footer__copyright-license copyright"
+				>Copyright 2025 © Licensed under the MIT License.</a
+			>
+			<a
+				href="https://github.com/Jaelouss"
+				class="button footer__copyright-link copyright"
+				>Developed by Jaelouss</a
+			>
+		</div>
+	</div>
+</footer>
+
+	</body>
+</html>

@@ -1,0 +1,172 @@
+@use '../helpers' as *;
+
+.tab {
+	&__list {
+		@include flex-center(column);
+		gap: remm(32);
+	}
+	&__header {
+		@include flex-center(column);
+		gap: remm(16);
+		padding-bottom: remm(8);
+		@include laptop {
+			gap: remm(20);
+			padding-bottom: remm(20);
+
+			&-title {
+				color: var(--black);
+				text-align: center;
+			}
+			&-text {
+				color: var(--gray);
+				text-align: center;
+				font-size: 18px;
+			}
+		}
+	}
+	&__selector {
+		@include flex-center;
+		&-input {
+			visibility: hidden;
+		}
+
+		&-input:checked + &-label {
+			background-color: var(--blue);
+			color: var(--white);
+		}
+
+		&-label {
+			color: var(--black-dark);
+
+			font-size: 17px;
+			line-height: 150%;
+			letter-spacing: 0.17px;
+			padding: remm(18) remm(20);
+			border: var(--border-blue);
+			border-radius: 12px 0px 0px 12px;
+		}
+	}
+	.first,
+	.second {
+		@include flex-center;
+	}
+	.second {
+		flex-direction: row-reverse;
+		.tab__selector-label {
+			border-radius: 0px 12px 12px 0px;
+		}
+	}
+
+	&__plan {
+		&-list {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: remm(16);
+
+			@include tablet {
+				grid-template-columns: repeat(3, 1fr);
+
+				&.yotube {
+					grid-template-columns: repeat(2, auto);
+					max-width: remm(800);
+				}
+			}
+			@include laptop {
+				&.yotube {
+					grid-template-columns: repeat(2, auto);
+				}
+			}
+		}
+		&-item {
+			.plan {
+				&__list {
+					display: flex;
+					height: 100%;
+					flex-direction: column;
+					border-radius: remm(24);
+					background-color: var(--white);
+					box-shadow: var(--shadow-main-item-second);
+					padding: remm(32) remm(16);
+
+					@include laptop {
+						padding: remm(60) remm(40) remm(40);
+						border-radius: remm(32);
+					}
+				}
+				&__header {
+					padding-bottom: remm(20);
+					border-bottom: var(--border-tabs-header);
+					@include laptop {
+						padding-bottom: remm(32);
+					}
+
+					&-title {
+						color: var(--price-text);
+					}
+				}
+				&__suggestions {
+					@include flex-center(column);
+					align-items: start;
+
+					gap: remm(16);
+					padding-block: remm(20);
+					margin-bottom: auto;
+
+					@include laptop {
+						gap: remm(20);
+						padding-block: remm(34);
+					}
+
+					.options {
+						@include flex-center;
+						gap: remm(8);
+						@include laptop {
+							gap: remm(12);
+						}
+
+						&-icon {
+							fill: var(--options);
+
+							&.added {
+								fill: var(--blue);
+							}
+						}
+						&__text {
+							color: var(--options);
+						}
+					}
+				}
+				&__price {
+					@include flex-center(column);
+					gap: remm(12);
+					padding-top: remm(20);
+
+					@include laptop {
+						gap: remm(16);
+						padding-top: remm(26);
+					}
+
+					&-inner {
+						@include flex-center;
+						gap: remm(1);
+
+						@include laptop {
+							gap: remm(3);
+						}
+					}
+
+					.currency {
+						font-size: remm(16);
+						@include laptop {
+							font-size: remm(30);
+						}
+					}
+
+					&-button {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

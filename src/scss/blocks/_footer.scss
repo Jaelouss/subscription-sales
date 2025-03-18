@@ -165,19 +165,5 @@
 			flex-direction: row;
 			justify-content: space-between;
 		}
-
-		.gray-text {
-			color: var(--background-menu-links);
-			font-size: 15px;
-			font-weight: 400;
-			opacity: 0.5;
-			padding: remm(12) 0;
-			white-space: wrap;
-			text-align: center;
-
-			@include hover {
-				opacity: 1;
-			}
-		}
 	}
 }

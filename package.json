@@ -1,12 +1,12 @@
 {
-	"name": "vite-vanila",
+	"name": "subscription-sales",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
 		"update": "ncu -u && npm install",
 		"dev": "vite",
-		"build": "vite build --base=/vite-vanila/",
+		"build": "vite build --base=/subscription-sales/",
 		"preview": "vite preview",
 		"lint": "eslint src/**/*.{js,ts}",
 		"lint:fix": "eslint src/**/*.{js,ts} --fix"

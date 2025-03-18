@@ -4,8 +4,8 @@
 	@include flex-center(column);
 	gap: remm(5);
 	padding: remm(4);
-	width: remm(24);
-	height: remm(24);
+	width: remm(24) !important;
+	height: remm(24) !important;
 	&.open {
 		transition-delay: 0.5s;
 		background-color: rgba(23, 23, 23, 0.1);

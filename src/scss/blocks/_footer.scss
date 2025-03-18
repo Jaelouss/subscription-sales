@@ -23,7 +23,6 @@
 		@include laptop {
 			gap: remm(180);
 			padding-inline: remm(120);
-			border-bottom: none;
 		}
 	}
 	&__item {
@@ -153,6 +152,31 @@
 					top: 50%;
 					left: -200%;
 				}
+			}
+		}
+	}
+
+	&__copyright {
+		width: 100%;
+		@include flex-center(column);
+		gap: remm(12);
+
+		@include tablet {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.gray-text {
+			color: var(--background-menu-links);
+			font-size: 15px;
+			font-weight: 400;
+			opacity: 0.5;
+			padding: remm(12) 0;
+			white-space: wrap;
+			text-align: center;
+
+			@include hover {
+				opacity: 1;
 			}
 		}
 	}

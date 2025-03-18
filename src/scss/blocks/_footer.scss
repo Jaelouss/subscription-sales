@@ -1,0 +1,159 @@
+@use '../helpers' as *;
+
+.footer {
+	width: 100%;
+	background-color: var(--blue);
+	@include flex-center;
+	&__inner {
+		width: 100%;
+		max-width: 1440px;
+		@include flex-center(column);
+	}
+	&__list {
+		@include flex-center(column);
+		align-items: start;
+		gap: remm(40);
+		padding: remm(40) remm(24);
+		border-bottom: var(--border-footer);
+		@include tablet {
+			flex-direction: row;
+			gap: remm(55);
+			padding-inline: remm(32);
+		}
+		@include laptop {
+			gap: remm(180);
+			padding-inline: remm(120);
+			border-bottom: none;
+		}
+	}
+	&__item {
+		width: 100%;
+	}
+
+	&__logo {
+		&-inner {
+			@include flex-center(column);
+			align-items: start;
+			gap: remm(12);
+
+			@include laptop {
+				gap: remm(23);
+			}
+		}
+		&-link {
+			@include flex-center;
+			gap: remm(12);
+
+			&-text {
+				font-weight: 600;
+				color: var(--white);
+				@include tablet {
+					@include visually-hidden;
+				}
+				@include laptop {
+					@include visually-shown;
+				}
+			}
+		}
+		&-image {
+			@include square(remm(40));
+			@include laptop {
+				@include square(remm(60));
+			}
+		}
+		&-text {
+			color: var(--white);
+		}
+	}
+
+	&__links {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: remm(28);
+		@include tablet {
+			gap: remm(55);
+		}
+		@include laptop {
+			gap: remm(214);
+		}
+	}
+	&__nav {
+		width: 100%;
+		@include flex-center(column);
+		align-items: start;
+
+		&-item {
+			@include flex-center(column);
+			align-items: start;
+			gap: remm(20);
+		}
+		&-title {
+			color: var(--white);
+			white-space: nowrap;
+			font-size: 18px;
+			font-weight: 600;
+		}
+		&-link {
+			color: var(--white);
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 150%;
+			justify-content: flex-start;
+			padding: remm(6) 0;
+			@include hover {
+				transform: scale(1.1) translateX(7%);
+			}
+		}
+	}
+
+	&__soc1al {
+		width: 100%;
+		@include flex-center;
+		justify-content: space-between;
+
+		@include tablet {
+			flex-direction: column;
+			gap: remm(17);
+		}
+
+		&-networks {
+			@include flex-center;
+			gap: remm(16);
+		}
+		&-lang {
+			&-details {
+				&[open] {
+					.summary__footer-lang {
+						color: white;
+					}
+				}
+			}
+			&-summary {
+				color: var(--white-08);
+				font-size: 17px;
+				@include flex-center;
+				gap: remm(3);
+
+				@include hover {
+					color: var(--white);
+				}
+			}
+
+			.lang-list {
+				@include abs-center;
+				top: -250%;
+				left: -50%;
+				background-color: #fff;
+				border-radius: remm(10);
+				z-index: 1;
+				padding: remm(17) remm(13);
+				border: var(--border-black);
+
+				@include tablet {
+					top: 50%;
+					left: -200%;
+				}
+			}
+		}
+	}
+}

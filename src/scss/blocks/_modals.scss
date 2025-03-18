@@ -7,8 +7,7 @@
 	@include flex-center;
 	z-index: 2;
 }
-
-.overlay::before {
+.bg-blur::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -19,10 +18,15 @@
 	backdrop-filter: blur(7.5px);
 	z-index: -1;
 }
-
-body {
-	position: relative;
-	min-height: 100vh; /* Гарантує, що body займає весь екран */
+.bg-menu::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--background);
+	z-index: -1;
 }
 
 .modal {
@@ -33,12 +37,11 @@ body {
 	z-index: 10;
 
 	&__menu {
-		background: rgba(23, 73, 179, 0.1);
 		width: 100%;
+		background: var(--background);
 		max-width: remm(375);
-		margin-top: remm(180);
+		margin-top: remm(170);
 		padding: remm(24) remm(24) remm(40);
-
 		&-list {
 			@include flex-center(column);
 			gap: remm(64);

@@ -3,7 +3,10 @@
 :root {
 	//! Colors
 	--white: #fff;
+	--white-08: rgba(255, 255, 255, 0.8);
 	--black: #171717;
+	--gray-05: rgba(247, 247, 247, 0.5);
+	--gray-dark: #606060;
 	--gray: #333333;
 	--gray-light: #d3d3d3;
 	--blue-dark: #070033;
@@ -15,7 +18,7 @@
 
 	--background-menu-links: #f7f7f7;
 	--background: #ecf3fb;
-	--background-input: #f1f4f8;
+	--background-second: #f1f4f8;
 
 	--main-text: #2c2738;
 	--label-text: #1b1b29;
@@ -28,6 +31,13 @@
 	--font-montserrat: 'Montserrat', sans-serif;
 
 	//! Shadows
+
+	--shadow-main-hero: #{remm(0)} #{remm(2)} #{remm(14)} #{remm(0)}
+		rgba(213, 216, 221, 0.2);
+	--shadow-main-item: #{remm(0)} #{remm(4)} #{remm(24)} #{remm(0)}
+		rgba(213, 216, 221, 0.2);
+	--shadow-main-item-second: #{remm(0)} #{remm(12)} #{remm(28)} #{remm(0)}
+		rgba(244, 245, 245, 0.2);
 	--shadow-menu-modal: #{remm(0)} #{remm(12)} #{remm(28)} #{remm(0)}
 		rgba(177, 177, 177, 0.2);
 	--shadow-details-list: #{remm(0)} #{remm(20)} #{remm(48)} #{remm(0)}
@@ -35,10 +45,12 @@
 
 	//! Borders
 	--border-input-active: #{remm(1)} solid var(--input-border);
+	--border-white: #{remm(1)} solid var(--white);
 	--border-blue: #{remm(1)} solid var(--blue);
 	--border-blue-light: #{remm(1)} solid var(--blue-light);
 	--border-black: #{remm(1)} solid var(--black);
 	--border-transparent: #{remm(1)} solid transparent;
+	--border-footer: #{remm(2)} solid var(--gray-05);
 
 	//! Ansmation
 	--transition-duration: 0.2s;

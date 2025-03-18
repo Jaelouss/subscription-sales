@@ -1,0 +1,6 @@
+@use '../helpers' as *;
+
+.section-display {
+	@include flex-center(column);
+	gap: fluid(38, 28);
+}

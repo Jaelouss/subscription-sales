@@ -18,10 +18,14 @@ body {
 	@include flex-center(column);
 	font-family: var(--font-gotham);
 	font-size: remm(16);
+	background: var(--background);
 }
 
 main {
-	@include flex-center(column);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-grow: 1;
 	flex-grow: 1;
 }
 

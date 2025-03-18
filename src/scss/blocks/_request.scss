@@ -1,0 +1,45 @@
+@use '../helpers' as *;
+
+.request {
+	&__main {
+		@include flex-center(column);
+		border-radius: remm(24);
+		background-color: var(--blue);
+		box-shadow: var(--shadow-main-item);
+		gap: fluid(80, 32);
+		padding: remm(40) remm(20);
+
+		@include tablet {
+			flex-direction: row;
+			padding: remm(32);
+		}
+		@include laptop {
+			padding: remm(40) remm(60);
+		}
+	}
+
+	&__inner {
+		@include flex-center(column);
+		align-items: start;
+		gap: remm(16);
+		@include laptop {
+			gap: remm(21);
+		}
+	}
+	&__title {
+		color: var(--white);
+		font-size: 22px;
+		text-align: left;
+	}
+	&__text {
+		color: var(--white);
+		font-size: 16px;
+	}
+	&__button {
+		width: 100%;
+		flex-shrink: 0;
+		@include tablet {
+			width: fluid(279, 209);
+		}
+	}
+}

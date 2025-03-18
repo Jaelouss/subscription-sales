@@ -1,0 +1,158 @@
+@use '../helpers' as *;
+
+.works {
+	&__list {
+		@include flex-center(column);
+		gap: fluid(20, 16);
+	}
+	&__item {
+		width: 100%;
+		&:last-child {
+			@include flex-center(column);
+			gap: remm(32);
+			padding: remm(20);
+			border-radius: remm(24);
+			background: var(--blue);
+			box-shadow: var(--shadow-main-item);
+
+			@include tablet {
+				flex-direction: row;
+				padding: remm(32);
+			}
+			@include laptop {
+				gap: remm(68);
+				padding: remm(40) remm(80);
+				border-radius: remm(32);
+			}
+		}
+	}
+	&__steps {
+		&-list {
+			@include flex-center(column);
+			align-items: stretch;
+			gap: remm(16);
+			@include tablet {
+				flex-direction: row;
+			}
+		}
+		&-item {
+			width: 100%;
+			@include flex-center(column);
+			align-items: flex-start;
+			gap: remm(12);
+			background-color: var(--white);
+			padding: remm(20);
+			border-radius: remm(24);
+			box-shadow: var(--shadow-main-item-second);
+			@include laptop {
+				gap: remm(15);
+				padding: remm(6) remm(6) remm(40) remm(40);
+				border-radius: remm(32);
+			}
+
+			.steps {
+				&__header {
+					width: 100%;
+					@include flex-center;
+					justify-content: space-between;
+
+					@include laptop {
+						align-items: flex-end;
+					}
+				}
+				&__title {
+					font-size: fluid(22, 19);
+				}
+				&__text {
+					max-width: remm(227);
+				}
+				&__icon {
+					@include square(remm(93));
+
+					@include tablet {
+						@include square(remm(80));
+					}
+					@include laptop {
+						@include square(remm(185));
+					}
+				}
+			}
+		}
+	}
+	&__invite {
+		@include flex-center(column);
+		align-items: start;
+		gap: remm(16);
+		@include laptop {
+			gap: remm(24);
+		}
+
+		.invite {
+			&__title {
+				color: var(--white, #fff);
+				font-weight: 400;
+			}
+			&__text {
+				color: var(--white, #fff);
+			}
+		}
+	}
+	&__discount {
+		width: 100%;
+		@include flex-center(column);
+		gap: remm(12);
+		border-radius: remm(16);
+		background-color: var(--background-second);
+		padding: remm(28) remm(32);
+
+		@include tablet {
+			padding: remm(20) remm(24);
+		}
+
+		@include laptop {
+			gap: remm(10);
+			padding: remm(28) remm(72);
+		}
+		.discount {
+			&__text {
+				font-size: fluid(20, 18);
+				line-height: 140%;
+			}
+			&__copy {
+				&-inner {
+					@include flex-center;
+					gap: remm(16);
+
+					@include tablet {
+						gap: remm(21);
+					}
+					@include laptop {
+						gap: remm(8);
+					}
+				}
+				&-text {
+					white-space: nowrap;
+					color: var(--blue);
+					font-size: remm(14);
+					text-decoration-line: underline;
+					text-underline-position: from-font;
+					text-transform: uppercase;
+
+					@include tablet {
+						font-size: remm(18);
+					}
+					@include laptop {
+						font-size: remm(20);
+					}
+				}
+				&-icon {
+					@include square(remm(19));
+
+					@include tablet {
+						@include square(remm(24));
+					}
+				}
+			}
+		}
+	}
+}

@@ -4,7 +4,6 @@
 	width: 100%;
 	background-color: var(--white);
 	position: relative;
-	z-index: 5;
 	@include flex-center;
 
 	&__inner {
@@ -117,6 +116,8 @@
 		}
 	}
 	&__burger {
+		width: remm(24);
+		height: remm(24);
 		@include tablet-l {
 			display: none;
 		}

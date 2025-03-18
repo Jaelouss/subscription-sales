@@ -1,0 +1,63 @@
+@use '../helpers' as *;
+
+.choose {
+	&__list {
+		@include flex-center(column);
+		gap: remm(16);
+	}
+
+	&__item {
+		@include flex-center(column-reverse);
+		justify-content: space-between;
+		background-color: var(--white);
+		border-radius: remm(24);
+		width: 100%;
+		box-shadow: var(--shadow-main-item);
+		filter: drop-shadow(0px 12px 28px rgba(244, 245, 245, 0.2));
+		@include tablet {
+			flex-direction: row;
+		}
+		@include laptop {
+			border-radius: remm(32);
+		}
+
+		&-inner {
+			@include flex-center(column);
+			gap: remm(24);
+			padding: remm(32) remm(20);
+
+			@include tablet {
+				align-items: start;
+				padding: remm(48) remm(28) remm(48) remm(32);
+			}
+			@include laptop {
+				gap: remm(30);
+				padding: remm(60) remm(60);
+			}
+		}
+		&-title {
+			font-weight: 400;
+		}
+
+		&-text {
+			@include tablet {
+				@include visually-hidden;
+			}
+			@include laptop {
+				@include visually-shown;
+				padding: 0;
+			}
+		}
+
+		&-image {
+			width: remm(327);
+			height: remm(213);
+			border-radius: remm(24);
+			@include laptop {
+				width: remm(588);
+				height: remm(342);
+				border-radius: remm(32);
+			}
+		}
+	}
+}

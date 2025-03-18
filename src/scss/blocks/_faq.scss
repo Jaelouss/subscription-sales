@@ -1,0 +1,58 @@
+@use '../helpers' as *;
+
+.faq {
+	width: 100%;
+	&__list {
+		width: 100%;
+		@include flex-center(column);
+		gap: remm(16);
+	}
+	&__item {
+		width: 100%;
+		padding: remm(20);
+		border-radius: remm(24);
+		background-color: var(--white);
+		box-shadow: var(--shadow-main-item-second);
+		@include laptop {
+			padding: remm(32) remm(40);
+			border-radius: remm(32);
+		}
+	}
+	&__details {
+		@include flex-center(column);
+		align-items: flex-start;
+		gap: fluid(12, 8);
+	}
+	&__summary {
+		width: 100%;
+		@include flex-center;
+		justify-content: space-between;
+		align-items: start;
+
+		&-question {
+			padding-right: remm(20);
+			color: var(--black);
+			font-size: 17px;
+			font-weight: 600;
+		}
+		&-answer {
+			color: var(--black);
+			font-size: 17px;
+			padding-right: remm(60);
+		}
+
+		&-icon {
+			@include square(remm(20));
+			&-inner {
+				@include flex-center;
+				background: rgba(23, 23, 23, 0.05);
+				padding: remm(10);
+				border-radius: remm(12);
+			}
+		}
+	}
+
+	&__button.button.gray {
+		width: remm(243);
+	}
+}

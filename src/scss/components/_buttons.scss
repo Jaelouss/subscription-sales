@@ -2,12 +2,16 @@
 
 .button {
 	@include transition;
+	@include flex-center;
 	background-color: transparent;
 	white-space: nowrap;
 	padding: remm(16) remm(24);
 	border-radius: remm(16);
 	position: relative;
-	z-index: 111;
+	width: 100%;
+	@include tablet {
+		width: auto;
+	}
 
 	&.blue {
 		color: var(--white);
@@ -26,7 +30,7 @@
 			border: var(--border-transparent);
 		}
 	}
-	&.white {
+	&.transparent {
 		color: var(--blue);
 		background-color: transparent;
 		border: var(--border-blue);
@@ -43,9 +47,45 @@
 			border: var(--border-blue-light);
 		}
 	}
+	&.white {
+		color: var(--black);
+		background-color: var(--white);
+		border: var(--border-transparent);
+
+		@include hover(false) {
+			color: var(--white);
+			background-color: transparent;
+			border: var(--border-white);
+		}
+
+		&:active {
+			color: var(--black);
+			background-color: var(--white-08);
+			border: var(--border-transparent);
+		}
+	}
+
+	&.gray {
+		color: var(--white);
+		background: var(--gray);
+		border: var(--border-transparent);
+
+		@include hover(false) {
+			color: var(--black);
+			background-color: transparent;
+			border: var(--border-black);
+		}
+
+		&:active {
+			color: var(--white);
+			background-color: var(--gray-dark);
+			border: var(--border-transparent);
+		}
+	}
 
 	&__header-platform,
 	&__header-lang,
+	&__footer-lang,
 	&__modal-menu-lang {
 		font-size: remm(17);
 		font-weight: 400;

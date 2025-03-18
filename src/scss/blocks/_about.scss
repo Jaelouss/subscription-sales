@@ -1,0 +1,79 @@
+@use '../helpers' as *;
+
+.about {
+	&__list {
+		@include flex-center(column-reverse);
+		gap: remm(16);
+		@include tablet {
+			flex-direction: row;
+			align-items: stretch;
+		}
+	}
+	&__item {
+		width: 100%;
+		border-radius: remm(24);
+		background-color: var(--white);
+		box-shadow: var(--shadow-main-hero);
+		@include laptop {
+			border-radius: remm(32);
+		}
+		.right {
+			@include flex-center;
+			padding-block: remm(42);
+			@include tablet {
+				padding-block: remm(34);
+			}
+			@include laptop {
+				padding-block: 0;
+				padding-inline: remm(28);
+			}
+			&__image {
+				@include square(remm(327));
+				border-radius: remm(32);
+				@include tablet {
+					@include square(remm(344));
+				}
+				@include laptop {
+					@include square(remm(535));
+					border-radius: remm(32);
+				}
+			}
+		}
+		.left {
+			&__list {
+				height: 100%;
+				@include flex-center(column);
+				justify-content: space-evenly;
+				align-items: flex-start;
+				gap: remm(16);
+				padding: remm(20);
+
+				@include laptop {
+					padding: remm(60);
+					gap: remm(32);
+				}
+			}
+			&__item {
+				text-align: left;
+
+				&-logo {
+					@include square(remm(60));
+
+					@include laptop {
+						@include square(remm(130));
+					}
+				}
+				&-text {
+					color: var(--gray);
+					font-size: remm(18);
+					line-height: 150%;
+
+					&.bold {
+						color: var(--black);
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+}

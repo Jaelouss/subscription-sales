@@ -4,6 +4,7 @@
 	@include transition;
 	&__header {
 		&-details {
+			fill: #3a3a3c;
 			.header__nav-details[open] & {
 				transform: rotate(180deg);
 			}
@@ -20,6 +21,8 @@
 	&__modal {
 		&-menu {
 			&-details {
+				fill: #3a3a3c;
+
 				.menu__login-soc1al-lang-details[open] & {
 					transform: rotate(180deg);
 				}
@@ -28,6 +31,36 @@
 				.soc1al__networks-link:hover & {
 					fill: var(--blue);
 				}
+			}
+		}
+	}
+	&__faq {
+		&-details {
+			fill: #3a3a3c;
+
+			.faq__details[open] & {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+	&__footer {
+		&-details {
+			stroke: var(--white);
+			fill: var(--white);
+			transform: rotate(90deg);
+			.footer__soc1al-lang-details[open] & {
+				transform: rotate(270deg);
+			}
+		}
+		&-soc1al {
+			fill: var(--white-08);
+
+			@include laptop {
+				@include square(remm(40));
+			}
+			.footer__soc1al-link:hover & {
+				fill: var(--white);
+				transform: scale(1.2);
 			}
 		}
 	}

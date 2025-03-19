@@ -1,0 +1,19 @@
+@use '../../helpers' as *;
+
+.subscription {
+	&__title {
+		padding-top: remm(10);
+		text-align: left;
+		color: var(--black);
+		font-size: fluid(26, 20);
+		letter-spacing: 0.25px;
+		@include laptop {
+			max-width: unset;
+		}
+	}
+	&__form {
+		width: 100%;
+		@include flex-center(column);
+		gap: remm(35);
+	}
+}

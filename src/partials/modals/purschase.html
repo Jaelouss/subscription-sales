@@ -1,0 +1,76 @@
+<ul class="purschase__list modal__list">
+	<li class="purschase__item modal__item">
+		<load src="/partials/modals/close-button.html" />
+	</li>
+	<li class="purschase__item modal__item">
+		<h2 class="purschase__title">Purchase payment</h2>
+	</li>
+	<li class="purschase__item modal__item">
+		<button class="button black" type="button" data-pay="apple">
+			<img
+				class="purschase__icons-payment apple-pay"
+				srcset="
+					/images/purchase/apple-pay.webp    1x,
+					/images/purchase/apple-pay-2x.webp 2x
+				"
+				src="/images/purchase/apple-pay.png"
+				alt="apple pay"
+			/>
+		</button>
+		<button class="button black" type="button" data-pay="google">
+			<img
+				class="purschase__icons-payment google-pay"
+				srcset="
+					/images/purchase/google-pay.webp    1x,
+					/images/purchase/google-pay-2x.webp 2x
+				"
+				src="/images/purchase/google-pay.png"
+				alt="google pay"
+			/>
+		</button>
+	</li>
+	<li class="purschase__item modal__item">
+		<form class="purschase__form">
+			<label class="purschase__label">
+				Card Number
+				<input
+					type="number"
+					class="purschase__input"
+					placeholder="1234 1234 1234 1234"
+				/>
+			</label>
+			<label class="purschase__label">
+				Expiration Date
+				<input type="number" class="purschase__input" placeholder="MM/YY" />
+			</label>
+			<label class="purschase__label">
+				СVC
+				<input
+					type="password"
+					class="purschase__input"
+					maxlength="3"
+					placeholder="CVC"
+				/>
+			</label>
+			<div class="purschase__inner">
+				<button class="button blue" data-pay="card" type="submit">
+					Pay with card
+				</button>
+				<p class="purschase__text">
+					We do not collect information on your cards, everything is safe
+				</p>
+			</div>
+		</form>
+	</li>
+	<li class="purschase__item modal__item">
+		<h3 class="purschase__crypto-title">Payment by crypto wallet</h3>
+		<div class="purschase__crypto-inner">
+			<p class="purschase__crypto-text">Select currency</p>
+			<select class="purschase__crypto-select input" name="crypto-wallet">
+				<option value="bitcoin" selected>Bitcoin</option>
+				<option value="paypal">Paypal</option>
+			</select>
+		</div>
+		<button class="button blue" data-pay="crypto-one">Pay</button>
+	</li>
+</ul>

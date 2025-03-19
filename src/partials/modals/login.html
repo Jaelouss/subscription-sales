@@ -1,0 +1,73 @@
+<ul class="login__list modal__list">
+	<li class="login__item modal__item">
+		<load src="/partials/modals/close-button.html" />
+	</li>
+	<li class="login__item modal__item">
+		<h2 class="login__title">Log in</h2>
+		<div class="login__create">
+			<p class="login__create-text">New user?</p>
+			<button
+				class="button button-create login__create-button"
+				data-modal="create"
+			>
+				Create an account
+			</button>
+		</div>
+	</li>
+	<li class="login__item modal__item">
+		<form class="login__form">
+			<label for="email" class="login__form-label">
+				Email Address
+				<input
+					type="email"
+					id="email"
+					class="login__form-input"
+					placeholder="Enter your e-mail"
+				/>
+			</label>
+			<label for="password" class="login__form-label">
+				Password
+				<div class="login__form-password">
+					<input
+						type="password"
+						id="password"
+						class="login__form-input"
+						placeholder="********"
+					/>
+					<load src="/partials/modals/password-button.html" />
+				</div>
+			</label>
+			<div class="login__form-inner">
+				<button class="button button-forgot" data-modal="forgot">
+					Forfot password?
+				</button>
+				<button class="button blue" type="submit" data-button="login">
+					Log in
+				</button>
+			</div>
+		</form>
+	</li>
+	<li class="login__item modal__item">
+		<load src="/partials/modals/login-platforms.html" />
+	</li>
+	<li class="login__item modal__item">
+		<div class="login__protected">
+			<span class="login__protected-text">
+				Protected by reCAPTCHA and subject to the Google
+			</span>
+			<a
+				class="login__protected-link-policy login__protected-link"
+				href="https://policies.google.com/privacy"
+			>
+				Privacy Policy
+			</a>
+			<span class="login__protected-text"> and </span>
+			<a
+				class="login__protected-link-terms login__protected-link"
+				href="https://policies.google.com/terms"
+			>
+				Terms of Service.
+			</a>
+		</div>
+	</li>
+</ul>

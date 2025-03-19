@@ -1,0 +1,86 @@
+@use '../../helpers' as *;
+
+.login {
+	&__item {
+		&:nth-child(2) {
+			gap: remm(12);
+		}
+	}
+
+	&__title {
+		color: var(--black);
+	}
+	&__create {
+		width: 100%;
+		@include flex-center;
+		justify-content: start;
+
+		&-text,
+		&-button {
+			white-space: nowrap;
+			color: var(--black-dark);
+			font-weight: 400;
+		}
+		&-button {
+			color: var(--blue);
+			text-decoration-line: underline;
+			text-underline-position: from-font;
+			padding-inline: remm(4);
+			padding-block: remm(10);
+			width: auto;
+		}
+	}
+	&__form {
+		width: 100%;
+		@include flex-center(column);
+		gap: remm(10);
+
+		@include tablet {
+			gap: remm(15);
+		}
+
+		&-inner {
+			width: 100%;
+			@include flex-center(column);
+			@include tablet {
+				flex-direction: row;
+			}
+		}
+		&-password {
+			width: 100%;
+			position: relative;
+		}
+		.button-forgot {
+			padding-inline: remm(4);
+			padding-block: remm(10);
+		}
+	}
+	&__protected {
+		width: 100%;
+		&-text,
+		&-link {
+			display: inline;
+		}
+		&-text {
+			color: var(--gray);
+			opacity: 0.6;
+		}
+		&-link {
+			&-policy {
+				color: var(--blue);
+				@include hover {
+					text-decoration-line: underline;
+					text-underline-position: from-font;
+				}
+			}
+			&-terms {
+				color: var(--black);
+				@include hover {
+					color: var(--black-dark);
+					text-decoration-line: underline;
+					text-underline-position: from-font;
+				}
+			}
+		}
+	}
+}

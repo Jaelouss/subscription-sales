@@ -1,0 +1,12 @@
+@use '../../helpers' as *;
+
+.logout {
+	&__item {
+		&:last-child {
+			gap: remm(15);
+			@include tablet {
+				flex-direction: row;
+			}
+		}
+	}
+}

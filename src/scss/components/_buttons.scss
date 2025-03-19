@@ -9,10 +9,86 @@
 	border-radius: remm(16);
 	position: relative;
 	width: 100%;
-	@include tablet {
+
+	&-password#password {
 		width: auto;
+		position: absolute;
+		top: 50%;
+		translate: -80% -50%;
+		left: 100%;
 	}
 
+	&-close {
+		border-radius: 50%;
+		background-color: rgba(23, 23, 23, 0.1);
+		position: relative;
+		@include square(remm(40));
+		padding: remm(8);
+		flex-shrink: 0;
+
+		@include hover(false) {
+			background-color: var(--blue);
+			.button-close-line {
+				background-color: var(--white);
+			}
+		}
+		&:active {
+			background-color: var(--blue-light);
+			.button-close-line {
+				background-color: var(--white);
+			}
+		}
+
+		&-line {
+			height: remm(2);
+			width: remm(14);
+			background-color: #3a3a3c;
+			@include abs-center;
+
+			&:first-child {
+				transform: rotate(45deg);
+			}
+			&:last-child {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	&-create {
+		@include hover {
+			transform: scale(1.1) translateX(5%);
+		}
+	}
+	&-forgot {
+		color: #0f0f0f;
+		font-size: 16px;
+		line-height: 150%;
+
+		@include hover {
+			text-decoration: underline;
+			text-underline-position: from-font;
+		}
+	}
+	&-login-platforms {
+		padding: remm(13);
+		border: var(--border-gray-2);
+		@include hover {
+			& > img {
+				transform: scale(1.1);
+			}
+		}
+	}
+	&.black {
+		border-radius: remm(2.6);
+		border: var(--border-black-origin);
+		background-color: var(--black-origin);
+		@include laptop {
+			border-radius: remm(4);
+		}
+		@include hover {
+			transform: scale(1.1);
+		}
+	}
 	&.blue {
 		color: var(--white);
 		background-color: var(--blue);

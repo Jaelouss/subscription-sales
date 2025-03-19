@@ -1,0 +1,44 @@
+@use '../../helpers' as *;
+
+.purschase {
+	&__item {
+		&:nth-child(3) {
+			@include flex-center;
+			gap: remm(20);
+		}
+		&:last-child {
+			gap: remm(20);
+		}
+	}
+	&__title {
+		color: var(--black);
+	}
+	&__icons-payment {
+		width: fluid(60, 40);
+	}
+	&__form {
+		width: 100%;
+		@include flex-center(column);
+		gap: remm(15);
+	}
+	&__inner {
+		width: 100%;
+		@include flex-center(column);
+		gap: remm(15);
+	}
+	&__text {
+		opacity: 0.6;
+	}
+	&__crypto {
+		&-title {
+			color: var(--black);
+			font-size: 19px;
+		}
+		&-inner {
+			width: 100%;
+			@include flex-center(column);
+			align-items: start;
+			gap: remm(15);
+		}
+	}
+}

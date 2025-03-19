@@ -16,6 +16,7 @@ body {
 	background-size: contain;
 	background-position: center;
 	@include flex-center(column);
+	justify-content: space-between;
 	font-family: var(--font-gotham);
 	font-size: remm(16);
 	background: var(--background);
@@ -164,6 +165,10 @@ a {
 	color: var(--black);
 }
 label {
+	width: 100%;
+	@include flex-center(column);
+	align-items: start;
+	gap: remm(10);
 	color: var(--label-text);
 	font-family: var(--font-gotham);
 	font-weight: 400;
@@ -195,8 +200,20 @@ svg * {
 body {
 	user-select: none;
 }
+#support,
+#faq,
+#about {
+	scroll-margin-top: 80px;
+}
 
-input {
+input,
+.input {
+	padding-block: remm(16);
+	padding-inline: remm(24) remm(30);
+	border-radius: remm(12);
+	background: var(--background-second);
+	border: none;
+	width: 100%;
 	color: var(--black);
 	font-family: var(--font-inter);
 	font-weight: 400;
@@ -204,6 +221,7 @@ input {
 	font-size: remm(17);
 	@include laptop-below {
 		font-size: remm(15);
+		padding-block: remm(12);
 	}
 	&::placeholder {
 		color: var(--placeholder-text);
@@ -243,5 +261,10 @@ input {
 	font-size: remm(30);
 	@include laptop {
 		font-size: remm(50);
+	}
+}
+.width-auto {
+	@include laptop {
+		width: auto;
 	}
 }

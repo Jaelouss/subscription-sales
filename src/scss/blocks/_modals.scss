@@ -2,37 +2,56 @@
 
 .overlay {
 	width: 100%;
-	padding: 0;
-	@include abs-center;
+	height: 100%;
+	padding: 30px;
+	position: fixed;
+	top: 0;
+	left: 0;
 	@include flex-center;
 	z-index: 2;
-}
-.bg-blur::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
 	background: rgba(23, 73, 179, 0.1);
 	backdrop-filter: blur(7.5px);
-	z-index: -1;
-}
-.bg-menu::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: var(--background);
-	z-index: -1;
+	overflow: hidden;
 }
 
 .modal {
-	max-width: 1440px;
 	@include flex-center(column);
+	justify-content: start;
 	width: 100%;
 	position: relative;
 	z-index: 10;
+	max-height: 100%;
+	overflow-y: auto;
+
+	& > li {
+		width: fluid(580, 320);
+	}
+
+	&__list {
+		@include flex-center(column);
+		gap: remm(40);
+		padding: remm(40) remm(25);
+		background-color: var(--white);
+		border-radius: remm(24);
+		box-shadow: var(--shadow-main-item);
+		position: relative;
+		@include laptop {
+			padding: remm(40);
+			border-radius: remm(32);
+		}
+	}
+	&__item {
+		width: 100%;
+		@include flex-center(column);
+		align-items: start;
+		&:first-child {
+			padding: remm(6);
+			position: absolute;
+			top: 0;
+			align-items: end;
+			@include laptop {
+				padding: remm(12);
+			}
+		}
+	}
 }

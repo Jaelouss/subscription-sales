@@ -33,6 +33,14 @@
 					fill: var(--blue);
 				}
 			}
+			&-nav {
+				fill: #9c99ad;
+			}
+		}
+		&-login {
+			&-password {
+				fill: var(--blue);
+			}
 		}
 	}
 	&__faq {

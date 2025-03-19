@@ -17,5 +17,15 @@
 @use './scss/blocks/footer';
 
 @use './scss/blocks/tabs';
+
 @use './scss/blocks/modals';
+@use './scss/components/platforms';
 @use './scss/blocks/modals/menu';
+@use './scss/blocks/modals/login';
+@use './scss/blocks/modals/subscription';
+@use './scss/blocks/modals/paid';
+@use './scss/blocks/modals/purschase';
+@use './scss/blocks/modals/crypto-wallet';
+@use './scss/blocks/modals/create';
+@use './scss/blocks/modals/forget';
+@use './scss/blocks/modals/logout';

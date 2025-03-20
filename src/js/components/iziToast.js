@@ -13,10 +13,10 @@ const iziOptions = {
 	displayMode: 2,
 };
 
-export function showPopUp() {
+export function showPopUp(message) {
 	iziToast.success({
 		...iziOptions,
 		title: 'Success',
-		message: 'The link is successfully copied!',
+		message: message,
 	});
 }

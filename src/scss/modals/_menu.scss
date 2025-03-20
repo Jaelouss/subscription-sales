@@ -1,6 +1,9 @@
 @use '../helpers' as *;
 
 .menu {
+	&__list {
+		background-color: var(--background);
+	}
 	&__item {
 		&:nth-child(2) {
 			gap: remm(16);
@@ -25,7 +28,7 @@
 		border-radius: remm(16);
 		@include flex-center;
 		justify-content: start;
-		padding: remm(10) remm(20);
+		padding: remm(15) remm(20);
 
 		@include hover {
 			background-color: var(--blue-light);

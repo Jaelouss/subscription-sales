@@ -11,24 +11,24 @@
 	</li>
 	<li class="email__item modal__item">
 		<form class="email__form">
-			<label class="email__label"
-				>Email verification code
+			<div class="label-inner">
+				<label class="email__label">Email verification code </label>
 				<div class="email__code">
 					<input
 						type="text"
-						maxlength="4"
+						maxlength="6"
 						class="email__code-input"
-						placeholder="XXXX"
+						placeholder="XXXXXX"
 					/>
 					<button
-						class="button button-text email__code-button"
-						id="resent"
+						class="button button-text email__code-button absolute"
 						type="button"
+						data-button="resent"
 					>
 						Resent code
 					</button>
 				</div>
-			</label>
+			</div>
 			<button class="button blue" type="submit" data-modal="successful">
 				Sing up
 			</button>

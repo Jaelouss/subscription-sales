@@ -28,27 +28,15 @@
 		@include flex-center;
 		justify-content: space-between;
 		align-items: start;
+		padding-right: remm(20);
+		color: var(--black);
+		font-size: 17px;
+		font-weight: 600;
 
-		&-question {
-			padding-right: remm(20);
-			color: var(--black);
-			font-size: 17px;
-			font-weight: 600;
-		}
 		&-answer {
 			color: var(--black);
 			font-size: 17px;
 			padding-right: remm(60);
-		}
-
-		&-icon {
-			@include square(remm(20));
-			&-inner {
-				@include flex-center;
-				background: rgba(23, 23, 23, 0.05);
-				padding: remm(10);
-				border-radius: remm(12);
-			}
 		}
 	}
 

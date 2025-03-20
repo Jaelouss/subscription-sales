@@ -167,7 +167,8 @@ a {
 	text-decoration: none;
 	color: var(--black);
 }
-label {
+label,
+.label-inner {
 	width: 100%;
 	@include flex-center(column);
 	align-items: start;

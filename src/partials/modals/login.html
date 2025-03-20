@@ -16,27 +16,27 @@
 	</li>
 	<li class="login__item modal__item">
 		<form class="login__form">
-			<label for="email" class="login__form-label">
-				Email Address
+			<div class="label-inner">
+				<label for="email" class="login__form-label"> Email Address </label>
 				<input
 					type="email"
 					id="email"
 					class="login__form-input"
 					placeholder="Enter your e-mail"
 				/>
-			</label>
-			<label for="password" class="login__form-label">
-				Password
-				<div class="login__form-password">
+			</div>
+			<div class="label-inner">
+				<label for="password" class="login__form-label"> Password </label>
+				<div class="create__form-password">
 					<input
+						id="login-password"
 						type="password"
-						id="password"
-						class="login__form-input"
+						class="create__form-input"
 						placeholder="********"
 					/>
 					<load src="/partials/modals/password-button.html" />
 				</div>
-			</label>
+			</div>
 			<div class="login__form-inner">
 				<button class="button button-forgot" data-modal="forget-email">
 					Forfot password?

@@ -1,6 +1,6 @@
 <header class="header" id="header">
 	<div class="header__inner">
-		<button class="header__logo" data-tab="main">
+		<div class="header__logo" data-tab="main">
 			<img
 				class="header__logo-img"
 				srcset="/images/logo/logo.webp 1x, /images/logo/logo-2x.webp 2x"
@@ -9,8 +9,8 @@
 				width="32"
 				height="32"
 			/>
-			<p class="header__logo-text">DiscountsOnServices</p>
-		</button>
+			<span class="header__logo-text">DiscountsOnServices</span>
+		</div>
 		<nav class="header__nav">
 			<ul class="header__nav-list">
 				<li class="header__nav-item">
@@ -110,9 +110,18 @@
 					<button
 						class="button button-login blue"
 						type="button"
+						id="header-login"
 						data-modal="login"
 					>
 						Login
+					</button>
+					<button
+						class="button button-login blue visually-hidden"
+						type="button"
+						id="header-account"
+						data-tab="account"
+					>
+						Account
 					</button>
 				</li>
 			</ul>

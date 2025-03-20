@@ -27,7 +27,14 @@
 		}
 
 		&-policy {
+			width: 100%;
+			border-bottom: 2px solid red;
+			#create__agree:checked + & {
+				border-bottom: 2px solid green;
+			}
+
 			&-label,
+			&-checbox,
 			&-text {
 				display: inline;
 			}

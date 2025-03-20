@@ -24,6 +24,7 @@
 	}
 
 	&__logo {
+		cursor: pointer;
 		@include flex-center;
 		gap: remm(12);
 		padding-right: fluid(116, 0);

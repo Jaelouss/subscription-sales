@@ -1,6 +1,11 @@
 @use '../helpers' as *;
 
 .paid {
+	&__item {
+		&.image {
+			@include flex-center;
+		}
+	}
 	&__title {
 		color: var(--black);
 	}

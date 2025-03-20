@@ -20,11 +20,12 @@
 
 	&-close {
 		border-radius: 50%;
-		background-color: rgba(23, 23, 23, 0.1);
+		background-color: var(--gray-light);
 		position: relative;
 		@include square(remm(40));
 		padding: remm(8);
 		flex-shrink: 0;
+		z-index: 1;
 
 		@include hover(false) {
 			background-color: var(--blue);

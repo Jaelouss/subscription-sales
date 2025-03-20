@@ -11,61 +11,68 @@
 	</li>
 	<li class="create__item modal__item">
 		<form class="create__form">
-			<label class="create__form-label" for="create__form-name">
-				User name
+			<div class="label-inner">
+				<label class="create__form-label" for="create__form-name">
+					User name
+				</label>
 				<input
 					id="create__form-name"
 					type="text"
 					class="create__form-input"
 					placeholder="Enter your name"
 				/>
-			</label>
-			<label class="create__form-label" for="create__form-email">
-				Email Address
+			</div>
+			<div class="label-inner">
+				<label class="create__form-label" for="create__form-email">
+					Email Address
+				</label>
 				<input
 					id="create__form-email"
 					type="email"
 					class="create__form-input"
 					placeholder="Enter your e-mail"
 				/>
-			</label>
-			<label class="create__form-label" for="create__form-password">
-				Password
+			</div>
+			<div class="label-inner">
+				<label class="create__form-label" for="create__form-password">
+					Password
+				</label>
 				<div class="create__form-password">
 					<input
-						id="create__form-password"
+						id="create-password"
 						type="password"
 						class="create__form-input"
 						placeholder="********"
 					/>
 					<load src="/partials/modals/password-button.html" />
 				</div>
-			</label>
-			<label class="create__form-policy-label" for="create__agree">
-				<input
-					class="create__form-policy-checbox"
-					id="create__agree"
-					type="checkbox"
-				/>
-				<p class="create__form-policy-text">
-					I agree to the
-					<button
-						class="button button-text link-blue"
-						data-button="terms"
-						type="button"
-					>
-						Terms of Service
-					</button>
-					and
-					<button
-						class="button button-text link-blue"
-						data-button="policy"
-						type="button"
-					>
-						Privacy Policy
-					</button>
-				</p>
-			</label>
+			</div>
+			<div class="create__form-policy">
+				<label class="create__form-policy-label" for="create__agree">
+					<input
+						class="create__form-policy-checbox"
+						id="create__agree"
+						type="checkbox"
+						required
+					/>
+				</label>
+				<p class="create__form-policy-text">I agree to the</p>
+				<button
+					class="button button-text link-blue"
+					data-button="terms"
+					type="button"
+				>
+					Terms of Service
+				</button>
+				<p class="create__form-policy-text">and</p>
+				<button
+					class="button button-text link-blue"
+					data-button="policy"
+					type="button"
+				>
+					Privacy Policy
+				</button>
+			</div>
 			<button class="button blue" type="submit" data-modal="email">
 				Sing up
 			</button>

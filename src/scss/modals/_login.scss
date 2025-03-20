@@ -1,4 +1,4 @@
-@use '../../helpers' as *;
+@use '../helpers' as *;
 
 .login {
 	&__item {
@@ -15,19 +15,10 @@
 		@include flex-center;
 		justify-content: start;
 
-		&-text,
-		&-button {
+		&-text {
 			white-space: nowrap;
 			color: var(--black-dark);
 			font-weight: 400;
-		}
-		&-button {
-			color: var(--blue);
-			text-decoration-line: underline;
-			text-underline-position: from-font;
-			padding-inline: remm(4);
-			padding-block: remm(10);
-			width: auto;
 		}
 	}
 	&__form {
@@ -60,27 +51,6 @@
 		&-text,
 		&-link {
 			display: inline;
-		}
-		&-text {
-			color: var(--gray);
-			opacity: 0.6;
-		}
-		&-link {
-			&-policy {
-				color: var(--blue);
-				@include hover {
-					text-decoration-line: underline;
-					text-underline-position: from-font;
-				}
-			}
-			&-terms {
-				color: var(--black);
-				@include hover {
-					color: var(--black-dark);
-					text-decoration-line: underline;
-					text-underline-position: from-font;
-				}
-			}
 		}
 	}
 }

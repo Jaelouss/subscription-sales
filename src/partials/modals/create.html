@@ -2,13 +2,75 @@
 	<li class="create__item modal__item">
 		<load src="/partials/modals/close-button.html" />
 	</li>
-	<li class="create__item modal__item">
+	<li class="create__item signin modal__item">
 		<h2 class="create__title">Create an account</h2>
+		<div class="create__signin">
+			<p class="create__signin-text">Already have an account?</p>
+			<button class="button button-text" data-modal="login">Sign In</button>
+		</div>
 	</li>
-	<li class="create__item modal__item"></li>
-	<li class="create__item modal__item"></li>
-	<li class="create__item modal__item"></li>
-	<li class="create__item modal__item"></li>
+	<li class="create__item modal__item">
+		<form class="create__form">
+			<label class="create__form-label" for="create__form-name">
+				User name
+				<input
+					id="create__form-name"
+					type="text"
+					class="create__form-input"
+					placeholder="Enter your name"
+				/>
+			</label>
+			<label class="create__form-label" for="create__form-email">
+				Email Address
+				<input
+					id="create__form-email"
+					type="email"
+					class="create__form-input"
+					placeholder="Enter your e-mail"
+				/>
+			</label>
+			<label class="create__form-label" for="create__form-password">
+				Password
+				<div class="create__form-password">
+					<input
+						id="create__form-password"
+						type="password"
+						class="create__form-input"
+						placeholder="********"
+					/>
+					<load src="/partials/modals/password-button.html" />
+				</div>
+			</label>
+			<label class="create__form-policy-label" for="create__agree">
+				<input
+					class="create__form-policy-checbox"
+					id="create__agree"
+					type="checkbox"
+				/>
+				<p class="create__form-policy-text">
+					I agree to the
+					<button
+						class="button button-text link-blue"
+						data-button="terms"
+						type="button"
+					>
+						Terms of Service
+					</button>
+					and
+					<button
+						class="button button-text link-blue"
+						data-button="policy"
+						type="button"
+					>
+						Privacy Policy
+					</button>
+				</p>
+			</label>
+			<button class="button blue" type="submit" data-modal="email">
+				Sing up
+			</button>
+		</form>
+	</li>
 	<li class="create__item modal__item">
 		<load src="/partials/modals/login-platforms.html" />
 	</li>

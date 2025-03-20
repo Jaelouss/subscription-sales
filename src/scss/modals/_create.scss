@@ -1,0 +1,44 @@
+@use '../helpers' as *;
+
+.create {
+	&__item {
+		&.signin {
+			gap: remm(12);
+		}
+	}
+
+	&__title {
+		color: var(--black);
+	}
+	&__signin {
+		&-text {
+			display: inline;
+			color: var(--black);
+		}
+	}
+	&__form {
+		width: 100%;
+		@include flex-center(column);
+		gap: remm(25);
+
+		&-password {
+			width: 100%;
+			position: relative;
+		}
+
+		&-policy {
+			&-label,
+			&-text {
+				display: inline;
+			}
+			&-checbox {
+				width: auto;
+			}
+			&-text {
+				@include tablet-below {
+					font-size: remm(15);
+				}
+			}
+		}
+	}
+}

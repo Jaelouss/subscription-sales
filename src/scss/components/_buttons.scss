@@ -10,7 +10,7 @@
 	position: relative;
 	width: 100%;
 
-	&-password#password {
+	&-password.absolute.image {
 		width: auto;
 		position: absolute;
 		top: 50%;
@@ -54,9 +54,17 @@
 		}
 	}
 
-	&-create {
+	&-text {
+		display: inline;
+		font-weight: 400;
+		color: var(--blue);
+		text-decoration-line: underline;
+		text-underline-position: from-font;
+		padding-inline: remm(4);
+		padding-block: remm(10);
+		width: auto;
 		@include hover {
-			transform: scale(1.1) translateX(5%);
+			transform: scale(1.07) translateX(3%);
 		}
 	}
 	&-forgot {

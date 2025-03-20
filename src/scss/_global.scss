@@ -36,6 +36,9 @@ section {
 		padding-block: remm(60);
 	}
 }
+section#tabs {
+	padding: 0;
+}
 
 h1,
 .h1,
@@ -266,5 +269,29 @@ input,
 .width-auto {
 	@include laptop {
 		width: auto;
+	}
+}
+
+.link {
+	&-text {
+		color: var(--gray);
+		opacity: 0.6;
+	}
+
+	&-blue {
+		color: var(--blue-light);
+		@include hover {
+			color: var(--blue);
+			text-decoration-line: underline;
+			text-underline-position: from-font;
+		}
+	}
+	&-black {
+		color: var(--black);
+		@include hover {
+			color: var(--black-dark);
+			text-decoration-line: underline;
+			text-underline-position: from-font;
+		}
 	}
 }

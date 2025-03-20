@@ -1,0 +1,53 @@
+@use '../helpers' as *;
+
+.email {
+	&__item {
+		&.title {
+			gap: remm(20);
+		}
+	}
+
+	&__title {
+		color: var(--black);
+	}
+	&__text {
+		color: var(--black-origin);
+	}
+	&__form {
+		width: 100%;
+		@include flex-center(column);
+		align-items: start;
+		gap: remm(26);
+
+		&-forget-passwords {
+			width: 100%;
+			@include flex-center(column);
+			gap: remm(15);
+			@include tablet {
+				flex-direction: row;
+			}
+		}
+	}
+	&__code {
+		width: 100%;
+		position: relative;
+
+		&-input {
+			letter-spacing: remm(5);
+			font-size: remm(20);
+		}
+
+		&-button#resent {
+			width: auto;
+			position: absolute;
+			top: 50%;
+			translate: -110% -50%;
+			left: 100%;
+			@include hover {
+				transform: scale(1);
+				text-decoration: underline;
+				text-underline-position: from-font;
+			}
+		}
+	}
+}

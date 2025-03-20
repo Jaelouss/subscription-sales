@@ -1,0 +1,30 @@
+<ul class="crypto-wallet__list modal__list">
+	<li class="crypto-wallet__item modal__item">
+		<load src="/partials/modals/close-button.html" />
+	</li>
+	<li class="crypto-wallet__item modal__item">
+		<h2 class="crypto-wallet__title">Purchase payment</h2>
+	</li>
+	<li class="crypto-wallet__item modal__item">
+		<p class="crypto-wallet__text">Payment by crypto wallet</p>
+	</li>
+	<li class="crypto-wallet__item modal__item">
+		<form class="crypto-wallet__form">
+			<label for="blockchain" class="crypto-wallet__label">
+				Choose the Blockhain Network
+				<select class="input crypto-wallet__select" id="blockchain">
+					<option value="coinbase" selected>BTC network</option>
+					<option value="coinbase">Coinbase</option>
+					<option value="binance">Binance</option>
+					<option value="kraken">Kraken</option>
+				</select>
+			</label>
+		</form>
+	</li>
+
+	<li class="crypto-wallet__item modal__item">
+		<button class="button blue" type="submit" data-modal="crypto-two">
+			Pay
+		</button>
+	</li>
+</ul>

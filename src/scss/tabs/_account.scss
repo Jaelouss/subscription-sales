@@ -1,0 +1,152 @@
+@use '../helpers' as *;
+
+.account {
+	&__list {
+		width: 100%;
+		@include flex-center(column);
+		gap: fluid(60, 28);
+	}
+	&__item {
+		width: 100%;
+
+		&.header {
+			background-color: transparent;
+			@include flex-center(column-reverse);
+			@include tablet {
+				flex-direction: row;
+				justify-content: space-between;
+			}
+		}
+		&.info {
+			@include flex-center(column);
+			gap: remm(24);
+			@include tablet-l {
+				flex-direction: row;
+				align-items: start;
+			}
+			@include laptop {
+				gap: remm(44);
+			}
+		}
+	}
+	&__header {
+		&-title {
+			color: var(--black);
+		}
+		&-button {
+			width: auto;
+			@include flex-center;
+			gap: remm(5);
+			color: var(--gray);
+			font-size: fluid(20, 16);
+		}
+	}
+
+	&__info {
+		width: 100%;
+		max-width: remm(350);
+		@include flex-center(column);
+		gap: remm(10);
+		background-color: var(--white);
+		border-radius: remm(12);
+		box-shadow: var(--shadow-menu-modal);
+		padding: remm(16);
+
+		&-item {
+			width: 100%;
+			@include flex-center;
+			justify-content: space-between;
+		}
+
+		&-text,
+		&-id {
+			display: inline;
+			font-weight: 600;
+		}
+	}
+	&__no-plans {
+		background-color: var(--white);
+		box-shadow: var(--shadow-menu-modal);
+		padding: remm(16);
+		border-radius: remm(12);
+
+		width: 100%;
+		@include flex-center(column);
+		gap: remm(20);
+
+		&-text {
+			font-size: remm(30);
+			font-weight: 600;
+		}
+	}
+	&__plans {
+		&-list {
+			width: 100%;
+			@include flex-center(column);
+			gap: remm(20);
+		}
+		&-item {
+			width: 100%;
+		}
+
+		&-header {
+			@include flex-center(column);
+			align-items: start;
+			gap: remm(20);
+			@include tablet {
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			padding-inline: remm(24);
+			padding-block: fluid(70, 58);
+			border-radius: remm(24) remm(24) remm(0) remm(0);
+			background-color: var(--white);
+			@include laptop {
+				border-radius: remm(32) remm(32) remm(0) remm(0);
+			}
+
+			&-title {
+				font-size: fluid(30, 24);
+				color: var(--white);
+				font-weight: 700;
+				line-height: 140%;
+				letter-spacing: 0.25px;
+			}
+		}
+		&-options {
+			@include flex-center(column);
+			align-items: start;
+			gap: remm(10);
+			padding: remm(24);
+			border-radius: remm(0) remm(0) remm(24) remm(24);
+			background-color: var(--white);
+			@include laptop {
+				border-radius: remm(0) remm(0) remm(32) remm(32);
+			}
+			&-text {
+				color: var(--gray-3);
+				font-size: 18px;
+				line-height: 140%;
+			}
+			&-button#account__plans-choose-button {
+				align-self: flex-end;
+				color: var(--black);
+				font-size: 20px;
+				text-decoration-line: underline;
+				text-underline-position: from-font;
+			}
+		}
+	}
+}
+
+.plan-spotify {
+	background-color: var(--spotify);
+}
+.plan-youtube {
+	background-color: var(--youtube);
+}
+.plan-netflix {
+	background-color: var(--netflix);
+}

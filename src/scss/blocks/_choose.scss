@@ -39,14 +39,9 @@
 		&-title {
 			font-weight: 400;
 		}
-
-		&-text {
+		&-button.width-auto {
 			@include tablet {
-				@include visually-hidden;
-			}
-			@include laptop {
-				@include visually-shown;
-				padding: 0;
+				width: remm(200);
 			}
 		}
 

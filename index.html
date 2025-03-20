@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="is-lock">
+<html lang="en" class="">
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/subscription-sales/favicon.svg" />
@@ -141,7 +141,7 @@
 	</div>
 </header>
 
-		<main>
+		<main class="visually-hidden">
 			<section class="hero container" id="hero">
 	<ul class="hero__list">
 		<li class="hero__item">
@@ -284,7 +284,7 @@
 	</div>
 	<div class="works__discount">
 		<p class="discount__text">Click on the link</p>
-		<div class="discount__copy-inner" id="copy">
+		<div class="discount__copy-inner" data-copy="no">
 			<p class="discount__copy-text">Discounts On Services</p>
 			<svg class="icon-copy discount__copy-icon" height="19" width="19">
 				<use href="/subscription-sales/sprite.svg#file-copy"></use>
@@ -462,7 +462,7 @@
 			</details>
 		</li>
 	</ul>
-	<button class="button gray faq__button" data-modal="support" id="support">
+	<button class="button gray faq__button" data-modal="working" id="support">
 		Support
 	</button>
 </section>
@@ -477,14 +477,14 @@
 				Disney, Amazon Prime, Microsoft Office, Microsoft Windows
 			</p>
 		</div>
-		<button class="request__button button white" data-modal="request">
+		<button class="request__button button white" data-modal="working">
 			Request
 		</button>
 	</div>
 </section>
 
 		</main>
-		<section class="overlay bg-blur" id="overlay">
+		<section class="overlay bg-blur visually-hidden" id="overlay">
 	<ul class="modal" id="modal">
 		<li class="modal__menu visually-hidden">
 			<ul class="menu__list modal__list">
@@ -559,7 +559,7 @@
 			<button class="button button-login transparent" data-modal="login">
 				Login
 			</button>
-			<button class="button button-sing-up transparent" data-modal="sing-up">
+			<button class="button button-sing-up transparent" data-modal="create">
 				Sign up
 			</button>
 		</div>
@@ -633,7 +633,7 @@
 		<div class="login__create">
 			<p class="login__create-text">New user?</p>
 			<button
-				class="button button-create login__create-button"
+				class="button button-text login__create-button"
 				data-modal="create"
 			>
 				Create an account
@@ -661,8 +661,7 @@
 						placeholder="********"
 					/>
 					<button
-	id="password"
-	class="button button-password"
+	class="button button-password absolute image"
 	type="button"
 	data-button="password"
 	aria-label="show\hide password"
@@ -683,10 +682,10 @@
 				</div>
 			</label>
 			<div class="login__form-inner">
-				<button class="button button-forgot" data-modal="forgot">
+				<button class="button button-forgot" data-modal="forget-email">
 					Forfot password?
 				</button>
-				<button class="button blue" type="submit" data-button="login">
+				<button class="button blue" type="submit" data-tab="account">
 					Log in
 				</button>
 			</div>
@@ -728,18 +727,18 @@
 	</li>
 	<li class="login__item modal__item">
 		<div class="login__protected">
-			<span class="login__protected-text">
+			<span class="login__protected-text link-text">
 				Protected by reCAPTCHA and subject to the Google
 			</span>
 			<a
-				class="login__protected-link-policy login__protected-link"
+				class="login__protected-link-policy login__protected-link link-blue"
 				href="https://policies.google.com/privacy"
 			>
 				Privacy Policy
 			</a>
-			<span class="login__protected-text"> and </span>
+			<span class="login__protected-text link-text"> and </span>
 			<a
-				class="login__protected-link-terms login__protected-link"
+				class="login__protected-link-terms login__protected-link link-black"
 				href="https://policies.google.com/terms"
 			>
 				Terms of Service.
@@ -794,7 +793,7 @@
 			<button
 				class="subscription__form-button button blue"
 				type="submit"
-				data-button="create"
+				data-button="purschase"
 			>
 				Apply
 			</button>
@@ -804,7 +803,7 @@
 
 		</li>
 		<li class="modal__paid visually-hidden">
-			<ul class="paid__list menu__list">
+			<ul class="paid__list modal__list">
 	<li class="paid__item modal__item">
 		<button
 	class="button button-close"
@@ -825,7 +824,7 @@
 		<h2 class="paid__title">Subscription paid</h2>
 	</li>
 	<li class="paid__item modal__item">
-		<button class="button blue">Continue work</button>
+		<button class="button blue" data-tab="main">Continue work</button>
 	</li>
 </ul>
 
@@ -888,7 +887,7 @@
 				/>
 			</label>
 			<div class="purschase__inner">
-				<button class="button blue" data-pay="card" type="submit">
+				<button class="button blue" data-modal="paid" type="submit">
 					Pay with card
 				</button>
 				<p class="purschase__text">
@@ -906,7 +905,7 @@
 				<option value="paypal">Paypal</option>
 			</select>
 		</div>
-		<button class="button blue" data-pay="crypto-one">Pay</button>
+		<button class="button blue" data-modal="crypto-one">Pay</button>
 	</li>
 </ul>
 
@@ -931,19 +930,23 @@
 		<p class="crypto-wallet__text">Payment by crypto wallet</p>
 	</li>
 	<li class="crypto-wallet__item modal__item">
-		<label for="blockchain" class="crypto-wallet__label">
-			Choose the Blockhain Network
-			<select class="input crypto-wallet__select" id="blockchain">
-				<option value="coinbase" selected>BTC network</option>
-				<option value="coinbase">Coinbase</option>
-				<option value="binance">Binance</option>
-				<option value="kraken">Kraken</option>
-			</select>
-		</label>
+		<form class="crypto-wallet__form">
+			<label for="blockchain" class="crypto-wallet__label">
+				Choose the Blockhain Network
+				<select class="input crypto-wallet__select" id="blockchain">
+					<option value="coinbase" selected>BTC network</option>
+					<option value="coinbase">Coinbase</option>
+					<option value="binance">Binance</option>
+					<option value="kraken">Kraken</option>
+				</select>
+			</label>
+		</form>
 	</li>
 
 	<li class="crypto-wallet__item modal__item">
-		<button class="button blue" data-pay="crypto-two">Pay</button>
+		<button class="button blue" type="submit" data-modal="crypto-two">
+			Pay
+		</button>
 	</li>
 </ul>
 
@@ -995,12 +998,12 @@
 	</li>
 
 	<li class="crypto-wallet__item modal__item">
-		<button class="button blue" data-pay="crypto">Ok</button>
+		<button class="button blue" data-modal="paid">Ok</button>
 	</li>
 </ul>
 
 		</li>
-		<li class="modal__create">
+		<li class="modal__create visually-hidden">
 			<ul class="create__list modal__list">
 	<li class="create__item modal__item">
 		<button
@@ -1013,13 +1016,93 @@
 </button>
 
 	</li>
-	<li class="create__item modal__item">
+	<li class="create__item signin modal__item">
 		<h2 class="create__title">Create an account</h2>
+		<div class="create__signin">
+			<p class="create__signin-text">Already have an account?</p>
+			<button class="button button-text" data-modal="login">Sign In</button>
+		</div>
 	</li>
-	<li class="create__item modal__item"></li>
-	<li class="create__item modal__item"></li>
-	<li class="create__item modal__item"></li>
-	<li class="create__item modal__item"></li>
+	<li class="create__item modal__item">
+		<form class="create__form">
+			<label class="create__form-label" for="create__form-name">
+				User name
+				<input
+					id="create__form-name"
+					type="text"
+					class="create__form-input"
+					placeholder="Enter your name"
+				/>
+			</label>
+			<label class="create__form-label" for="create__form-email">
+				Email Address
+				<input
+					id="create__form-email"
+					type="email"
+					class="create__form-input"
+					placeholder="Enter your e-mail"
+				/>
+			</label>
+			<label class="create__form-label" for="create__form-password">
+				Password
+				<div class="create__form-password">
+					<input
+						id="create__form-password"
+						type="password"
+						class="create__form-input"
+						placeholder="********"
+					/>
+					<button
+	class="button button-password absolute image"
+	type="button"
+	data-button="password"
+	aria-label="show\hide password"
+>
+	<svg class="icon icon__modal-login-password" height="20" width="20">
+		<use href="/subscription-sales/sprite.svg#password-open"></use>
+	</svg>
+
+	<svg
+		class="icon icon__modal-login-password visually-hidden"
+		height="20"
+		width="20"
+	>
+		<use href="/subscription-sales/sprite.svg#password-close"></use>
+	</svg>
+</button>
+
+				</div>
+			</label>
+			<label class="create__form-policy-label" for="create__agree">
+				<input
+					class="create__form-policy-checbox"
+					id="create__agree"
+					type="checkbox"
+				/>
+				<p class="create__form-policy-text">
+					I agree to the
+					<button
+						class="button button-text link-blue"
+						data-button="terms"
+						type="button"
+					>
+						Terms of Service
+					</button>
+					and
+					<button
+						class="button button-text link-blue"
+						data-button="policy"
+						type="button"
+					>
+						Privacy Policy
+					</button>
+				</p>
+			</label>
+			<button class="button blue" type="submit" data-modal="email">
+				Sing up
+			</button>
+		</form>
+	</li>
 	<li class="create__item modal__item">
 		<div class="platforms">
 	<div class="platforms-inner">
@@ -1057,9 +1140,9 @@
 </ul>
 
 		</li>
-		<li class="modal__forget visually-hidden">
-			<ul class="forget__list modal__list">
-	<li class="forget__item modal__item">
+		<li class="modal__email visually-hidden">
+			<ul class="email__list modal__list">
+	<li class="email__item modal__item">
 		<button
 	class="button button-close"
 	data-button="close"
@@ -1070,10 +1153,276 @@
 </button>
 
 	</li>
-	<li class="forget__item modal__item">
-		<h2 class="forget__title">Are you sure want to forget?</h2>
+	<li class="email__item title modal__item">
+		<h2 class="email__title">Email verification</h2>
+		<p class="email__text">
+			Please enter the 6-digit verification code that was sent to
+			name@gmail,com. The code is valid for 30 minutes.
+		</p>
 	</li>
-	<li class="forget__item modal__item"></li>
+	<li class="email__item modal__item">
+		<form class="email__form">
+			<label class="email__label"
+				>Email verification code
+				<div class="email__code">
+					<input
+						type="text"
+						maxlength="4"
+						class="email__code-input"
+						placeholder="XXXX"
+					/>
+					<button
+						class="button button-text email__code-button"
+						id="resent"
+						type="button"
+					>
+						Resent code
+					</button>
+				</div>
+			</label>
+			<button class="button blue" type="submit" data-modal="successful">
+				Sing up
+			</button>
+			<button class="button button-text" type="button" data-modal="code">
+				Didn’t receive the code?
+			</button>
+		</form>
+	</li>
+</ul>
+
+		</li>
+		<li class="modal__code visually-hidden">
+			<ul class="email__list modal__list">
+	<li class="email__item modal__item">
+		<button
+	class="button button-close"
+	data-button="close"
+	aria-label="close button"
+>
+	<span class="button-close-line"></span>
+	<span class="button-close-line"></span>
+</button>
+
+	</li>
+	<li class="email__item title modal__item">
+		<h2 class="email__title">Resend code</h2>
+		<p class="email__text">We will send code in this emaill.</p>
+	</li>
+	<li class="email__item modal__item">
+		<form class="email__form">
+			<label class="email__label"
+				>Email
+				<input
+					type="email"
+					class="email__input"
+					placeholder="Enter your email here!"
+				/>
+			</label>
+			<button class="button blue" type="submit" data-modal="email">Send</button>
+		</form>
+	</li>
+</ul>
+
+		</li>
+		<li class="modal__successful visually-hidden">
+			<ul class="email__list modal__list">
+	<li class="email__item modal__item">
+		<button
+	class="button button-close"
+	data-button="close"
+	aria-label="close button"
+>
+	<span class="button-close-line"></span>
+	<span class="button-close-line"></span>
+</button>
+
+	</li>
+	<li class="email__item title modal__item">
+		<h2 class="email__title">Successful registration</h2>
+		<p class="email__text">
+			By optimizing our work and using internal tools, we were able to lower the
+			prices while keeping the highest possible.
+		</p>
+	</li>
+	<li class="email__item modal__item">
+		<button class="button blue" type="button" data-tab="account">
+			Continue work
+		</button>
+	</li>
+</ul>
+
+		</li>
+		<li class="modal__forget visually-hidden">
+			<ul class="email__list modal__list">
+	<li class="email__item modal__item">
+		<button
+	class="button button-close"
+	data-button="close"
+	aria-label="close button"
+>
+	<span class="button-close-line"></span>
+	<span class="button-close-line"></span>
+</button>
+
+	</li>
+	<li class="email__item title modal__item">
+		<h2 class="email__title">Forget Password</h2>
+		<p class="email__text">We will send reset code in this emaill.</p>
+	</li>
+	<li class="email__item modal__item">
+		<form class="email__form">
+			<label class="email__label"
+				>Email Address
+				<input
+					type="email"
+					maxlength="4"
+					class="email__input"
+					placeholder="name@gmail.com"
+				/>
+			</label>
+			<button class="button blue" type="submit" data-modal="forget-code">
+				Submit
+			</button>
+		</form>
+	</li>
+</ul>
+
+		</li>
+		<li class="modal__forget visually-hidden">
+			<ul class="email__list modal__list">
+	<li class="email__item modal__item">
+		<button
+	class="button button-close"
+	data-button="close"
+	aria-label="close button"
+>
+	<span class="button-close-line"></span>
+	<span class="button-close-line"></span>
+</button>
+
+	</li>
+	<li class="email__item title modal__item">
+		<h2 class="email__title">Forget Password</h2>
+		<p class="email__text">We will send reset code in this emaill.</p>
+	</li>
+	<li class="email__item modal__item">
+		<form class="email__form">
+			<label class="email__label"
+				>Email verification code
+				<div class="email__code">
+					<input
+						type="text"
+						maxlength="4"
+						class="email__code-input"
+						placeholder="XXXX"
+					/>
+					<button
+						class="button button-text email__code-button"
+						id="resent"
+						type="button"
+					>
+						Resent code
+					</button>
+				</div>
+			</label>
+			<button class="button blue" type="submit" data-modal="forget-password">
+				Restore Password
+			</button>
+			<button class="button button-text" type="button" data-modal="code">
+				Didn’t receive the code?
+			</button>
+		</form>
+	</li>
+</ul>
+
+		</li>
+		<li class="modal__forget visually-hdden visually-hidden">
+			<ul class="email__list modal__list">
+	<li class="email__item modal__item">
+		<button
+	class="button button-close"
+	data-button="close"
+	aria-label="close button"
+>
+	<span class="button-close-line"></span>
+	<span class="button-close-line"></span>
+</button>
+
+	</li>
+	<li class="email__item title modal__item">
+		<h2 class="email__title">Forget Password</h2>
+		<p class="email__text">Enter a new password.</p>
+	</li>
+	<li class="email__item modal__item">
+		<form class="email__form">
+			<div class="email__form-forget-passwords">
+				<label for="password" class="login__form-label">
+					Password
+					<div class="login__form-password">
+						<input
+							type="password"
+							id="password"
+							class="login__form-input"
+							placeholder="********"
+						/>
+						<button
+	class="button button-password absolute image"
+	type="button"
+	data-button="password"
+	aria-label="show\hide password"
+>
+	<svg class="icon icon__modal-login-password" height="20" width="20">
+		<use href="/subscription-sales/sprite.svg#password-open"></use>
+	</svg>
+
+	<svg
+		class="icon icon__modal-login-password visually-hidden"
+		height="20"
+		width="20"
+	>
+		<use href="/subscription-sales/sprite.svg#password-close"></use>
+	</svg>
+</button>
+
+					</div>
+				</label>
+				<label for="confirm-password" class="login__form-label">
+					Confirm Password
+					<div class="login__form-password">
+						<input
+							type="password"
+							id="confirm-password"
+							class="login__form-input"
+							placeholder="********"
+						/>
+						<button
+	class="button button-password absolute image"
+	type="button"
+	data-button="password"
+	aria-label="show\hide password"
+>
+	<svg class="icon icon__modal-login-password" height="20" width="20">
+		<use href="/subscription-sales/sprite.svg#password-open"></use>
+	</svg>
+
+	<svg
+		class="icon icon__modal-login-password visually-hidden"
+		height="20"
+		width="20"
+	>
+		<use href="/subscription-sales/sprite.svg#password-close"></use>
+	</svg>
+</button>
+
+					</div>
+				</label>
+			</div>
+
+			<button class="button blue" type="submit" data-tab="login">
+				Restore Password
+			</button>
+		</form>
+	</li>
 </ul>
 
 		</li>
@@ -1094,8 +1443,67 @@
 		<h2 class="logout__title">Are you sure want to logout?</h2>
 	</li>
 	<li class="logout__item modal__item">
-		<button class="button transparent">Cancel</button>
-		<button class="button transparent">Yes, Logout</button>
+		<button class="button transparent" data-tab="main">Cancel</button>
+		<button class="button transparent" data-tab="main-logout">
+			Yes, Logout
+		</button>
+	</li>
+</ul>
+
+		</li>
+		<li class="modal__policy visually-hidden">
+			<ul class="email__list modal__list">
+	<li class="email__item modal__item">
+		<button
+	class="button button-close"
+	data-button="close"
+	aria-label="close button"
+>
+	<span class="button-close-line"></span>
+	<span class="button-close-line"></span>
+</button>
+
+	</li>
+	<li class="email__item title modal__item">
+		<h2 class="email__title">Privacy Policy</h2>
+		<p class="email__text">
+			This site is just a template for learning. It runs locally, doesn't
+			collect data, and doesn't send anything anywhere. Everything stays on your
+			device. The code is open source under the MIT license - check it out on
+			GitHub!
+		</p>
+	</li>
+	<li class="email__item modal__item">
+		<button class="button blue" type="button" data-button="close-modal">
+			Continue work
+		</button>
+	</li>
+</ul>
+
+		</li>
+		<li class="modal__working visually-hidden">
+			<ul class="email__list modal__list">
+	<li class="email__item modal__item">
+		<button
+	class="button button-close"
+	data-button="close"
+	aria-label="close button"
+>
+	<span class="button-close-line"></span>
+	<span class="button-close-line"></span>
+</button>
+
+	</li>
+	<li class="email__item title modal__item">
+		<h2 class="email__title">Wa are so sorry!</h2>
+		<p class="email__text">
+			This section under construction! Please come back later.
+		</p>
+	</li>
+	<li class="email__item modal__item">
+		<button class="button blue" type="button" data-button="close-modal">
+			Continue work
+		</button>
 	</li>
 </ul>
 
@@ -1117,20 +1525,24 @@
 				<input
 					class="tab__selector-input"
 					type="radio"
-					name="price-time"
-					id="time"
+					name="price-netflix"
+					id="month-6-netflix"
 					checked
 				/>
-				<label class="tab__selector-label" for="time"> 6 months </label>
+				<label class="tab__selector-label" for="month-6-netflix">
+					6 months
+				</label>
 			</div>
 			<div class="second">
 				<input
 					class="tab__selector-input"
 					type="radio"
-					name="price-time"
-					id="time2"
+					name="price-netflix"
+					id="month-12-netflix"
 				/>
-				<label class="tab__selector-label" for="time2"> 12 months </label>
+				<label class="tab__selector-label" for="month-12-netflix">
+					12 months
+				</label>
 			</div>
 		</li>
 		<li class="tab__plan">
@@ -1292,7 +1704,7 @@
 	</div>
 	<div class="works__discount">
 		<p class="discount__text">Click on the link</p>
-		<div class="discount__copy-inner" id="copy">
+		<div class="discount__copy-inner" data-copy="no">
 			<p class="discount__copy-text">Discounts On Services</p>
 			<svg class="icon-copy discount__copy-icon" height="19" width="19">
 				<use href="/subscription-sales/sprite.svg#file-copy"></use>
@@ -1421,7 +1833,7 @@
 			</details>
 		</li>
 	</ul>
-	<button class="button gray faq__button" data-modal="support" id="support">
+	<button class="button gray faq__button" data-modal="working" id="support">
 		Support
 	</button>
 </section>
@@ -1440,20 +1852,24 @@
 				<input
 					class="tab__selector-input"
 					type="radio"
-					name="price-time"
-					id="time"
+					name="price-youtube"
+					id="month-6-youtube"
 					checked
 				/>
-				<label class="tab__selector-label" for="time"> 6 months </label>
+				<label class="tab__selector-label" for="month-6-youtube">
+					6 months
+				</label>
 			</div>
 			<div class="second">
 				<input
 					class="tab__selector-input"
 					type="radio"
-					name="price-time"
-					id="time2"
+					name="price-youtube"
+					id="month-12-youtube"
 				/>
-				<label class="tab__selector-label" for="time2"> 12 months </label>
+				<label class="tab__selector-label" for="month-12-youtube">
+					12 months
+				</label>
 			</div>
 		</li>
 		<li class="tab__plan">
@@ -1544,7 +1960,7 @@
 	</div>
 	<div class="works__discount">
 		<p class="discount__text">Click on the link</p>
-		<div class="discount__copy-inner" id="copy">
+		<div class="discount__copy-inner" data-copy="no">
 			<p class="discount__copy-text">Discounts On Services</p>
 			<svg class="icon-copy discount__copy-icon" height="19" width="19">
 				<use href="/subscription-sales/sprite.svg#file-copy"></use>
@@ -1673,7 +2089,7 @@
 			</details>
 		</li>
 	</ul>
-	<button class="button gray faq__button" data-modal="support" id="support">
+	<button class="button gray faq__button" data-modal="working" id="support">
 		Support
 	</button>
 </section>
@@ -1692,20 +2108,24 @@
 				<input
 					class="tab__selector-input"
 					type="radio"
-					name="price-time"
-					id="time"
+					name="price-spotify"
+					id="month-6-spotify"
 					checked
 				/>
-				<label class="tab__selector-label" for="time"> 6 months </label>
+				<label class="tab__selector-label" for="month-6-spotify">
+					6 months
+				</label>
 			</div>
 			<div class="second">
 				<input
 					class="tab__selector-input"
 					type="radio"
-					name="price-time"
-					id="time2"
+					name="price-spotify"
+					id="month-12-spotify"
 				/>
-				<label class="tab__selector-label" for="time2"> 12 months </label>
+				<label class="tab__selector-label" for="month-12-spotify">
+					12 months
+				</label>
 			</div>
 		</li>
 		<li class="tab__plan">
@@ -1879,7 +2299,7 @@
 	</div>
 	<div class="works__discount">
 		<p class="discount__text">Click on the link</p>
-		<div class="discount__copy-inner" id="copy">
+		<div class="discount__copy-inner" data-copy="no">
 			<p class="discount__copy-text">Discounts On Services</p>
 			<svg class="icon-copy discount__copy-icon" height="19" width="19">
 				<use href="/subscription-sales/sprite.svg#file-copy"></use>
@@ -2008,11 +2428,135 @@
 			</details>
 		</li>
 	</ul>
-	<button class="button gray faq__button" data-modal="support" id="support">
+	<button class="button gray faq__button" data-modal="working" id="support">
 		Support
 	</button>
 </section>
 
+
+		</li>
+		<li class="tab__account">
+			<section class="account container tab" id="account">
+	<ul class="account__list">
+		<li class="account__item header">
+			<h2 class="account__header-title h1">Personal data management</h2>
+			<button class="button account__header-button">
+				<svg class="icon-exit" height="24" width="24">
+					<use href="/subscription-sales/sprite.svg#exit"></use>
+				</svg>
+				Exit the office
+			</button>
+		</li>
+		<li class="account__item info">
+			<ul class="account__info">
+				<li class="account__info-item">
+					<p class="account__info-text">ID user</p>
+					<p class="account__info-id" id="account-id">000000</p>
+				</li>
+				<li class="account__info-item">
+					<p class="account__info-text">Emai user</p>
+					<p class="account__info-id" id="account-id">000000</p>
+				</li>
+			</ul>
+			<ul class="account__plans-list">
+				<li class="account__no-plans">
+					<p class="account__no-plans-text">Please choose your subscription</p>
+					<button class="button blue" data-button="choose">Choose!</button>
+				</li>
+				<li class="account__plans-item">
+					<div class="account__plans-header plan-spotify">
+						<h3 class="account__plans-header-title">Spotify Premium</h3>
+						<p class="account__plans-header-title">Duo</p>
+					</div>
+					<div class="account__plans-options">
+						<p class="account__plans-options-text">
+							<svg
+								class="icon icon-copy success options-icon"
+								height="24"
+								width="24"
+								fill="blue"
+							>
+								<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+							</svg>
+							qwerqwerqwerqwerqwer qewr
+						</p>
+
+						<button
+							class="button button-text account__plans-options-button"
+							type="button"
+							id="account__plans-choose-button"
+							data-button="choose"
+						>
+							Change plan
+						</button>
+					</div>
+				</li>
+				<li class="account__plans-item">
+					<div class="account__plans-header plan-youtube">
+						<h3 class="account__plans-header-title">Spotify Premium Duo</h3>
+					</div>
+					<div class="account__plans-options">
+						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
+						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
+						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
+						<button
+							class="button button-text account__plans-options-button"
+							type="button"
+							id="account__plans-choose-button"
+							data-button="choose"
+						>
+							Change plan
+						</button>
+					</div>
+				</li>
+				<li class="account__plans-item">
+					<div class="account__plans-header plan-netflix">
+						<h3 class="account__plans-header-title">Spotify Premium Duo</h3>
+					</div>
+					<div class="account__plans-options">
+						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
+						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
+						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
+						<button
+							class="button button-text account__plans-options-button"
+							type="button"
+							id="account__plans-choose-button"
+							data-button="choose"
+						>
+							Change plan
+						</button>
+					</div>
+				</li>
+			</ul>
+		</li>
+		<li class="works__item">
+	<div class="works__invite">
+		<h3 class="invite__title">Invite friends</h3>
+		<p class="invite__text">
+			Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with
+			a secure payment from PAYPAL
+		</p>
+	</div>
+	<div class="works__discount">
+		<p class="discount__text">Click on the link</p>
+		<div class="discount__copy-inner" data-copy="no">
+			<p class="discount__copy-text">Discounts On Services</p>
+			<svg class="icon-copy discount__copy-icon" height="19" width="19">
+				<use href="/subscription-sales/sprite.svg#file-copy"></use>
+			</svg>
+			<svg
+				class="icon-copy success discount__copy-icon visually-hidden"
+				height="19"
+				width="19"
+			>
+				<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+			</svg>
+		</div>
+	</div>
+</li>
+
+	</ul>
+</section>
 
 		</li>
 	</ul>
@@ -2122,11 +2666,13 @@
 				Privacy Policy
 			</button>
 			<a
+				target="_blank"
 				href="https://github.com/Jaelouss/subscription-sales"
 				class="button footer__copyright-license copyright"
 				>Copyright 2025 © Licensed under the MIT License.</a
 			>
 			<a
+				target="_blank"
 				href="https://github.com/Jaelouss"
 				class="button footer__copyright-link copyright"
 				>Developed by Jaelouss</a

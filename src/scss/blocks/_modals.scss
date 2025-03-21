@@ -17,7 +17,6 @@
 .modal {
 	@include flex-center(column);
 	justify-content: start;
-	width: 100%;
 	position: relative;
 	z-index: 10;
 	max-height: 100%;

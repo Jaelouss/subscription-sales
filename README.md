@@ -1,17 +1,42 @@
-# Мій шаблон Vite Vanilla
+data-tab="netflix"
+data-tab="youtube"
+data-tab="spotify"
+data-tab="main"
+data-tab="main-logout"
+data-tab="account"
 
-## Як використовувати
-1. Скопіюйте цей шаблон у нову папку.
-2. Видаліть `package-lock.json` (щоб уникнути старих фіксованих версій).
-3. Запустіть `npm run update`, щоб оновити всі залежності до найновіших версій.
-4. Почніть розробку з `npm run dev`.
+data-copy="no"
 
-## Скрипти
-- `npm run dev` — запуск dev-сервера.
-- `npm run build` — зборка проєкту.
-- `npm run preview` — перегляд збірки.
-- `npm run lint` — перевірка коду ESLint.
-- `npm run lint:fix` — перевірка та виправлення коду.
-- `npm run update` — оновлення всіх залежностей до найновіших версій.
+data-lang="en"
+data-lang="uk"
+
+data-pay="apple"
+data-pay="google"
+
+data-button="close"
+data-button="resent"
+data-button="password"
+data-button="choose"
 
 
+data-platform="google"
+data-platform="facebook"
+data-platform="apple"
+
+data-modal="working"
+data-modal="login"
+data-modal="account"
+data-modal="menu"
+data-modal="email"
+data-modal="login"
+data-modal="policy"
+data-modal="crypto-one"
+data-modal="crypto-two"
+data-modal="paid"
+data-modal="successful"
+data-modal="code"
+data-modal="forget-password"
+data-modal="forget-code"
+data-modal="forget-email"
+data-modal="create"
+data-modal="purschase"

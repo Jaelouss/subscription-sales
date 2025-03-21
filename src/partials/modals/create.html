@@ -6,7 +6,9 @@
 		<h2 class="create__title">Create an account</h2>
 		<div class="create__signin">
 			<p class="create__signin-text">Already have an account?</p>
-			<button class="button button-text" data-modal="login">Sign In</button>
+			<button type="button" class="button button-text" data-modal="login">
+				Sign In
+			</button>
 		</div>
 	</li>
 	<li class="create__item modal__item">
@@ -16,6 +18,7 @@
 					User name
 				</label>
 				<input
+					name="name"
 					id="create__form-name"
 					type="text"
 					class="create__form-input"
@@ -27,6 +30,7 @@
 					Email Address
 				</label>
 				<input
+					name="email"
 					id="create__form-email"
 					type="email"
 					class="create__form-input"
@@ -39,6 +43,7 @@
 				</label>
 				<div class="create__form-password">
 					<input
+						name="password"
 						id="create-password"
 						type="password"
 						class="create__form-input"
@@ -55,23 +60,18 @@
 						type="checkbox"
 						required
 					/>
+					I agree to the
+					<a class="link link-blue" href="/rule-page/terms.html" target="_blank"
+						>Terms of Service</a
+					>
+					and
+					<a
+						class="link link-blue"
+						href="/rule-page/policy.html"
+						target="_blank"
+						>Privacy Policy</a
+					>
 				</label>
-				<p class="create__form-policy-text">I agree to the</p>
-				<button
-					class="button button-text link-blue"
-					data-button="terms"
-					type="button"
-				>
-					Terms of Service
-				</button>
-				<p class="create__form-policy-text">and</p>
-				<button
-					class="button button-text link-blue"
-					data-button="policy"
-					type="button"
-				>
-					Privacy Policy
-				</button>
 			</div>
 			<button class="button blue" type="submit" data-modal="email">
 				Sing up

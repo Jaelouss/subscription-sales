@@ -7,6 +7,7 @@
 		<div class="login__create">
 			<p class="login__create-text">New user?</p>
 			<button
+				type="button"
 				class="button button-text login__create-button"
 				data-modal="create"
 			>
@@ -21,6 +22,7 @@
 				<input
 					type="email"
 					id="email"
+					name="email"
 					class="login__form-input"
 					placeholder="Enter your e-mail"
 				/>
@@ -29,6 +31,7 @@
 				<label for="login-password" class="login__form-label"> Password </label>
 				<div class="create__form-password">
 					<input
+						name="password"
 						id="login-password"
 						type="password"
 						class="create__form-input"
@@ -38,7 +41,11 @@
 				</div>
 			</div>
 			<div class="login__form-inner">
-				<button class="button button-forgot" data-modal="forget-email">
+				<button
+					type="button"
+					class="button button-forgot"
+					data-modal="forget-email"
+				>
 					Forfot password?
 				</button>
 				<button class="button blue" type="submit" data-tab="account">
@@ -56,6 +63,7 @@
 				Protected by reCAPTCHA and subject to the Google
 			</span>
 			<a
+				target="_blank"
 				class="login__protected-link-policy login__protected-link link-blue"
 				href="https://policies.google.com/privacy"
 			>
@@ -63,6 +71,7 @@
 			</a>
 			<span class="login__protected-text link-text"> and </span>
 			<a
+				target="_blank"
 				class="login__protected-link-terms login__protected-link link-black"
 				href="https://policies.google.com/terms"
 			>

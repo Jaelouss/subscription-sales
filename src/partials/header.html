@@ -1,6 +1,6 @@
 <header class="header" id="header">
 	<div class="header__inner">
-		<div class="header__logo" data-tab="main">
+		<a href="#header" class="header__logo">
 			<img
 				class="header__logo-img"
 				srcset="/images/logo/logo.webp 1x, /images/logo/logo-2x.webp 2x"
@@ -9,8 +9,8 @@
 				width="32"
 				height="32"
 			/>
-			<span class="header__logo-text">DiscountsOnServices</span>
-		</div>
+			DiscountsOnServices
+		</a>
 		<nav class="header__nav">
 			<ul class="header__nav-list">
 				<li class="header__nav-item">
@@ -24,6 +24,7 @@
 						<ul class="header__nav-platforms">
 							<li class="header__nav-platforms-item">
 								<button
+									type="button"
 									class="button button__header-platform"
 									data-tab="netflix"
 								>
@@ -32,6 +33,7 @@
 							</li>
 							<li class="header__nav-platforms-item">
 								<button
+									type="button"
 									class="button button__header-platform"
 									data-tab="youtube"
 								>
@@ -40,6 +42,7 @@
 							</li>
 							<li class="header__nav-platforms-item">
 								<button
+									type="button"
 									class="button button__header-platform"
 									data-tab="spotify"
 								>
@@ -62,6 +65,7 @@
 			<ul class="header__soc1al">
 				<li class="header__soc1al-networks">
 					<a
+						target="_blank"
 						class="header__soc1al-link"
 						href="https://github.com/Jaelouss"
 						aria-label="autor github"
@@ -71,6 +75,7 @@
 						</svg>
 					</a>
 					<a
+						target="_blank"
 						class="header__soc1al-link"
 						href="https://www.linkedin.com/in/eugen-alekseev/"
 						aria-label="autor linkedin"
@@ -94,13 +99,21 @@
 						</summary>
 						<ul class="lang-list">
 							<li class="lang-item">
-								<button class="button button__header-lang" data-lang="en">
+								<button
+									type="button"
+									class="button button__header-lang"
+									data-lang="en"
+								>
 									English
 								</button>
 							</li>
 							<li class="lang-item">
-								<button class="button button__header-lang" data-lang="uk">
-									Ukraine
+								<button
+									type="button"
+									class="button button__header-lang"
+									data-lang="uk"
+								>
+									Ukrainian
 								</button>
 							</li>
 						</ul>
@@ -128,6 +141,7 @@
 		</nav>
 
 		<button
+			type="button"
 			class="button header__burger burger"
 			data-modal="menu"
 			aria-label="menu"

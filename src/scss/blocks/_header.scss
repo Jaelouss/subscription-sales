@@ -29,6 +29,8 @@
 		gap: remm(12);
 		padding-right: fluid(116, 0);
 		background-color: transparent;
+		font-family: Manrope;
+		font-weight: 600;
 		@include laptop {
 			gap: remm(8);
 		}
@@ -39,13 +41,6 @@
 				width: remm(55);
 				height: remm(55);
 			}
-		}
-		&-text {
-			@include mobile-below {
-				@include visually-hidden;
-			}
-			font-family: Manrope;
-			font-weight: 600;
 		}
 	}
 
@@ -88,6 +83,7 @@
 				background: var(--white);
 				box-shadow: var(--shadow-details-list);
 				padding: remm(17) remm(13);
+				z-index: 5;
 			}
 		}
 	}

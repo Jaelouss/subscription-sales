@@ -2,7 +2,11 @@
 	<ul class="account__list">
 		<li class="account__item header">
 			<h2 class="account__header-title h1">Personal data management</h2>
-			<button class="button account__header-button">
+			<button
+				type="button"
+				class="button account__header-button"
+				data-modal="logout"
+			>
 				<svg class="icon-exit" height="24" width="24">
 					<use href="/images/svg/sprite.svg#exit"></use>
 				</svg>
@@ -12,18 +16,28 @@
 		<li class="account__item info">
 			<ul class="account__info">
 				<li class="account__info-item">
-					<p class="account__info-text">ID user</p>
+					<p class="account__info-text">ID:</p>
 					<p class="account__info-id" id="account-id">000000</p>
 				</li>
 				<li class="account__info-item">
-					<p class="account__info-text">Emai user</p>
+					<p class="account__info-text">Name:</p>
+					<p class="account__info-id" id="account-id">000000</p>
+				</li>
+				<li class="account__info-item">
+					<p class="account__info-text">Email:</p>
+					<p class="account__info-id" id="account-email">000000</p>
+				</li>
+				<li class="account__info-item">
+					<p class="account__info-text">Tel:</p>
 					<p class="account__info-id" id="account-email">000000</p>
 				</li>
 			</ul>
 			<ul class="account__plans-list">
 				<li class="account__no-plans">
 					<p class="account__no-plans-text">Please choose your subscription</p>
-					<button class="button blue" data-button="choose">Choose!</button>
+					<button type="button" class="button blue" data-button="choose">
+						Choose!
+					</button>
 				</li>
 				<li class="account__plans-item">
 					<div class="account__plans-header plan-spotify">

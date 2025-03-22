@@ -5,11 +5,20 @@ import './main.scss';
 import refs from './js/components/refs.js';
 import { closeAllModals } from './js/components/closeAllModals.js';
 import { copyText } from './js/components/copyLink.js';
+import { changePrice } from './js/components/changePrice.js';
+import { loadUserSettings } from './js/components/localStorage.js';
+import { userData } from './js/userData.js';
+import { logout } from './js/components/account.js';
+
+loadUserSettings(userData);
+logout();
 
 document.addEventListener('submit', event => {
 	event.preventDefault();
 	formData(event);
 });
+
+refs.section.tabs.addEventListener('change', changePrice);
 
 document.addEventListener('click', event => {
 	const elem = event.target;

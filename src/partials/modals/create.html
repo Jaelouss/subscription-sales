@@ -18,6 +18,8 @@
 					User name
 				</label>
 				<input
+					title="Pls enter your name"
+					required
 					name="name"
 					id="create__form-name"
 					type="text"
@@ -30,6 +32,8 @@
 					Email Address
 				</label>
 				<input
+					title="Pls enter your email"
+					required
 					name="email"
 					id="create__form-email"
 					type="email"
@@ -43,6 +47,8 @@
 				</label>
 				<div class="create__form-password">
 					<input
+						title="Enter your password"
+						required
 						name="password"
 						id="create-password"
 						type="password"
@@ -55,6 +61,8 @@
 			<div class="create__form-policy">
 				<label class="create__form-policy-label" for="create__agree">
 					<input
+						title="Are you agree?"
+						required
 						class="create__form-policy-checbox"
 						id="create__agree"
 						type="checkbox"
@@ -76,7 +84,12 @@
 					>
 				</label>
 			</div>
-			<button class="button blue" type="submit" data-modal="email">
+			<button
+				class="button blue"
+				type="submit"
+				title="Please fill out the form fields"
+				data-modal="email"
+			>
 				Sing up
 			</button>
 		</form>

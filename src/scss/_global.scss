@@ -20,6 +20,7 @@ body {
 	font-family: var(--font-gotham);
 	font-size: remm(16);
 	background: var(--background);
+	user-select: none;
 }
 
 main {
@@ -159,8 +160,19 @@ button {
 		}
 	}
 }
-button {
+button.button {
 	border: none;
+	&:disabled {
+		color: var(--black);
+		background-color: var(--gray-light);
+		border: var(--border-black);
+		@include hover {
+			color: var(--black);
+			background-color: var(--gray-light);
+			border: var(--border-black);
+			cursor: not-allowed;
+		}
+	}
 }
 a {
 	display: inline-flex;
@@ -201,9 +213,6 @@ svg * {
 	transition-duration: 0s !important;
 }
 
-body {
-	user-select: none;
-}
 #support,
 #faq,
 #about {

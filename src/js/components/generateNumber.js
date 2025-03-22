@@ -1,3 +1,4 @@
+import { temp } from '../userData';
 import { showPopUp } from './iziToast';
 
 export function generateNumber() {
@@ -6,5 +7,8 @@ export function generateNumber() {
 		arr.push(Math.floor(Math.random() * 10));
 	}
 	const numbers = arr.join('');
+	temp.code = numbers;
+	console.log(temp);
+
 	showPopUp(numbers, 'info', 'copy');
 }

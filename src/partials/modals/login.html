@@ -20,6 +20,8 @@
 			<div class="label-inner">
 				<label for="email" class="login__form-label"> Email Address </label>
 				<input
+					title="Pls enter your email here"
+					required
 					type="email"
 					id="email"
 					name="email"
@@ -31,6 +33,8 @@
 				<label for="login-password" class="login__form-label"> Password </label>
 				<div class="create__form-password">
 					<input
+						title="Enter your password"
+						required
 						name="password"
 						id="login-password"
 						type="password"
@@ -48,7 +52,13 @@
 				>
 					Forfot password?
 				</button>
-				<button class="button blue" type="submit" data-tab="account">
+				<button
+					class="button blue"
+					type="submit"
+					title="Please fill out the form fields"
+					data-tab="account"
+					id="login"
+				>
 					Log in
 				</button>
 			</div>

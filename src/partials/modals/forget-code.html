@@ -7,11 +7,13 @@
 		<p class="email__text">We will send reset code in this emaill.</p>
 	</li>
 	<li class="email__item modal__item">
-		<form class="email__form">
+		<form class="email__form-code">
 			<div class="label-inner">
 				<label class="email__label">Email verification code </label>
 				<div class="email__code">
 					<input
+						title="Enter code from email here"
+						required
 						name="email-code"
 						type="text"
 						maxlength="6"
@@ -27,7 +29,12 @@
 					</button>
 				</div>
 			</div>
-			<button class="button blue" type="submit" data-modal="forget-password">
+			<button
+				class="button blue"
+				type="submit"
+				title="Please fill out the form fields"
+				data-modal="forget-password"
+			>
 				Restore Password
 			</button>
 			<button class="button button-text" type="button" data-modal="code">

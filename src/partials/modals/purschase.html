@@ -34,6 +34,8 @@
 			<div class="label-inner">
 				<label class="purschase__label"> Card Number </label>
 				<input
+					title="Pls enter your card number"
+					required
 					name="card-number"
 					type="number"
 					class="purschase__input"
@@ -43,6 +45,8 @@
 			<div class="label-inner">
 				<label class="purschase__label"> Expiration Date </label>
 				<input
+					title="Pls enter your card date"
+					required
 					name="card-date"
 					type="number"
 					class="purschase__input"
@@ -52,6 +56,8 @@
 			<div class="label-inner">
 				<label class="purschase__label"> СVC </label>
 				<input
+					title="Pls enter your card cvc code"
+					required
 					name="card-cvc"
 					type="password"
 					class="purschase__input"
@@ -60,7 +66,12 @@
 				/>
 			</div>
 			<div class="purschase__inner">
-				<button class="button blue" data-modal="paid" type="submit">
+				<button
+					class="button blue"
+					data-modal="paid"
+					type="submit"
+					title="Please fill out the form fields"
+				>
 					Pay with card
 				</button>
 				<p class="purschase__text">
@@ -71,14 +82,18 @@
 	</li>
 	<li class="purschase__item modal__item">
 		<h3 class="purschase__crypto-title">Payment by crypto wallet</h3>
-		<div class="purschase__crypto-inner">
+		<form class="purschase__crypto-inner">
 			<p class="purschase__crypto-text">Select currency</p>
-			<select class="purschase__crypto-select input" name="crypto-wallet">
+			<select
+				required
+				class="purschase__crypto-select input"
+				name="crypto-wallet"
+			>
 				<option value="bitcoin" selected>Bitcoin</option>
 				<option value="paypal">Paypal</option>
 			</select>
-		</div>
-		<button type="button" class="button blue" data-modal="crypto-one">
+		</form>
+		<button type="submit" class="button blue" data-modal="crypto-one">
 			Pay
 		</button>
 	</li>

@@ -40,3 +40,10 @@ data-modal="forget-code"
 data-modal="forget-email"
 data-modal="create"
 data-modal="purschase"
+
+
+рендер аккаунта
+валідація форм покупки.
+після покупки не оновляє локалстор
+в формі з іменем треба звіряти емейл
+валідація форми з карткою

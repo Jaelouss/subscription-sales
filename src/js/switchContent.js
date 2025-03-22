@@ -1,24 +1,69 @@
+import { logout } from './components/account';
 import { closeAllModals } from './components/closeAllModals';
 import { generateNumber } from './components/generateNumber';
 import { goToMain } from './components/mainPage';
 import { openModal } from './components/openModal';
 import { openTab } from './components/openTab';
+import { savePrice } from './components/savePrice';
+import {
+	clearPrice,
+	clearTemp,
+	form,
+	formPass,
+	price,
+	temp,
+	userData,
+} from './userData';
 
 export function switchContent(data, button) {
 	const windowType = data[0];
 	const windowName = data[1];
 
 	const className = `${windowType}__${windowName}`;
-	// if(button.type==='submit' && )
+	if (button.type === 'submit' && !form) {
+		return;
+	}
+	if (button.id === 'login') {
+		console.log('yes');
+	}
 	if (windowType === 'modal') {
-		openModal(className);
 		if (windowName === 'email' || windowName === 'forget-code') {
 			generateNumber();
 		}
+		if (windowName === 'subscription') {
+			const dataset = button.parentElement.dataset;
+			for (const key in dataset) {
+				temp[key] = dataset[key];
+			}
+		}
+		if (windowName === 'paid') {
+			for (const key in temp) {
+				userData[userData.currentUser].subscription[key] = temp[key];
+			}
+			clearTemp();
+		}
+		if (windowName === 'subscription') {
+			if (userData.currentUser === 'null') {
+				openModal('modal__login');
+				return;
+			}
+		}
+		openModal(className);
 	}
 	if (windowType === 'tab') {
-		if (windowName === 'main-logout' || windowName === 'main') {
+		userData.tab = windowName;
+		clearPrice();
+		if (
+			windowName === 'netflix' ||
+			windowName === 'youtube' ||
+			windowName === 'spotify'
+		) {
+			savePrice();
+		}
+		if (windowName === 'main') {
 			goToMain();
+		} else if (windowName === 'main-logout') {
+			logout();
 		} else {
 			openTab(className);
 		}
@@ -56,4 +101,5 @@ export function switchContent(data, button) {
 			generateNumber();
 		}
 	}
+	formPass(false);
 }

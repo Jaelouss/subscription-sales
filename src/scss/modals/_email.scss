@@ -13,7 +13,9 @@
 	&__text {
 		color: var(--black-origin);
 	}
-	&__form {
+	&__form,
+	&__form-code,
+	&__form-new-password {
 		width: 100%;
 		@include flex-center(column);
 		align-items: start;

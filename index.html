@@ -682,6 +682,8 @@
 			<div class="label-inner">
 				<label for="email" class="login__form-label"> Email Address </label>
 				<input
+					title="Pls enter your email here"
+					required
 					type="email"
 					id="email"
 					name="email"
@@ -693,6 +695,8 @@
 				<label for="login-password" class="login__form-label"> Password </label>
 				<div class="create__form-password">
 					<input
+						title="Enter your password"
+						required
 						name="password"
 						id="login-password"
 						type="password"
@@ -728,7 +732,13 @@
 				>
 					Forfot password?
 				</button>
-				<button class="button blue" type="submit" data-tab="account">
+				<button
+					class="button blue"
+					type="submit"
+					title="Please fill out the form fields"
+					data-tab="account"
+					id="login"
+				>
 					Log in
 				</button>
 			</div>
@@ -827,6 +837,8 @@
 			<div class="label-inner">
 				<label class="subscription__form-label"> Enter your name </label>
 				<input
+					title="Pls enter your name"
+					required
 					name="name"
 					type="text"
 					class="subscription__form-input"
@@ -836,6 +848,8 @@
 			<div class="label-inner">
 				<label class="subscription__form-label"> E-mail </label>
 				<input
+					title="Pls enter your email"
+					required
 					name="email"
 					type="email"
 					class="subscription__form-input"
@@ -845,6 +859,8 @@
 			<div class="label-inner">
 				<label class="subscription__form-label"> Phone </label>
 				<input
+					title="Pls enter your telephone"
+					required
 					name="tel"
 					type="tel"
 					class="subscription__form-input"
@@ -854,6 +870,7 @@
 			<button
 				class="subscription__form-button button blue"
 				type="submit"
+				title="Please fill out the form fields"
 				data-modal="purschase"
 			>
 				Apply
@@ -933,6 +950,8 @@
 			<div class="label-inner">
 				<label class="purschase__label"> Card Number </label>
 				<input
+					title="Pls enter your card number"
+					required
 					name="card-number"
 					type="number"
 					class="purschase__input"
@@ -942,6 +961,8 @@
 			<div class="label-inner">
 				<label class="purschase__label"> Expiration Date </label>
 				<input
+					title="Pls enter your card date"
+					required
 					name="card-date"
 					type="number"
 					class="purschase__input"
@@ -951,6 +972,8 @@
 			<div class="label-inner">
 				<label class="purschase__label"> СVC </label>
 				<input
+					title="Pls enter your card cvc code"
+					required
 					name="card-cvc"
 					type="password"
 					class="purschase__input"
@@ -959,7 +982,12 @@
 				/>
 			</div>
 			<div class="purschase__inner">
-				<button class="button blue" data-modal="paid" type="submit">
+				<button
+					class="button blue"
+					data-modal="paid"
+					type="submit"
+					title="Please fill out the form fields"
+				>
 					Pay with card
 				</button>
 				<p class="purschase__text">
@@ -970,14 +998,18 @@
 	</li>
 	<li class="purschase__item modal__item">
 		<h3 class="purschase__crypto-title">Payment by crypto wallet</h3>
-		<div class="purschase__crypto-inner">
+		<form class="purschase__crypto-inner">
 			<p class="purschase__crypto-text">Select currency</p>
-			<select class="purschase__crypto-select input" name="crypto-wallet">
+			<select
+				required
+				class="purschase__crypto-select input"
+				name="crypto-wallet"
+			>
 				<option value="bitcoin" selected>Bitcoin</option>
 				<option value="paypal">Paypal</option>
 			</select>
-		</div>
-		<button type="button" class="button blue" data-modal="crypto-one">
+		</form>
+		<button type="submit" class="button blue" data-modal="crypto-one">
 			Pay
 		</button>
 	</li>
@@ -1021,7 +1053,12 @@
 	</li>
 
 	<li class="crypto-wallet__item modal__item">
-		<button class="button blue" type="submit" data-modal="crypto-two">
+		<button
+			class="button blue"
+			type="submit"
+			title="Please fill out the form fields"
+			data-modal="crypto-two"
+		>
 			Pay
 		</button>
 	</li>
@@ -1111,6 +1148,8 @@
 					User name
 				</label>
 				<input
+					title="Pls enter your name"
+					required
 					name="name"
 					id="create__form-name"
 					type="text"
@@ -1123,6 +1162,8 @@
 					Email Address
 				</label>
 				<input
+					title="Pls enter your email"
+					required
 					name="email"
 					id="create__form-email"
 					type="email"
@@ -1136,6 +1177,8 @@
 				</label>
 				<div class="create__form-password">
 					<input
+						title="Enter your password"
+						required
 						name="password"
 						id="create-password"
 						type="password"
@@ -1166,6 +1209,8 @@
 			<div class="create__form-policy">
 				<label class="create__form-policy-label" for="create__agree">
 					<input
+						title="Are you agree?"
+						required
 						class="create__form-policy-checbox"
 						id="create__agree"
 						type="checkbox"
@@ -1187,7 +1232,12 @@
 					>
 				</label>
 			</div>
-			<button class="button blue" type="submit" data-modal="email">
+			<button
+				class="button blue"
+				type="submit"
+				title="Please fill out the form fields"
+				data-modal="email"
+			>
 				Sing up
 			</button>
 		</form>
@@ -1263,11 +1313,13 @@
 		</p>
 	</li>
 	<li class="email__item modal__item">
-		<form class="email__form">
+		<form class="email__form-code">
 			<div class="label-inner">
 				<label class="email__label">Email verification code </label>
 				<div class="email__code">
 					<input
+						title="Enter code from email here"
+						required
 						name="email-code"
 						type="text"
 						maxlength="6"
@@ -1284,7 +1336,12 @@
 					</button>
 				</div>
 			</div>
-			<button class="button blue" type="submit" data-modal="successful">
+			<button
+				class="button blue"
+				type="submit"
+				title="Please fill out the form fields"
+				data-modal="successful"
+			>
 				Sing up
 			</button>
 			<button class="button button-text" type="button" data-modal="code">
@@ -1318,13 +1375,22 @@
 			<div class="label-inner">
 				<label class="email__label">Email </label>
 				<input
+					title="Pls enter your email"
+					required
 					name="email"
 					type="email"
 					class="email__input"
 					placeholder="Enter your email here!"
 				/>
 			</div>
-			<button class="button blue" type="submit" data-modal="email">Send</button>
+			<button
+				class="button blue"
+				type="submit"
+				title="Please fill out the form fields"
+				data-modal="email"
+			>
+				Send
+			</button>
 		</form>
 	</li>
 </ul>
@@ -1352,7 +1418,7 @@
 		</p>
 	</li>
 	<li class="email__item modal__item">
-		<button class="button blue" type="button" data-tab="account">
+		<button class="button blue" type="button" data-modal="login">
 			Continue work
 		</button>
 	</li>
@@ -1382,13 +1448,20 @@
 			<div class="label-inner">
 				<label class="email__label">Email Address </label>
 				<input
+					title="Pls enter your email here"
+					required
 					name="email"
 					type="email"
 					class="email__input"
 					placeholder="name@gmail.com"
 				/>
 			</div>
-			<button class="button blue" type="submit" data-modal="forget-code">
+			<button
+				class="button blue"
+				type="submit"
+				title="Please fill out the form fields"
+				data-modal="forget-code"
+			>
 				Submit
 			</button>
 		</form>
@@ -1415,11 +1488,13 @@
 		<p class="email__text">We will send reset code in this emaill.</p>
 	</li>
 	<li class="email__item modal__item">
-		<form class="email__form">
+		<form class="email__form-code">
 			<div class="label-inner">
 				<label class="email__label">Email verification code </label>
 				<div class="email__code">
 					<input
+						title="Enter code from email here"
+						required
 						name="email-code"
 						type="text"
 						maxlength="6"
@@ -1435,7 +1510,12 @@
 					</button>
 				</div>
 			</div>
-			<button class="button blue" type="submit" data-modal="forget-password">
+			<button
+				class="button blue"
+				type="submit"
+				title="Please fill out the form fields"
+				data-modal="forget-password"
+			>
 				Restore Password
 			</button>
 			<button class="button button-text" type="button" data-modal="code">
@@ -1465,13 +1545,15 @@
 		<p class="email__text">Enter a new password.</p>
 	</li>
 	<li class="email__item modal__item">
-		<form class="email__form">
+		<form class="email__form-new-password">
 			<div class="email__form-forget-passwords">
 				<div class="label-inner">
 					<label for="new-password" class="login__form-label"> Password </label>
 					<div class="create__form-password">
 						<input
-							name="new-password"
+							title="Enter your password"
+							required
+							name="password"
 							id="new-password"
 							type="password"
 							class="create__form-input"
@@ -1503,7 +1585,9 @@
 					Confirm Password
 					<div class="create__form-password">
 						<input
-							name="confirm-password"
+							title="Confirm your password"
+							required
+							name="password"
 							id="confirm-password"
 							type="password"
 							class="create__form-input"
@@ -1532,7 +1616,12 @@
 				</div>
 			</div>
 
-			<button class="button blue" type="submit" data-modal="login">
+			<button
+				class="button blue"
+				type="submit"
+				title="Please fill out the form fields"
+				data-modal="login"
+			>
 				Restore Password
 			</button>
 		</form>
@@ -1561,7 +1650,12 @@
 		<button type="button" class="button transparent" data-tab="account">
 			Cancel
 		</button>
-		<button type="button" class="button transparent" data-tab="main-logout">
+		<button
+			type="button"
+			class="button transparent"
+			data-tab="main-logout"
+			id="logout"
+		>
 			Yes, Logout
 		</button>
 	</li>
@@ -1643,6 +1737,7 @@
 		<li class="tab__selector">
 			<div class="first">
 				<input
+					title="Pls choose your plan"
 					class="tab__selector-input"
 					type="radio"
 					name="price-netflix"
@@ -1655,6 +1750,7 @@
 			</div>
 			<div class="second">
 				<input
+					title="Pls choose your plan"
 					class="tab__selector-input"
 					type="radio"
 					name="price-netflix"
@@ -1704,10 +1800,10 @@
 								<p class="options__text">On-demand playback</p>
 							</div>
 						</li>
-						<li class="plan__price">
+						<li class="plan__price" data-netflix="Basic">
 							<div class="plan__price-inner">
 								<span class="price currency">$</span>
-								<p class="price">45</p>
+								<p class="price" data-price="Basic">45</p>
 							</div>
 							<button
 								type="button"
@@ -1756,10 +1852,10 @@
 								<p class="options__text">On-demand playback</p>
 							</div>
 						</li>
-						<li class="plan__price">
+						<li class="plan__price" data-netflix="Standart">
 							<div class="plan__price-inner">
 								<span class="price currency">$</span>
-								<p class="price">60</p>
+								<p class="price" data-price="Standart">60</p>
 							</div>
 							<button
 								type="button"
@@ -1808,10 +1904,10 @@
 								<p class="options__text">On-demand playback</p>
 							</div>
 						</li>
-						<li class="plan__price">
+						<li class="plan__price" data-netflix="Premium">
 							<div class="plan__price-inner">
 								<span class="price currency">$</span>
-								<p class="price">80</p>
+								<p class="price" data-price="Premium">80</p>
 							</div>
 							<button
 								type="button"
@@ -1962,6 +2058,7 @@
 		<li class="tab__selector">
 			<div class="first">
 				<input
+					title="Pls choose your plan"
 					class="tab__selector-input"
 					type="radio"
 					name="price-youtube"
@@ -1974,6 +2071,7 @@
 			</div>
 			<div class="second">
 				<input
+					title="Pls choose your plan"
 					class="tab__selector-input"
 					type="radio"
 					name="price-youtube"
@@ -2005,10 +2103,10 @@
 								</p>
 							</div>
 						</li>
-						<li class="plan__price">
+						<li class="plan__price" data-youtube="Music">
 							<div class="plan__price-inner">
 								<span class="price currency">$</span>
-								<p class="price">60</p>
+								<p class="price" data-price="Music">60</p>
 							</div>
 							<button
 								type="button"
@@ -2052,10 +2150,10 @@
 								</p>
 							</div>
 						</li>
-						<li class="plan__price">
+						<li class="plan__price" data-youtube="Premium">
 							<div class="plan__price-inner">
 								<span class="price currency">$</span>
-								<p class="price">80</p>
+								<p class="price" data-price="Premium">80</p>
 							</div>
 							<button
 								type="button"
@@ -2206,6 +2304,7 @@
 		<li class="tab__selector">
 			<div class="first">
 				<input
+					title="Pls choose your plan"
 					class="tab__selector-input"
 					type="radio"
 					name="price-spotify"
@@ -2218,6 +2317,7 @@
 			</div>
 			<div class="second">
 				<input
+					title="Pls choose your plan"
 					class="tab__selector-input"
 					type="radio"
 					name="price-spotify"
@@ -2271,10 +2371,10 @@
 								<p class="options__text">Block explicit music</p>
 							</div>
 						</li>
-						<li class="plan__price">
+						<li class="plan__price" data-spotify="Individual">
 							<div class="plan__price-inner">
 								<span class="price currency">$</span>
-								<p class="price">47</p>
+								<p class="price" data-price="Individual">47</p>
 							</div>
 							<button
 								type="button"
@@ -2327,10 +2427,10 @@
 								<p class="options__text">Block explicit music</p>
 							</div>
 						</li>
-						<li class="plan__price">
+						<li class="plan__price" data-spotify="Duo">
 							<div class="plan__price-inner">
 								<span class="price currency">$</span>
-								<p class="price">57</p>
+								<p class="price" data-price="Duo">57</p>
 							</div>
 							<button
 								type="button"
@@ -2383,10 +2483,10 @@
 								<p class="options__text">Block explicit music</p>
 							</div>
 						</li>
-						<li class="plan__price">
+						<li class="plan__price" data-spotify="Family">
 							<div class="plan__price-inner">
 								<span class="price currency">$</span>
-								<p class="price">77</p>
+								<p class="price" data-price="Family">77</p>
 							</div>
 							<button
 								class="plan__price-button button gray"

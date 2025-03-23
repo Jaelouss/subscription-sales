@@ -2,6 +2,7 @@
 
 .paid {
 	&__item {
+		align-items: center;
 		&.image {
 			@include flex-center;
 		}

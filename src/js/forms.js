@@ -1,10 +1,15 @@
 import { createNewUser, login } from './components/account';
-import { classAdd, classRemove } from './components/classChange';
 import { showPopUp } from './components/iziToast';
 import { loadUserSettings, setLocal } from './components/localStorage';
 import { choose } from './components/refs';
 import { switchContent } from './switchContent';
-import { findUserByEmail, formPass, temp, userData } from './userData';
+import {
+	clearTemp,
+	findUserByEmail,
+	formPass,
+	temp,
+	userData,
+} from './userData';
 
 export function formData(event) {
 	const form = event.target;
@@ -13,66 +18,35 @@ export function formData(event) {
 	const data = Object.entries(button.dataset)[0];
 	const formData = new FormData(form);
 	const formDataObject = Object.fromEntries(formData.entries());
-	let allFilled = true;
+	let allFilled = validateRequiredInputs(requiredInputs);
 
-	requiredInputs.forEach(input => {
-		if (!input.value.trim()) {
-			allFilled = false;
-		} else if (form.classList[0] === 'login__form') {
-			let inputEmail = form.querySelector('input[name="email"]').value.trim();
-			let inputPassword = form
-				.querySelector('input[name="password"]')
-				.value.trim();
-			let user = findUserByEmail(userData, inputEmail);
+	if (allFilled) {
+		const formClass = form.classList[0];
 
-			if (!user) {
-				showPopUp('Such a user does not exist', 'error');
-				allFilled = false;
-			} else if (user.password !== inputPassword) {
-				showPopUp('Incorrect password. Try again.', 'error');
-				allFilled = false;
-			} else if (user) {
+		if (formClass === 'login__form') {
+			const user = validateLoginInputs(form);
+			if (user) {
 				for (let key in userData) {
 					if (key.startsWith('user') && userData[key] === user) {
 						login(key);
-
 						break;
 					}
 				}
-			}
-		} else if (form.classList[0] === 'email__form') {
-			let inputEmail = form.querySelector('input[name="email"]').value.trim();
-			let user = findUserByEmail(userData, inputEmail);
-			if (!user) {
-				showPopUp('Such a user does not exist', 'error');
-				allFilled = false;
-			}
-		} else if (input.name === 'email-code') {
-			if (input.value.trim() !== temp.code) {
-				showPopUp('Invalid code. Try again.', 'error');
-				allFilled = false;
-			}
-		} else if (input.id === 'new-password') {
-			let newPassword = choose('#new-password').value;
-			let confirmPassword = choose('#confirm-password').value;
-			if (newPassword !== confirmPassword) {
-				showPopUp('Passwords do not match. Try again.', 'error');
-				allFilled = false;
 			} else {
-				showPopUp('Your password has been successfully changed!', 'success');
-			}
-		} else if (form.classList[0] === 'create__form') {
-			loadUserSettings(userData);
-			let inputEmail = form.querySelector('input[name="email"]').value.trim();
-			let user = findUserByEmail(userData, inputEmail);
-			if (user) {
-				showPopUp('This email is already registered', 'error');
 				allFilled = false;
-			} else {
-				createNewUser(userData);
 			}
+		} else if (formClass === 'email__form') {
+			allFilled = validateEmailForm(form);
+		} else if (form.querySelector('input[name="email-code"]')) {
+			allFilled = validateEmailCode(
+				form.querySelector('input[name="email-code"]')
+			);
+		} else if (form.querySelector('#new-password')) {
+			allFilled = validateNewPassword();
+		} else if (formClass === 'create__form') {
+			allFilled = validateCreateForm(form);
 		}
-	});
+	}
 
 	if (allFilled) {
 		for (const key in formDataObject) {
@@ -92,4 +66,68 @@ export function formData(event) {
 		form.reset();
 		switchContent(data, button);
 	}
+}
+
+function validateRequiredInputs(requiredInputs) {
+	return Array.from(requiredInputs).every(input => input.value.trim());
+}
+
+function validateLoginInputs(form) {
+	const email = form.querySelector('input[name="email"]').value;
+	const password = form.querySelector('input[name="password"]').value;
+	const user = findUserByEmail(userData, email);
+
+	if (!user) {
+		showPopUp('Such a user does not exist', 'error');
+		return false;
+	}
+	if (user.password !== password) {
+		showPopUp('Incorrect password. Try again.', 'error');
+		return false;
+	}
+	return user;
+}
+
+function validateEmailForm(form) {
+	const email = form.querySelector('input[name="email"]').value.trim();
+	const user = findUserByEmail(userData, email);
+
+	if (!user) {
+		showPopUp('Such a user does not exist', 'error');
+		return false;
+	}
+	return true;
+}
+
+function validateEmailCode(input) {
+	if (input.value.trim() !== temp.code) {
+		showPopUp('Invalid code. Try again.', 'error');
+		return false;
+	}
+	clearTemp();
+	return true;
+}
+
+function validateNewPassword() {
+	const newPassword = choose('#new-password').value;
+	const confirmPassword = choose('#confirm-password').value;
+
+	if (newPassword !== confirmPassword) {
+		showPopUp('Passwords do not match. Try again.', 'error');
+		return false;
+	}
+	showPopUp('Your password has been successfully changed!', 'success');
+	return true;
+}
+
+function validateCreateForm(form) {
+	const email = form.querySelector('input[name="email"]').value.trim();
+	const user = findUserByEmail(userData, email);
+
+	if (user) {
+		showPopUp('This email is already registered', 'error');
+		return false;
+	}
+	createNewUser(userData);
+	return true;
 }

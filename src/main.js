@@ -2,7 +2,7 @@ import { switchContent } from './js/switchContent.js';
 import { scrollToSection } from './js/components/scrollToSection.js';
 import { formData } from './js/forms';
 import './main.scss';
-import refs from './js/components/refs.js';
+import refs, { choose, chooseAll } from './js/components/refs.js';
 import { closeAllModals } from './js/components/closeAllModals.js';
 import { copyText } from './js/components/copyLink.js';
 import { changePrice } from './js/components/changePrice.js';
@@ -11,7 +11,7 @@ import { userData } from './js/userData.js';
 import { logout } from './js/components/account.js';
 
 loadUserSettings(userData);
-logout();
+// logout();
 
 document.addEventListener('submit', event => {
 	event.preventDefault();
@@ -25,8 +25,12 @@ document.addEventListener('click', event => {
 	const button = elem.closest('BUTTON');
 	const link = elem.closest('A');
 	const copy = elem.closest('[data-copy="no"]');
+	const openDetails = choose('[data-details][open]');
 
 	if (button) {
+		if (openDetails) {
+			openDetails.open = false;
+		}
 		const buttonClass = button.className;
 		if (buttonClass.includes('izi')) {
 			return;
@@ -43,5 +47,7 @@ document.addEventListener('click', event => {
 		closeAllModals();
 	} else if (copy) {
 		copyText(copy);
+	} else if (openDetails) {
+		openDetails.open = false;
 	}
 });

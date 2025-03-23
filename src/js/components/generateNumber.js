@@ -8,7 +8,6 @@ export function generateNumber() {
 	}
 	const numbers = arr.join('');
 	temp.code = numbers;
-	console.log(temp);
 
 	showPopUp(numbers, 'info', 'copy');
 }

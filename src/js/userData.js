@@ -1,5 +1,5 @@
 export const userData = {
-	currentUser: 'null',
+	currentUser: null,
 	tab: 'main',
 	priceX: 1,
 };

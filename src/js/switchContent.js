@@ -1,6 +1,9 @@
-import { logout } from './components/account';
+import { logout, renderUserAccount } from './components/account';
+import { checkSubscriptionStatus } from './components/checkSubscription';
 import { closeAllModals } from './components/closeAllModals';
 import { generateNumber } from './components/generateNumber';
+import { showPopUp } from './components/iziToast';
+import { loadUserSettings, setLocal } from './components/localStorage';
 import { goToMain } from './components/mainPage';
 import { openModal } from './components/openModal';
 import { openTab } from './components/openTab';
@@ -16,73 +19,78 @@ import {
 } from './userData';
 
 export function switchContent(data, button) {
-	const windowType = data[0];
-	const windowName = data[1];
+	const type = data[0];
+	const name = data[1];
 
-	const className = `${windowType}__${windowName}`;
+	const className = `${type}__${name}`;
+
 	if (button.type === 'submit' && !form) {
 		return;
 	}
-	if (button.id === 'login') {
-		console.log('yes');
-	}
-	if (windowType === 'modal') {
-		if (windowName === 'email' || windowName === 'forget-code') {
+	if (type === 'modal') {
+		if (name === 'email' || name === 'forget-code') {
 			generateNumber();
 		}
-		if (windowName === 'subscription') {
-			const dataset = button.parentElement.dataset;
-			for (const key in dataset) {
-				temp[key] = dataset[key];
+		if (name === 'subscription') {
+			if (!userData.currentUser) {
+				openModal('modal__login');
+				return;
+			} else {
+				const dataset = button.parentElement.dataset;
+
+				const subscriptionCheck = checkSubscriptionStatus(
+					userData,
+					userData.currentUser,
+					dataset
+				);
+
+				if (!subscriptionCheck.canSubscribe) {
+					showPopUp(subscriptionCheck.message, subscriptionCheck.type);
+					return;
+				} else {
+					for (const key in dataset) {
+						temp[key] = dataset[key];
+					}
+				}
 			}
 		}
-		if (windowName === 'paid') {
+		if (name === 'paid') {
 			for (const key in temp) {
 				userData[userData.currentUser].subscription[key] = temp[key];
 			}
+			setLocal(userData);
+			loadUserSettings(userData);
+			renderUserAccount();
 			clearTemp();
 		}
-		if (windowName === 'subscription') {
-			if (userData.currentUser === 'null') {
-				openModal('modal__login');
-				return;
-			}
-		}
+
 		openModal(className);
 	}
-	if (windowType === 'tab') {
-		userData.tab = windowName;
+	if (type === 'tab') {
+		userData.tab = name;
 		clearPrice();
-		if (
-			windowName === 'netflix' ||
-			windowName === 'youtube' ||
-			windowName === 'spotify'
-		) {
+		if (name === 'netflix' || name === 'youtube' || name === 'spotify') {
 			savePrice();
 		}
-		if (windowName === 'main') {
+		if (name === 'main') {
 			goToMain();
-		} else if (windowName === 'main-logout') {
+		} else if (name === 'main-logout') {
 			logout();
 		} else {
 			openTab(className);
 		}
 	}
-	if (
-		windowType === 'platform' ||
-		windowType === 'pay' ||
-		windowType === 'lang'
-	) {
+	if (type === 'platform' || type === 'pay' || type === 'lang') {
 		openModal('modal__working');
 	}
-	if (windowType === 'button') {
-		if (windowName === 'close') {
+	if (type === 'button') {
+		if (name === 'close') {
 			closeAllModals();
 		}
-		if (windowName === 'choose') {
+		if (name === 'choose') {
 			goToMain('choose');
 		}
-		if (windowName === 'password') {
+		if (name === 'password') {
 			const firstIcon = button.children[0];
 			const secondIcon = button.children[1];
 			const parentDiv = button.parentElement;
@@ -97,7 +105,7 @@ export function switchContent(data, button) {
 				passwordInput.type = 'password';
 			}
 		}
-		if (windowName === 'resent') {
+		if (name === 'resent') {
 			generateNumber();
 		}
 	}

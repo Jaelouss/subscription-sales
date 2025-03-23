@@ -25,7 +25,10 @@
 		<nav class="header__nav">
 			<ul class="header__nav-list">
 				<li class="header__nav-item">
-					<details class="header__nav-details details details__header-menu">
+					<details
+						data-details
+						class="header__nav-details details details__header-menu"
+					>
 						<summary class="header__nav-summary summary summary__header-menu">
 							Subscriptions
 							<svg class="icon icon__header-details" height="12" width="12">
@@ -98,6 +101,7 @@
 				</li>
 				<li class="header__soc1al-lang">
 					<details
+						data-details
 						class="details details__header-lang header__soc1al-lang-details"
 					>
 						<summary
@@ -2102,6 +2106,19 @@
 									Listen to music without ads, in the background and offline
 								</p>
 							</div>
+							<div class="options">
+								<svg
+									class="icon icon-copy success options-icon"
+									height="19"
+									width="19"
+								>
+									<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
+								</svg>
+								<p class="options__text">
+									YouTube and YouTube Music without ads, in the background and
+									offline
+								</p>
+							</div>
 						</li>
 						<li class="plan__price" data-youtube="Music">
 							<div class="plan__price-inner">
@@ -2650,7 +2667,7 @@
 				</li>
 				<li class="account__info-item">
 					<p class="account__info-text">Name:</p>
-					<p class="account__info-id" id="account-id">000000</p>
+					<p class="account__info-id" id="account-name">000000</p>
 				</li>
 				<li class="account__info-item">
 					<p class="account__info-text">Email:</p>
@@ -2658,76 +2675,15 @@
 				</li>
 				<li class="account__info-item">
 					<p class="account__info-text">Tel:</p>
-					<p class="account__info-id" id="account-email">000000</p>
+					<p class="account__info-id" id="account-tel">000000</p>
 				</li>
 			</ul>
-			<ul class="account__plans-list">
-				<li class="account__no-plans">
+			<ul class="account__plans-list" id="account__plans">
+				<li class="account__no-plans" data-no-plans>
 					<p class="account__no-plans-text">Please choose your subscription</p>
 					<button type="button" class="button blue" data-button="choose">
 						Choose!
 					</button>
-				</li>
-				<li class="account__plans-item">
-					<div class="account__plans-header plan-spotify">
-						<h3 class="account__plans-header-title">Spotify Premium</h3>
-						<p class="account__plans-header-title">Duo</p>
-					</div>
-					<div class="account__plans-options">
-						<p class="account__plans-options-text">
-							<svg
-								class="icon icon-copy success options-icon"
-								height="24"
-								width="24"
-								fill="blue"
-							>
-								<use href="/subscription-sales/sprite.svg#file-copy-success"></use>
-							</svg>
-							qwerqwerqwerqwerqwer qewr
-						</p>
-
-						<button
-							class="button button-text account__plans-options-button choose underline"
-							type="button"
-							data-button="choose"
-						>
-							Change plan
-						</button>
-					</div>
-				</li>
-				<li class="account__plans-item">
-					<div class="account__plans-header plan-youtube">
-						<h3 class="account__plans-header-title">Spotify Premium Duo</h3>
-					</div>
-					<div class="account__plans-options">
-						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
-						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
-						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
-						<button
-							class="button button-text account__plans-options-button choose underline"
-							type="button"
-							data-button="choose"
-						>
-							Change plan
-						</button>
-					</div>
-				</li>
-				<li class="account__plans-item">
-					<div class="account__plans-header plan-netflix">
-						<h3 class="account__plans-header-title">Spotify Premium Duo</h3>
-					</div>
-					<div class="account__plans-options">
-						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
-						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
-						<p class="account__plans-options-text">qwerqwerqwerqwerqwer qewr</p>
-						<button
-							class="button button-text account__plans-options-button choose underline"
-							type="button"
-							data-button="choose"
-						>
-							Change plan
-						</button>
-					</div>
 				</li>
 			</ul>
 		</li>
@@ -2847,6 +2803,7 @@
 					</li>
 					<li class="footer__soc1al-lang">
 						<details
+							data-details
 							class="details details__footer-lang footer__soc1al-lang-details"
 						>
 							<summary

@@ -143,7 +143,6 @@ function validateCreateForm(form, formDataObject) {
 	for (const key in formDataObject) {
 		tempAcc[key] = formDataObject[key];
 	}
-	console.log(tempAcc);
 
 	return true;
 }

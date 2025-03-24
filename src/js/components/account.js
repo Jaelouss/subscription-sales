@@ -37,7 +37,6 @@ export function createNewUser(userData) {
 const loginBtn = choose('#header-login');
 const accountBtn = choose('#header-account');
 
-// Логін
 export function login(user) {
 	userData.currentUser = user;
 	classAdd(loginBtn);

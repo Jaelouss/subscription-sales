@@ -1,10 +1,10 @@
-import { userData } from '../userData';
+import { clearTempAcc, tempAcc, userData } from '../userData';
 import { classAdd, classRemove } from './classChange';
 import { setLocal } from './localStorage';
+import { goToMain } from './mainPage';
 import { makeOptions } from './options';
 import { choose } from './refs';
 
-// Створення нового користувача
 export function createNewUser(userData) {
 	const existingUsers = Object.keys(userData)
 		.filter(key => key.startsWith('user'))
@@ -25,7 +25,13 @@ export function createNewUser(userData) {
 
 	userData.currentUser = newUserKey;
 
+	for (const key in tempAcc) {
+		userData[newUserKey][key] = tempAcc[key];
+	}
+
 	setLocal(userData);
+	login(newUserKey);
+	clearTempAcc();
 }
 
 const loginBtn = choose('#header-login');
@@ -37,12 +43,15 @@ export function login(user) {
 	classAdd(loginBtn);
 	classRemove(accountBtn);
 	renderUserAccount();
+	setLocal(userData);
 }
 
 export function logout() {
 	userData.currentUser = null;
 	classAdd(accountBtn);
 	classRemove(loginBtn);
+	goToMain();
+	setLocal(userData);
 }
 
 export function renderUserAccount() {

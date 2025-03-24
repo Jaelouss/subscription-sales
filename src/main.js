@@ -11,7 +11,7 @@ import { userData } from './js/userData.js';
 import { logout } from './js/components/account.js';
 
 loadUserSettings(userData);
-// logout();
+logout();
 
 document.addEventListener('submit', event => {
 	event.preventDefault();

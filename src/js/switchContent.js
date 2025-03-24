@@ -31,6 +31,9 @@ export function switchContent(data, button) {
 		if (name === 'email' || name === 'forget-code') {
 			generateNumber();
 		}
+		if (name === 'successful') {
+			showPopUp('Account successfully created!', 'success');
+		}
 		if (name === 'subscription') {
 			if (!userData.currentUser) {
 				openModal('modal__login');

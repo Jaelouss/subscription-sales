@@ -10,18 +10,15 @@ export function checkSubscriptionStatus(userData, currentUser, clickedDataset) {
 		break;
 	}
 
-	// Якщо підписки на сервіс немає, дозволяємо підписку
 	if (!currentSubscriptions[clickedService]) {
 		return { canSubscribe: true, message: '' };
 	}
 
 	const currentPlan = currentSubscriptions[clickedService];
 
-	// Приводимо обидва плани до одного регістру для порівняння
 	const normalizedCurrentPlan = currentPlan.toLowerCase();
 	const normalizedClickedPlan = clickedPlan.toLowerCase();
 
-	// Перевірка на однакову підписку
 	if (normalizedCurrentPlan === normalizedClickedPlan) {
 		return {
 			canSubscribe: false,
@@ -30,14 +27,12 @@ export function checkSubscriptionStatus(userData, currentUser, clickedDataset) {
 		};
 	}
 
-	// Отримуємо плани сервісу і нормалізуємо їх
 	const servicePlans = Object.keys(option[clickedService]).map(plan =>
 		plan.toLowerCase()
 	);
 	const currentPlanIndex = servicePlans.indexOf(normalizedCurrentPlan);
 	const clickedPlanIndex = servicePlans.indexOf(normalizedClickedPlan);
 
-	// Перевірка на помилки: якщо план не знайдено
 	if (currentPlanIndex === -1 || clickedPlanIndex === -1) {
 		console.error(
 			`Plan not found: currentPlan=${currentPlan}, clickedPlan=${clickedPlan}, servicePlans=`,
@@ -50,7 +45,6 @@ export function checkSubscriptionStatus(userData, currentUser, clickedDataset) {
 		};
 	}
 
-	// Перевірка на вищий/нижчий план
 	if (clickedPlanIndex < currentPlanIndex) {
 		return {
 			canSubscribe: false,

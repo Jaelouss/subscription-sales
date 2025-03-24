@@ -32,37 +32,47 @@
 	<li class="purschase__item modal__item">
 		<form class="purschase__form">
 			<div class="label-inner">
-				<label class="purschase__label"> Card Number </label>
+				<label class="purschase__label">Card Number</label>
 				<input
-					title="Pls enter your card number"
+					title="Please enter your card number"
 					required
 					name="card-number"
-					type="number"
+					type="text"
 					class="purschase__input"
-					placeholder="1234 1234 1234 1234"
+					placeholder="1234 5678 9012 3456"
+					maxlength="19"
+					pattern="^\d{4}\s\d{4}\s\d{4}\s\d{4}$"
+					oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\d{4})(?=\d)/g, '$1 ').slice(0, 19)"
 				/>
 			</div>
 			<div class="label-inner">
-				<label class="purschase__label"> Expiration Date </label>
+				<label class="purschase__label">Expiration Date</label>
 				<input
-					title="Pls enter your card date"
+					title="Please enter your card date"
 					required
 					name="card-date"
-					type="number"
+					type="text"
 					class="purschase__input"
 					placeholder="MM/YY"
+					maxlength="5"
+					pattern="^(0[1-9]|1[0-2])\/\d{2}$"
+					oninput="this.value =
+				this.value.replace(/[^0-9]/g, '').replace(/(\d{2})(\d{0,2})/,
+				'$1/$2').slice(0, 5)"
 				/>
 			</div>
 			<div class="label-inner">
-				<label class="purschase__label"> СVC </label>
+				<label class="purschase__label">CVC</label>
 				<input
-					title="Pls enter your card cvc code"
+					title="Please enter your card CVC code"
 					required
 					name="card-cvc"
 					type="password"
 					class="purschase__input"
 					maxlength="3"
-					placeholder="CVC"
+					pattern="^\d{3}$"
+					oninput="this.value = this.value.replace(/[^0-9]/g,
+				'').slice(0, 3)"
 				/>
 			</div>
 			<div class="purschase__inner">

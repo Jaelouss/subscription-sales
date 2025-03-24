@@ -8,6 +8,7 @@ import {
 	findUserByEmail,
 	formPass,
 	temp,
+	tempAcc,
 	userData,
 } from './userData';
 
@@ -44,20 +45,30 @@ export function formData(event) {
 		} else if (form.querySelector('#new-password')) {
 			allFilled = validateNewPassword();
 		} else if (formClass === 'create__form') {
-			allFilled = validateCreateForm(form);
+			allFilled = validateCreateForm(form, formDataObject);
+		} else if (formClass === 'subscription__form') {
+			allFilled = validateSubscriptionForm(form);
+		} else if (formClass === 'purschase__form') {
+			allFilled = validatePurschaseForm(form);
 		}
 	}
 
 	if (allFilled) {
-		for (const key in formDataObject) {
-			userData[userData.currentUser][key] = formDataObject[key];
+		const formClass = form.classList[0];
+		if (formClass !== 'create__form' && formClass !== 'email__form') {
+			if (userData.currentUser && userData[userData.currentUser]) {
+				for (const key in formDataObject) {
+					userData[userData.currentUser][key] = formDataObject[key];
+				}
+			} else {
+				console.error('No current user defined. Cannot update userData.');
+				showPopUp('Error: Please log in first.', 'error');
+				return;
+			}
 		}
 
 		setLocal(userData);
 
-		if (form.classList[0] === 'create__form') {
-			showPopUp('Account successfully created!', 'success');
-		}
 		if (form.classList[0] === 'login__form') {
 			showPopUp('Welcome back!', 'success');
 		}
@@ -105,6 +116,7 @@ function validateEmailCode(input) {
 		return false;
 	}
 	clearTemp();
+	createNewUser(userData);
 	return true;
 }
 
@@ -120,7 +132,7 @@ function validateNewPassword() {
 	return true;
 }
 
-function validateCreateForm(form) {
+function validateCreateForm(form, formDataObject) {
 	const email = form.querySelector('input[name="email"]').value.trim();
 	const user = findUserByEmail(userData, email);
 
@@ -128,6 +140,49 @@ function validateCreateForm(form) {
 		showPopUp('This email is already registered', 'error');
 		return false;
 	}
-	createNewUser(userData);
+	for (const key in formDataObject) {
+		tempAcc[key] = formDataObject[key];
+	}
+	console.log(tempAcc);
+
+	return true;
+}
+
+function validateSubscriptionForm(form) {
+	const email = form.querySelector('input[name="email"]').value.trim();
+	const userEmail = userData[userData.currentUser].email;
+	if (email !== userEmail) {
+		showPopUp('Email does not match', 'error');
+		return false;
+	}
+	return true;
+}
+
+function validatePurschaseForm(form) {
+	const cardNumberInput = form
+		.querySelector('input[name="card-number"]')
+		.value.trim();
+	const expirationDateInput = form
+		.querySelector('input[name="card-date"]')
+		.value.trim();
+	const cvcInput = form.querySelector('input[name="card-cvc"]').value.trim();
+
+	const cleanedCardNumber = cardNumberInput.replace(/\s/g, '');
+	if (cleanedCardNumber.length !== 16) {
+		showPopUp('Card number must be 16 digits.', 'error');
+		return false;
+	}
+
+	if (!/^\d{2}\/\d{2}$/.test(expirationDateInput)) {
+		showPopUp('Expiration date must be in MM/YY format.', 'error');
+		return false;
+	}
+
+	if (cvcInput.length !== 3) {
+		showPopUp('CVC must be 3 digits.', 'error');
+		return false;
+	}
+
+	showPopUp('Payment details validated successfully!', 'success');
 	return true;
 }

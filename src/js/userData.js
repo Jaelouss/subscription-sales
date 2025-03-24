@@ -10,11 +10,16 @@ export const price = {};
 
 export const temp = {};
 
+export const tempAcc = {};
+
 export function clearPrice() {
 	Object.keys(price).forEach(key => delete price[key]);
 }
 export function clearTemp() {
 	Object.keys(temp).forEach(key => delete temp[key]);
+}
+export function clearTempAcc() {
+	Object.keys(tempAcc).forEach(key => delete temp[key]);
 }
 
 export function formPass(bulean) {

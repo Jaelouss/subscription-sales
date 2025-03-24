@@ -32,12 +32,13 @@
 			<div class="label-inner">
 				<label class="subscription__form-label"> Phone </label>
 				<input
-					title="Pls enter your telephone"
+					title="Please enter a valid phone number (e.g., +1234567890, 123-456-7890)"
 					required
 					name="tel"
 					type="tel"
 					class="subscription__form-input"
 					placeholder="Enter your phone"
+					pattern="^\+?[0-9\s\-]{6,15}$"
 				/>
 			</div>
 			<button
